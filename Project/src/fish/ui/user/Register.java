@@ -33,8 +33,12 @@ public class Register extends ActionSupport{
 	}
 	
 	public void validate() {
-		if(password != null && repassword != null && !repassword.equals(password)){
-			this.addActionError("Confirm should be equal to the password");
+		if(password != null && repassword != null){
+			if(!repassword.equals(password))
+				this.addActionError("Confirm should be equal to the password");
 		}
+	}
+	public void register() {
+		
 	}
 }
