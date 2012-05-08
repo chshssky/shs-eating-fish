@@ -3,7 +3,7 @@ use orderonlineDB;
 create table CustomerInfo 
 (
     CustomerID int(10) not null AUTO_INCREMENT,
-    telephoneNum int(15),
+    telephoneNum varchar(15),
     firstName varchar(20),
     lastName varchar(20) not null,
     email varchar(30),
