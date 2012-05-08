@@ -10,8 +10,8 @@
             <column name="CustomerID" />
             <generator class="increment" />
         </id>
-        <property name="telephoneNum" type="integer">
-            <column name="telephoneNum" />
+        <property name="telephoneNum" type="string">
+            <column name="telephoneNum" length="15" />
         </property>
         <property name="firstName" type="string">
             <column name="firstName" length="20" />

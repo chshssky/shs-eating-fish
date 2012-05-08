@@ -3,7 +3,7 @@ use orderonlineDB;
 create table CustomerInfo 
 (
     CustomerID int(10) not null AUTO_INCREMENT,
-    telephoneNum int(15),
+    telephoneNum varchar(15),
     firstName varchar(20),
     lastName varchar(20) not null,
     email varchar(30),
@@ -145,4 +145,20 @@ insert into courseinfo(name, descript, price, RestaurantID) values
 ('龙虾汤过桥象','龙虾取自大明湖畔的夏雨荷下，虾肉甜美。',53,6);
 insert into courseinfo(name, descript, price, RestaurantID) values
 ('文火焖小牛肉','餐厅选用的质感柔嫩的顶级雪花牛肉，加上秘制酱料文火焖制而成，绵软酥烂',69,6);
+insert into customerinfo(telephoneNum,firstName,lastName,email)
+values('15000802026','Yiting','Zhang','948164356@qq.com');
+insert into logininfo(LoginName,Password,CustomerID)
+values('eating','1234',1);
+insert into orderinfo(address,sumPrice,CustomerID)
+values('上海市嘉定区曹安路4800号同济大学',296,1);
+insert into ordercourses(num,OrderID,CourseID)
+values(1,1,1);
 
+insert into ordercourses(num,OrderID,CourseID)
+values(1,1,4);
+
+insert into ordercourses(num,OrderID,CourseID)
+values(2,1,7);
+
+insert into ordercourses(num,OrderID,CourseID)
+values(1,1,10);

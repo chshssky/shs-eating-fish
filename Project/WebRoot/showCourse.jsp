@@ -48,7 +48,7 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="gb2312"%>
 			<td><%=info.getDescript() %></td>
 			<td><%=info.getPrice() %></td>
 			<td align="center">
-			<form>
+			<form action="test.jsp">
        		<input type="hidden" name="id" id="id" value=<%=info.getCourseId()%>>
        		<input type="text" name=course_count id="course_count" size="3">
        		<input type="submit" name="submit" value="加入购物车">
