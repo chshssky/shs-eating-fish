@@ -11,7 +11,7 @@ I'm coming.........
 一下就是工作日志--log:
 
 2012/5/7:
-	我创建了OrderOnlineDB.sql；
+	C：我创建了OrderOnlineDB.sql；
 	我在里边初始化了数据库和各个表，应该挺全的了，大家看名字就应该能懂；
 	我先插入了三条数据，就是咱们三个管理员的账号密码，
 	接下来，大家如果要插入自己的测试数据的话（指大家手动的），可以在.sql里在下面接着写insert啥东东，这样每个人也可以用它添的一些必要数据
@@ -20,3 +20,8 @@ I'm coming.........
 	不要把有bug的.sql提交上来哦。。。。
 2012/5/7:
 	我是意婷，我给restaurantinfo table里面增加了饭店信息，加到sql里面了，现在push上去，接下来我还要接着添加courseinfo里面的东西，再push上来
+
+
+2012/5/7:
+	C：我写了index.jsp和login.jsp 及index.jsp包含的jsps只有login用了struts其他的都没用，所以还有待改进
+	注意：在pull下来后，我们要先把hibernate.cfg.xml里的一些数据库连接信息改成自己的~~~E已经试过了，可以的。。
