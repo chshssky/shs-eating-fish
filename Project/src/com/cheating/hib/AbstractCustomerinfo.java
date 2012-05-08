@@ -13,7 +13,7 @@ public abstract class AbstractCustomerinfo implements java.io.Serializable {
 	// Fields
 
 	private Integer customerId;
-	private Integer telephoneNum;
+	private String telephoneNum;
 	private String firstName;
 	private String lastName;
 	private String email;
@@ -33,7 +33,7 @@ public abstract class AbstractCustomerinfo implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public AbstractCustomerinfo(Integer telephoneNum, String firstName,
+	public AbstractCustomerinfo(String telephoneNum, String firstName,
 			String lastName, String email, Set reservationinfos,
 			Set logininfos, Set orderinfos) {
 		this.telephoneNum = telephoneNum;
@@ -55,11 +55,11 @@ public abstract class AbstractCustomerinfo implements java.io.Serializable {
 		this.customerId = customerId;
 	}
 
-	public Integer getTelephoneNum() {
+	public String getTelephoneNum() {
 		return this.telephoneNum;
 	}
 
-	public void setTelephoneNum(Integer telephoneNum) {
+	public void setTelephoneNum(String telephoneNum) {
 		this.telephoneNum = telephoneNum;
 	}
 

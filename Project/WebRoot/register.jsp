@@ -5,17 +5,16 @@
 	<title>Register Page</title>
 </head>
 	<body>
+		<center>
+		<h1><font color="#FF0099">请填写注册信�/font></h1>
 		<s:form action="register_check" >
-			<s:label label="Username"/>
-			<s:textfield name="username"/>
-			<s:label label="Password"/>
-			<s:password name="password"/>
-			<s:label label="Confirm Password"/>
-			<s:password name="repassword"/>
-			<s:label label="Email Address"/>
-			<s:textfield name="email"/>
-			<s:submit/>
-			<s:reset/>
+			<s:textfield name="username" label="用户�/>
+			<s:password name="password" label="密码"/>
+			<s:password name="repassword" label="确认密码"/>
+			<s:textfield name="email" label="邮箱"/>
+			<s:submit value="注册"/>
+			<s:reset value="重置"/>
 		</s:form>
+		</center>
 	</body>
 </html>

@@ -28,6 +28,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      <%
      	}
       %>
-      
+      <h2 align="center">
+     <a href="RestaurantInfoMenu.jsp?id=0">餐馆信息</a>
+     </h2>
   </body>
 </html>
