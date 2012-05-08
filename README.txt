@@ -29,3 +29,5 @@ I'm coming.........
 2012/5/7:
 	C：我写了index.jsp和login.jsp 及index.jsp包含的jsps只有login用了struts其他的都没用，所以还有待改进
 	注意：在pull下来后，我们要先把hibernate.cfg.xml里的一些数据库连接信息改成自己的~~~E已经试过了，可以的。。
+
+        y:这次我修改了数据库的ordercourses table，因为在读取数据的时候遇到问题，就增加了ordercoursesid 作为primary key。
