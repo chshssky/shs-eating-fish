@@ -8,7 +8,7 @@ Hi I'm eating.
 I'm coming.........
 
 现在，我们可以开始工作了：
-一下就是工作日志--log:
+以下就是工作日志--log:
 
 2012/5/7:
 	C：我创建了OrderOnlineDB.sql；

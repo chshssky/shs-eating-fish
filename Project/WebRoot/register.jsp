@@ -9,7 +9,7 @@
 			<s:label label="Username"/>
 			<s:textfield name="username"/>
 			<s:label label="Password"/>
-			<s:password type="password" name="password"/>
+			<s:password name="password"/>
 			<s:label label="Confirm Password"/>
 			<s:password name="repassword"/>
 			<s:label label="Email Address"/>

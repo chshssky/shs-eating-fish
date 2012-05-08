@@ -28,12 +28,13 @@
 		<message>Confirm password should not be empty.</message>
 	</validator>
 	
+	<!-- 
 	<validator type="expression">  
 		<param name="expression">
 			(password==repassword)
 		</param>
 		<message>Confirm password should be equal to the password</message>
-	</validator>
+	</validator> -->
 	
 	<field name="email">
 		<field-validator type="requiredstring" short-circuit="true">
