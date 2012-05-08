@@ -1,4 +1,9 @@
-<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" import="java.util.*" 
+import="com.cheating.hib.*" 
+import="org.hibernate.Criteria" 
+import="org.hibernate.Session"
+import="hibernate.*"
+import="org.hibernate.criterion.Restrictions"	pageEncoding="gb2312"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>  
@@ -14,9 +19,61 @@
 
   </head>
   
-  <body>
+  <body topmargin="100">
     <%
     	int customerID = 1;
+    	Session se = HibernateSessionFactory.getSession();
+		Criteria crit = se.createCriteria(Customerinfo.class);
+		crit.add(Restrictions.eq("customerId", customerID));
+		List<Customerinfo> cusinfos = crit.list();
+		Criteria crit2 = se.createCriteria(Orderinfo.class);
+		crit2.add(Restrictions.eq("customerinfo", cusinfos.get(0)));
+		List<Orderinfo> orderinfos = crit2.list();
+		
+		for(Orderinfo info: orderinfos)
+		{
+			Session se2 = HibernateSessionFactory.getSession();
+			//Orderinfo ord = (Orderinfo)se2.load(com.cheating.hib.Orderinfo.class, info.getOrderId());
+			//Set<Ordercourses> odcourses= ord.getOrdercourseses();
+			Criteria crit3 = se2.createCriteria(Ordercourses.class);
+			crit3.add(Restrictions.eq("orderinfo", info));
+			List<Ordercourses> odcourses = crit3.list();
+			//List<Ordercourses> odcourses = crit3.list();
+			//Criteria crit4 = se2.createCriteria(Courseinfo.class);
+			//crit3.add(Restrictions.eq("courseId", info));
+			%>
+			<table align="center" border="2">
+			<tr>
+			<td>订单号:<%=info.getOrderId() %></td>
+			<td colspan="2">订单生成时间：<%=String.valueOf(info.getOrderTime()) %></td>
+			<td>总价格：<%=info.getSumPrice()%></td>
+			</tr>
+			<tr>
+			<td>菜肴名</td>
+			<td>数量</td>
+			<td>单价</td>
+			<td>配送地址</td>
+			</tr>
+			<%
+				for(Ordercourses info2: odcourses)
+				{
+					Session se3 = HibernateSessionFactory.getSession();
+					Criteria crit4 = se3.createCriteria(Courseinfo.class);
+					crit4.add(Restrictions.eq("courseId", info2.getCourseinfo().getCourseId()));
+					List<Courseinfo> courseinfo = crit4.list();
+					%>
+					<tr>
+					<td align="center"><%=courseinfo.get(0).getName()%></td>
+				
+					<td align="center"><%=info2.getNum()%></td>
+					<td align="center"><%=courseinfo.get(0).getPrice() %></td>
+					<td align="center"><%=info.getAddress()%></td>
+					</tr>
+				<%}
+			 %>
+			</table>
+			
+		<%}
     	
      %>
   </body>
