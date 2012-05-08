@@ -10,7 +10,7 @@
 
   </head>
 	<frameset cols="20%,80%" >
-	<frame noresize src="showRestaurant.html" name="left">
+	<frame noresize src="showRestaurant.jsp" name="left">
 	<frame noresize name="right">
 	</frameset>
   <body>
