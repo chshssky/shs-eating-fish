@@ -8,7 +8,7 @@
     <class name="com.cheating.hib.Customerinfo" table="customerinfo" catalog="orderonlinedb">
         <id name="customerId" type="integer">
             <column name="CustomerID" />
-            <generator class="increment" />
+            <generator class="native" />
         </id>
         <property name="telephoneNum" type="string">
             <column name="telephoneNum" length="15" />
