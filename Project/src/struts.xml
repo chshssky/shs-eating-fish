@@ -6,8 +6,16 @@
 		
 		<action name="register_check" class="fish.ui.user.Register">
 			<interceptor-ref name="validationWorkflowStack"/>
-			<result name="input">register.jsp</result>
-			<result name="success">index.jsp</result>
+			<result name="input">/register.jsp</result>
+			<result name="success">/index.jsp</result>
+		</action>
+		
+		<action name="reset_email" class="fish.ui.user.ResetEmail">
+			<result name="success">/userInfo.jsp</result>
+		</action>
+		
+		<action name="reset_password" class="fish.ui.user.ResetPass">
+			<result name="success">/userInfo.jsp</result>
 		</action>
 	</package>
 </struts>    
