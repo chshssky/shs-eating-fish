@@ -20,3 +20,7 @@ I'm coming.........
 	不要把有bug的.sql提交上来哦。。。。
 2012/5/7:
 	我是意婷，我给restaurantinfo table里面增加了饭店信息，加到sql里面了，现在push上去，接下来我还要接着添加courseinfo里面的东西，再push上来
+
+	我又加了菜品信息
+
+	我写了两个jsp，实现了把菜品信息按餐馆列出的功能
