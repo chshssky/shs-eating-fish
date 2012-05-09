@@ -9,9 +9,10 @@ public abstract class AbstractOrdercourses implements java.io.Serializable {
 
 	// Fields
 
-	private OrdercoursesId id;
+	private Integer orderCoursesId;
 	private Courseinfo courseinfo;
 	private Orderinfo orderinfo;
+	private Integer num;
 
 	// Constructors
 
@@ -20,26 +21,26 @@ public abstract class AbstractOrdercourses implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public AbstractOrdercourses(OrdercoursesId id) {
-		this.id = id;
+	public AbstractOrdercourses(Integer num) {
+		this.num = num;
 	}
 
 	/** full constructor */
-	public AbstractOrdercourses(OrdercoursesId id, Courseinfo courseinfo,
-			Orderinfo orderinfo) {
-		this.id = id;
+	public AbstractOrdercourses(Courseinfo courseinfo, Orderinfo orderinfo,
+			Integer num) {
 		this.courseinfo = courseinfo;
 		this.orderinfo = orderinfo;
+		this.num = num;
 	}
 
 	// Property accessors
 
-	public OrdercoursesId getId() {
-		return this.id;
+	public Integer getOrderCoursesId() {
+		return this.orderCoursesId;
 	}
 
-	public void setId(OrdercoursesId id) {
-		this.id = id;
+	public void setOrderCoursesId(Integer orderCoursesId) {
+		this.orderCoursesId = orderCoursesId;
 	}
 
 	public Courseinfo getCourseinfo() {
@@ -56,6 +57,14 @@ public abstract class AbstractOrdercourses implements java.io.Serializable {
 
 	public void setOrderinfo(Orderinfo orderinfo) {
 		this.orderinfo = orderinfo;
+	}
+
+	public Integer getNum() {
+		return this.num;
+	}
+
+	public void setNum(Integer num) {
+		this.num = num;
 	}
 
 }
