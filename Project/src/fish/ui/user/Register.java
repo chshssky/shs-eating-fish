@@ -1,11 +1,17 @@
 package fish.ui.user;
 
+import org.hibernate.*;
+
 import com.opensymphony.xwork2.ActionSupport;
+import com.cheating.hib.*;
 
 public class Register extends ActionSupport{
 	private String username ;
 	private String password ;
 	private String repassword ;
+	private String telephonenum;
+	private String firstname;
+	private String lastname;
 	private String email ;
 	public String getUsername() {
 		return username;
@@ -39,6 +45,46 @@ public class Register extends ActionSupport{
 		}
 	}
 	public void register() {
+		Logininfo in = new Logininfo();
+		Customerinfo cu = new Customerinfo();
 		
+		cu.setEmail(email);
+		cu.setFirstName(firstname);
+		cu.setLastName(lastname);
+		cu.setTelephoneNum(telephonenum);
+		
+		in.setLoginName(username);
+		in.setPassword(password);
+		in.setCustomerinfo(cu);
+		
+		Session se = HibernateSessionFactory.getSession();
+		Transaction tran = se.beginTransaction();
+		se.save(cu);
+		se.save(in);
+		tran.commit();
+		HibernateSessionFactory.closeSession();
+	}
+	public String execute() throws Exception{
+		register();
+		return "success";
+		
+	}
+	public String getTelephonenum() {
+		return telephonenum;
+	}
+	public void setTelephonenum(String telephonenum) {
+		this.telephonenum = telephonenum;
+	}
+	public String getFirstname() {
+		return firstname;
+	}
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+	public String getLastname() {
+		return lastname;
+	}
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
 	}
 }

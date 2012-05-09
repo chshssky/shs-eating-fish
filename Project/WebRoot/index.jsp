@@ -18,6 +18,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	<h1 align="center"><font color="#330099">欢迎来到EFC网上订餐系统</font></h1>
   	<jsp:useBean id="currUser" scope="session" class="com.cheating.SessionBean.LoginedUser"></jsp:useBean>
   	<%
+  		System.out.println(currUser.getId());
   		if(currUser.getId() == 0) {
   	 %>
     <jsp:include page="HeadLoggedout.jsp"></jsp:include>

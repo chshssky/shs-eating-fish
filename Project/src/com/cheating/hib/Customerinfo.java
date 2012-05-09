@@ -20,9 +20,8 @@ public class Customerinfo extends AbstractCustomerinfo implements
 	}
 
 	/** full constructor */
-	public Customerinfo(String telephoneNum, String firstName,
-			String lastName, String email, Set reservationinfos,
-			Set logininfos, Set orderinfos) {
+	public Customerinfo(String telephoneNum, String firstName, String lastName,
+			String email, Set reservationinfos, Set logininfos, Set orderinfos) {
 		super(telephoneNum, firstName, lastName, email, reservationinfos,
 				logininfos, orderinfos);
 	}

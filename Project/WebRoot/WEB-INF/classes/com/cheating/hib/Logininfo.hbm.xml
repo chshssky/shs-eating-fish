@@ -8,7 +8,7 @@
     <class name="com.cheating.hib.Logininfo" table="logininfo" catalog="orderonlinedb">
         <id name="loginId" type="integer">
             <column name="LoginID" />
-            <generator class="increment" />
+            <generator class="native" />
         </id>
         <many-to-one name="customerinfo" class="com.cheating.hib.Customerinfo" fetch="select">
             <column name="CustomerID" />
