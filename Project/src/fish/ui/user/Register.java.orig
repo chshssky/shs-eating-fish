@@ -32,6 +32,22 @@ public class Register extends ActionSupport{
 		this.email = email;
 	}
 	
+<<<<<<< HEAD
+	public void validate() 
+	{
+		if(!passEqual(getPassword(), getRepassword()))
+		{
+			this.addFieldError(password, "Confirm should be equal to the password");
+			
+		}
+	}
+	
+	public boolean passEqual(String pass, String repass)
+	{
+		if(pass != null && repass != null && pass.equals(repass))
+			return true ;
+		else return false ;
+=======
 	public void validate() {
 		if(password != null && repassword != null){
 			if(!repassword.equals(password))
@@ -40,5 +56,6 @@ public class Register extends ActionSupport{
 	}
 	public void register() {
 		
+>>>>>>> 992c8c0d9930884a04df58003efbae993634c0dd
 	}
 }

@@ -3,7 +3,7 @@ import="com.cheating.hib.*"
 import="org.hibernate.Criteria" 
 import="org.hibernate.Session"
 import="hibernate.*"
-import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
+import="org.hibernate.criterion.Restrictions"	pageEncoding="gb2312"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
@@ -12,7 +12,6 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
   </head>
-  
   
   <body>
     <%
@@ -32,12 +31,12 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
     %>
     <table align="center" border="2">
 	<tr>
-	<td colspan="3"><h3>èœè‚´ä¿¡æ¯</h3></td>
+	<td colspan="3"><h3>²ËëÈÐÅÏ¢</h3></td>
 	</tr>
 	<tr align="center">
-    <td>èœè‚´å</td>
-    <td>èœè‚´æè¿°</td>
-    <td>èœè‚´ä»·æ ¼/å…ƒ</td>
+    <td>²ËëÈÃû</td>
+    <td>²ËëÈÃèÊö</td>
+    <td>²ËëÈ¼Û¸ñ/Ôª</td>
     </tr>
 	
 	<%
@@ -49,10 +48,14 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
 			<td><%=info.getDescript() %></td>
 			<td><%=info.getPrice() %></td>
 			<td align="center">
+<<<<<<< HEAD
 			<form action="put_cart">
+=======
+			<form action="test.jsp">
+>>>>>>> 992c8c0d9930884a04df58003efbae993634c0dd
        		<input type="hidden" name="id" id="id" value=<%=info.getCourseId()%>>
-       		<input type="text" name="course_count" id="course_count" size="3">
-       		<input type="submit" name="submit" value="åŠ å…¥è´­ç‰©è½¦">
+       		<input type="text" name=course_count id="course_count" size="3">
+       		<input type="submit" name="submit" value="¼ÓÈë¹ºÎï³µ">
        		</form>
        		</td>
 			</tr>

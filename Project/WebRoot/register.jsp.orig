@@ -1,5 +1,4 @@
 <%@ taglib uri="/struts-tags" prefix="s" %>
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,14 +6,27 @@
 </head>
 	<body>
 		<center>
-		<h1><font color="#FF0099">请填写注册信</font></h1>
+		<h1><font color="#FF0099">请填写注册信息</font></h1>
 		<s:form action="register_check" >
-			<s:textfield name="username" label="用户"/>
+<<<<<<< HEAD
+			<s:label label="Username"/>
+			<s:textfield name="username"/>
+			<s:label label="Password"/>
+			<s:password name="password"/>
+			<s:label label="Confirm Password"/>
+			<s:password name="repassword"/>
+			<s:label label="Email Address"/>
+			<s:textfield name="email"/>
+			<s:submit/>
+			<s:reset/>
+=======
+			<s:textfield name="username" label="用户名"/>
 			<s:password name="password" label="密码"/>
 			<s:password name="repassword" label="确认密码"/>
 			<s:textfield name="email" label="邮箱"/>
 			<s:submit value="注册"/>
 			<s:reset value="重置"/>
+>>>>>>> 992c8c0d9930884a04df58003efbae993634c0dd
 		</s:form>
 		</center>
 	</body>
