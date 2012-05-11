@@ -59,9 +59,11 @@ create table OrderInfo
 );
 create table OrderCourses
 (
+    OrderCoursesID int(10) not null AUTO_INCREMENT,
     num int(10) not null,
     OrderID int(10),
     CourseID int(10),
+    primary key(OrderCoursesID),
     foreign key(OrderID) references OrderInfo(OrderID),
     foreign key(CourseID) references CourseInfo(CourseID)
 );
@@ -162,3 +164,5 @@ values(2,1,7);
 
 insert into ordercourses(num,OrderID,CourseID)
 values(1,1,10);
+
+

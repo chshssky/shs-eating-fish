@@ -6,22 +6,18 @@
 -->
 <hibernate-mapping>
     <class name="com.cheating.hib.Ordercourses" table="ordercourses" catalog="orderonlinedb">
-        <composite-id name="id" class="com.cheating.hib.OrdercoursesId">
-            <key-property name="num" type="integer">
-                <column name="num" />
-            </key-property>
-            <key-many-to-one name="orderinfo" class="com.cheating.hib.Orderinfo">
-                <column name="OrderID" />
-            </key-many-to-one>
-            <key-many-to-one name="courseinfo" class="com.cheating.hib.Courseinfo">
-                <column name="CourseID" />
-            </key-many-to-one>
-        </composite-id>
-        <many-to-one name="courseinfo" class="com.cheating.hib.Courseinfo" update="false" insert="false" fetch="select">
+        <id name="orderCoursesId" type="integer">
+            <column name="OrderCoursesID" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="courseinfo" class="com.cheating.hib.Courseinfo" fetch="select">
             <column name="CourseID" />
         </many-to-one>
-        <many-to-one name="orderinfo" class="com.cheating.hib.Orderinfo" update="false" insert="false" fetch="select">
+        <many-to-one name="orderinfo" class="com.cheating.hib.Orderinfo" fetch="select">
             <column name="OrderID" />
         </many-to-one>
+        <property name="num" type="integer">
+            <column name="num" not-null="true" />
+        </property>
     </class>
 </hibernate-mapping>

@@ -13,14 +13,13 @@ public class Ordercourses extends AbstractOrdercourses implements
 	}
 
 	/** minimal constructor */
-	public Ordercourses(OrdercoursesId id) {
-		super(id);
+	public Ordercourses(Integer num) {
+		super(num);
 	}
 
 	/** full constructor */
-	public Ordercourses(OrdercoursesId id, Courseinfo courseinfo,
-			Orderinfo orderinfo) {
-		super(id, courseinfo, orderinfo);
+	public Ordercourses(Courseinfo courseinfo, Orderinfo orderinfo, Integer num) {
+		super(courseinfo, orderinfo, num);
 	}
 
 }

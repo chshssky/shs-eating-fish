@@ -1,5 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ taglib uri="/struts-tags" prefix="s" %>
+<%@ page language="java" import="java.util.*" import="com.cheating.SessionBean.*" pageEncoding="UTF-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -10,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>登陆</title>
+    <title>My JSP 'logout.jsp' starting page</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -24,15 +23,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-  		<center>
-  		<h1><font color="#FF0099">欢迎登陆</font></h1>
-		<s:form action="login_check">
-			<s:textfield name="loginName" label="用户名"></s:textfield>
-			<s:password name="password" label="密码"></s:password>
-			<s:radio name="userType" label="用户类型" list="{'管理员', '顾客', '经理'}"></s:radio> 
-			<s:submit value="登陆"/><s:reset value="重置"/>
-			
-		</s:form>
-		</center>
+    <jsp:useBean id="currUser" scope="session" class="com.cheating.SessionBean.LoginedUser"></jsp:useBean>
+    <%
+    	currUser.setId(0);
+    	currUser.setFirstname("");
+     %>
+     <jsp:forward page="index.jsp"></jsp:forward>
   </body>
 </html>
