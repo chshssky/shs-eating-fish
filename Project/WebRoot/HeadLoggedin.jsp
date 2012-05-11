@@ -7,9 +7,9 @@
   	<jsp:useBean id="currUser" scope="session" class="com.cheating.SessionBean.LoginedUser"></jsp:useBean>
     <h3 align="right">
 	  	  你好,  
-	  	<a href="userinfo.jsp">
+	  	<a href="userInfo.jsp">
 	  	<%=currUser.getFirstname() %>
-	  	</a>   	
+	  	</a>!   	
     	<a href="orders.jsp">订单</a>
     	<a href="cart.jsp">购物车</a>
     	<a href="logout.jsp">登出</a>

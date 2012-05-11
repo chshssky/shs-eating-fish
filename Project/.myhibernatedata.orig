@@ -1,5 +1,9 @@
 #MyEclipse Hibernate Properties
-#Wed May 09 09:30:02 CST 2012
+<<<<<<< HEAD
+#Tue May 08 22:38:56 CST 2012
+=======
+#Tue May 08 22:58:45 CST 2012
+>>>>>>> a0b14b919fd9c04f919085c3dbc55d042002232e
 sessionFactoryName=com.cheating.hib.HibernateSessionFactory
 genBasicCompId=false
 profile=
@@ -8,7 +12,7 @@ version=3.3
 jndiPath=
 detectM2M=false
 reStrategyClass=
-detectO2O=true
+detectO2O=false
 springDaoFile=
 useJavaTypes=false
 keyGenerator=native

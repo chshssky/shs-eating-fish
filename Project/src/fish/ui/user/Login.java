@@ -1,17 +1,26 @@
 package fish.ui.user;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import com.cheating.SessionBean.*;
 import com.cheating.hib.*;
 import com.opensymphony.xwork2.ActionSupport;
 
+import org.apache.struts2.interceptor.ServletRequestAware;
+import org.apache.struts2.interceptor.ServletResponseAware;
 import org.hibernate.*;
 import org.hibernate.criterion.Restrictions;
 
-public class Login extends ActionSupport{
-	String loginName;
-	String password;
-	LoginedUser currUser;
+import sun.org.mozilla.javascript.internal.Context;
+
+public class Login extends ActionSupport implements ServletRequestAware, ServletResponseAware {
+	private String loginName;
+	private String password;
+	private LoginedUser currUser;
+	private HttpServletRequest request;
+	private HttpServletResponse response;
 	public String getLoginName() {
 		return loginName;
 	}
@@ -31,18 +40,21 @@ public class Login extends ActionSupport{
 		this.currUser = currUser;
 	}
 	public void validate() {
+		currUser = (LoginedUser)request.getSession().getAttribute("currUser");
 		Session se = HibernateSessionFactory.getSession();
 		Criteria crit = se.createCriteria(Logininfo.class);
 		//crit.add(Restrictions.eq("loginName", loginName));
 		List<Logininfo> infos = crit.list();
+		
 		boolean login = false;
 		for(Logininfo info:infos) {
 			if(loginName.equals(info.getLoginName())) {
 				if(password.equals(info.getPassword())) {
-					Customerinfo cus = info.getCustomerinfo();
-					currUser.setId(cus.getCustomerId());
-					currUser.setFirstname(cus.getFirstName());
+					System.out.println("Login_Action:LoginID:" + info.getLoginId());
+					currUser.setId(info.getCustomerinfo().getCustomerId());
+					currUser.setFirstname(info.getCustomerinfo().getFirstName());
 					login = true;
+					request.getSession().setAttribute("currUser", currUser);
 					break;
 				}
 			}			
@@ -50,6 +62,15 @@ public class Login extends ActionSupport{
 		if(!login) {
 			this.addActionError("用户名或密码错误!");
 		}
-		
+	}
+	@Override
+	public void setServletRequest(HttpServletRequest request) {
+		// TODO Auto-generated method stub
+		this.request = request;
+	}
+	@Override
+	public void setServletResponse(HttpServletResponse response) {
+		// TODO Auto-generated method stub
+		this.response = response;
 	}
 }

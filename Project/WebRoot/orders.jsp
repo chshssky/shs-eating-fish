@@ -20,8 +20,9 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="gb2312"%>
   </head>
   
   <body topmargin="100">
+    <jsp:useBean id="currUser" scope="session" class="com.cheating.SessionBean.LoginedUser"></jsp:useBean>
     <%
-    	int customerID = 1;
+    	int customerID = currUser.getId();
     	Session se = HibernateSessionFactory.getSession();
 		Criteria crit = se.createCriteria(Customerinfo.class);
 		crit.add(Restrictions.eq("customerId", customerID));
