@@ -14,6 +14,7 @@ import org.hibernate.*;
 import org.hibernate.criterion.Restrictions;
 
 import sun.org.mozilla.javascript.internal.Context;
+import fish.operation.cart.*;
 
 public class Login extends ActionSupport implements ServletRequestAware, ServletResponseAware {
 	private String loginName;
@@ -21,6 +22,16 @@ public class Login extends ActionSupport implements ServletRequestAware, Servlet
 	private LoginedUser currUser;
 	private HttpServletRequest request;
 	private HttpServletResponse response;
+	
+	private static Cart mycart ;
+	
+	public static Cart getMycart() {
+		return mycart;
+	}
+	public static void setMycart(Cart mycart) {
+		Login.mycart = mycart;
+	}
+	
 	public String getLoginName() {
 		return loginName;
 	}
@@ -55,6 +66,9 @@ public class Login extends ActionSupport implements ServletRequestAware, Servlet
 					currUser.setFirstname(info.getCustomerinfo().getFirstName());
 					login = true;
 					request.getSession().setAttribute("currUser", currUser);
+					
+					mycart = new Cart() ;
+					
 					break;
 				}
 			}			
@@ -62,6 +76,8 @@ public class Login extends ActionSupport implements ServletRequestAware, Servlet
 		if(!login) {
 			this.addActionError("用户名或密码错误!");
 		}
+		
+		request.getSession().setAttribute("if_login", login) ;
 	}
 	@Override
 	public void setServletRequest(HttpServletRequest request) {

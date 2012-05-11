@@ -21,7 +21,6 @@
 		<property name="myeclipse.connection.profile">
 			driver
 		</property>
-		</property>
 		<mapping resource="com/cheating/hib/Restaurantinfo.hbm.xml" />
 		<mapping resource="com/cheating/hib/Logininfo.hbm.xml" />
 		<mapping resource="com/cheating/hib/Courseinfo.hbm.xml" />

@@ -56,7 +56,6 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
        		</form>
        		</td>
 			</tr>
-			
 		<%
 		}
     	%>

@@ -2,20 +2,32 @@ package fish.operation.cart;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.swing.JOptionPane;
+
+import org.apache.struts2.interceptor.ServletRequestAware;
+import org.apache.struts2.interceptor.ServletResponseAware;
+import org.apache.struts2.interceptor.SessionAware;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-public class PutCart extends ActionSupport{
-	Cart mycart ;
+import fish.ui.user.Login;
+
+public class PutCart extends ActionSupport implements ServletRequestAware, ServletResponseAware{
+	//Cart mycart ;
 	
 	private int id ;
 	private int course_count ;
 	private Item course ;
-
+	
+	private HttpServletRequest request;
+	
 	public Item getCourse() {
 		return course;
 	}
-
 
 	public void setCourse(Item course) {
 		this.course = course;
@@ -24,31 +36,28 @@ public class PutCart extends ActionSupport{
 
 	public void put()
 	{
-		//List<Item> current_list = new LinkedList<Item>() ;
 		course = new Item() ;
+		if(course_count == 0)
+			course_count = 1 ;
 		course.setCourse_id(id) ;
 		course.setCourse_num(course_count) ;
 		
-		System.out.println(id+"haha") ;
-		mycart = new Cart() ;
+		Login.getMycart().getCart().add(course) ;
 		
+		request.getSession().setAttribute("mycart", Login.getMycart()) ;
 		
-		//current_list.add(course) ;
-		//mycart.setCart(current_list) ;
-		mycart.getCart().add(course) ;
-		
-		
-		if(!mycart.getCart().isEmpty())
-		{
-			System.out.println(mycart.getCart().iterator().next().getCourse_id()+"dui") ;
-		}
-		else System.out.println("budui") ;
 		
 	}
 	
 	
 	@Override
 	public String execute() throws Exception {
+		if(request.getSession().getAttribute("currUser") == null)
+		{
+			JOptionPane.showMessageDialog(null, "ÇëÏÈµÇÂ¼") ;
+			return INPUT;
+		}
+		
 		put() ;
 		return SUCCESS;
 	}
@@ -73,14 +82,14 @@ public class PutCart extends ActionSupport{
 		this.course_count = course_count;
 	}
 
-
-	public Cart getMycart() {
-		return mycart;
+	public void setServletRequest(HttpServletRequest request) {
+		this.request = request;
 	}
 
-
-	public void setMycart(Cart mycart) {
-		this.mycart = mycart;
+	@Override
+	public void setServletResponse(HttpServletResponse arg0) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }
