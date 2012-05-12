@@ -15,7 +15,6 @@
 	</frameset>
   <body>
     <h2 align="center"><font color="#CC0066">欢迎进入我们的网上订餐系统</font></h2>
-
     
   </body>
 </html>

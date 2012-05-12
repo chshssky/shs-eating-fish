@@ -5,6 +5,17 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
 	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
   
+  <!-- 
+  <servlet>
+    <servlet-name>ChooseRest</servlet-name>
+    <servlet-class>fish.operation.cart.ChooseRest</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ChooseRest</servlet-name>
+    <url-pattern>/ChooseRest</url-pattern>
+  </servlet-mapping>
+   -->
+  
   <display-name></display-name>
   
   <filter>
@@ -19,6 +30,6 @@
   </filter-mapping>
   
   <welcome-file-list>
-    <welcome-file>register.jsp</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
   </web-app>

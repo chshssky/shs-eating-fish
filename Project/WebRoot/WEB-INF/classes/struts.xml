@@ -2,6 +2,7 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
 	<include file="struts-default.xml"/>
+	<constant name="struts.devMode" value="true"/>
 	<package name="default" extends="struts-default">
 		
 		<action name="register_check" class="fish.ui.user.Register">
@@ -20,6 +21,11 @@
 		
 		<action name="reset_password" class="fish.ui.user.ResetPass">
 			<result name="success">/userInfo.jsp</result>
+		</action>
+		
+		<action name="put_cart" class="fish.operation.cart.PutCart">
+			<result name="input">/Login.jsp</result>
+			<result name="success">/RestaurantInfoMenu.jsp</result>
 		</action>
 	</package>
 </struts>    
