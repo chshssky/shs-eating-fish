@@ -77,7 +77,6 @@ public class Login extends ActionSupport implements ServletRequestAware, Servlet
 			this.addActionError("用户名或密码错误!");
 		}
 		
-		request.getSession().setAttribute("if_login", login) ;
 	}
 	@Override
 	public void setServletRequest(HttpServletRequest request) {

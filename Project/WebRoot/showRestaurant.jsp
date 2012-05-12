@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8" import="javax.swing.JOptionPane"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -25,9 +25,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body topmargin="100" >
   <!-- <form action="ChooseRest" method="post"> -->
   
+  	<jsp:useBean id="currUser" scope="session" class="com.cheating.SessionBean.LoginedUser"></jsp:useBean>
+  	<%
+  		if(currUser.getId() != 0) 
+  		{
+  	 %>
  	<table>
  		<tr><td><a href="putCart.jsp">我的购物车</a></td></tr>
+ 		<tr/>
+ 		<tr/>
  	</table>
+    
+    <% }%>
+    
     <table>
     <tr><td>你想浏览哪个饭店的菜肴呢？</td></tr>
     <tr><td><a href="showCourse.jsp?id=0" target="right" >全部店家</a></td></tr>
