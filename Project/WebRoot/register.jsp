@@ -8,6 +8,7 @@
 	<body>
 		<center>
 		<h1><font color="#FF0099">请填写注册信息</font></h1>
+    	<h2 align="right" ><font color="#FF99FF"><a href="index.jsp">返回</a></font></h2>
 		<s:form action="register_check" >
 			<s:textfield name="username" label="用户名"/>
 			<s:password name="password" label="密码"/>

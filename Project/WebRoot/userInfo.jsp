@@ -1,7 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" import="java.util.*" import="com.cheating.hib.*" import="org.hibernate.*"%>
 <%@ taglib uri="/struts-tags" prefix="s" %>
-<%@ include  file="userInfoMenu.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
@@ -9,12 +8,23 @@
 		<title>My Information</title>
 		</head>
 	<body>
-		<center>
-			<s:label value="Your Username"/><br>
-			<s:label value="fish"/><br>	<%//这里显示当前用户名 %>
-			<s:label value="Your Email Address"/><br>
-			<s:label value="smile_bogeyman@163.com"/><br>
+		<h1 align="center"><font color="#FF0099">用户信息</font></h1>
+    <h2 align="right" ><font color="#FF99FF"><a href="index.jsp">返回</a></font></h2>
+		<jsp:useBean id="currUser" scope="session" class="com.cheating.SessionBean.LoginedUser"></jsp:useBean>
+		<%
+			Session se = HibernateSessionFactory.getSession();
+			//Criteria crit = se.createCriteria(Customerinfo.class);
+			System.out.println("userInfo.jsp:LoginID:" + currUser.getId());
+			Customerinfo cus = (Customerinfo)se.load(Customerinfo.class, currUser.getId());
+			//List<Customerinfo> infos = crit.list();
+		 %>
 			
+		<center>
+			顾客编号:<%=cus.getCustomerId() %><br>
+			姓        ：<%=cus.getLastName() %><br>
+			名        ：<%=cus.getFirstName()%><br>
+			电话号码：<%=cus.getTelephoneNum() %><br>
+			邮箱：<%=cus.getEmail() %><br>
 			<s:form action="reset_email">
 				<s:textfield type="text" name="reemail"/>
 				<s:submit value="Reset Email"/>					

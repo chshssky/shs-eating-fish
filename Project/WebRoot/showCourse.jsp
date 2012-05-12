@@ -29,6 +29,7 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="gb2312"%>
     	}
     	List<Courseinfo> courseinfos = crit.list();
     %>
+    <h2 align="right" ><font color="#FF99FF"><a href="index.jsp">·µ»Ø</a></font></h2>
     <table align="center" border="2">
 	<tr>
 	<td colspan="3"><h3>²ËëÈÐÅÏ¢</h3></td>
