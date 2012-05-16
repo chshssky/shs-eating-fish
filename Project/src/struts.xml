@@ -16,10 +16,12 @@
 		</action>
 		
 		<action name="reset_email" class="fish.ui.user.ResetEmail">
+			<!-- need input result -->
 			<result name="success">/userInfo.jsp</result>
 		</action>
 		
 		<action name="reset_password" class="fish.ui.user.ResetPass">
+			<!-- need input result -->
 			<result name="success">/userInfo.jsp</result>
 		</action>
 		
@@ -31,6 +33,16 @@
 		<action name="rmv_course" class="fish.operation.cart.RmvCourseAction">
 			<result name="input">/RestaurantInfoMenu.jsp</result>
 			<result name="success">/putCart.jsp</result>
+		</action>
+		
+		<action name="submit_order" class="fish.operation.cart.SubmitOrderAction">
+			<result name="input">/putCart.jsp</result>
+			<result name="success">/showOrder.jsp</result>
+		</action>
+		
+		<action name="payment" class="fish.operation.cart.PaymentAction">
+			<result name="input">/showOrder.jsp</result>
+			<result name="success">/index.jsp</result>
 		</action>
 	</package>
 </struts>    

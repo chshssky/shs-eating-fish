@@ -17,32 +17,40 @@
 			<tr>
 				<td>菜名</td>
 				<td>数量</td>
+				<td>单价</td>
 			</tr>
 </table>
 	<%	
 		Iterator<Item> cart_list = mycart.getCart().iterator() ;	
 		Item item = new Item() ;
 		Courseinfo course = new Courseinfo();
+		int sum_price = 0;
 		
 		while(cart_list.hasNext())
 		{
 			item = cart_list.next() ;
 			course = (Courseinfo)HibernateSessionFactory.getSession().load(Courseinfo.class, item.getCourse_id()) ;
+			sum_price += course.getPrice() ;
 	%>
 	<form action="rmv_course">
-	<table>
+		<table>
 	 		<tr>
 	 			<td><%=course.getName()%></td>
 	 			<td><%=item.getCourse_num()%></td>
+	 			<td><%=course.getPrice()%></td>
 	 			<td><input type="hidden" name="course_id" value=<%=item.getCourse_id()%>></input></td>
 	 			<td><input type="submit" value="删除"></input></td>
 	 		</tr>
-	 </table>
+	 	</table>
 	 </form>			 
 	<%	
 		}
 	 %>
 
+	总金额：<%=sum_price %>
+	<form action="submit_order">
+		<input type="submit" value="提交订单"></input>
+	</form>
 
 </body>
 </html>
