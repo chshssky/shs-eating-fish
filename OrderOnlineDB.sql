@@ -58,6 +58,7 @@ create table CourseInfo
     Descript varchar(255),
     price int(10) not null,
     type int(3) ,
+    pic blob,
     RestaurantID int(10),
     primary key(CourseID),
     foreign key(RestaurantID) references RestaurantInfo(RestaurantID),
