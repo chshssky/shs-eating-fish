@@ -43,8 +43,4 @@ I'm coming.........
 			  还要记住那个hibernate.cfg.xml不用提交上来了，因为每个人的都不同。		
 			  于是我就写在了gitignore里他会自动过滤里边说的文件~~~嘻嘻
 2012/5/15:
-	C:重写了数据库，添了两个表：权限表和菜品表
-	  改了几个foreignkey：customerInfo，managerInfo，adminInfo都有了foreignkey ->>>>LoginInfo
-	  加了些固定数据，并把eating的每个菜目分配了所属类，但希望意婷再给没有菜的类加几个菜。。。
-2012/5/16:
-	C:又把登陆改了，可以判断用户身份了，并分别跳转到不同的界面，大家可以测试一下。。
+	C:今天我把数据库完善了一下，
