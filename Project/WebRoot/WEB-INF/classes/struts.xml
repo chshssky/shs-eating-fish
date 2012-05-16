@@ -27,5 +27,10 @@
 			<result name="input">/Login.jsp</result>
 			<result name="success">/RestaurantInfoMenu.jsp</result>
 		</action>
+		
+		<action name="rmv_course" class="fish.operation.cart.RmvCourseAction">
+			<result name="input">/RestaurantInfoMenu.jsp</result>
+			<result name="success">/putCart.jsp</result>
+		</action>
 	</package>
 </struts>    

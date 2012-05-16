@@ -117,9 +117,9 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
 			<td align="center"><%=info.getPrice() %></td>
 			<td align="center">
 			<form action="put_cart">
-       		<input type="hidden" name="id" id="id" value=<%=info.getCourseId()%>>
-       		<input type="text" name="course_count" id="course_count" size="3">
-       		<input type="submit" name="submit" value="加入购物车">
+       		<input type="hidden" name="id" id="id" value=<%=info.getCourseId()%>></input>
+       		<input type="text" name="course_count" id="course_count" size="3"></input>
+       		<input type="submit" name="submit" value="加入购物车"></input>
        		</form>
        		</td>
 			</tr>

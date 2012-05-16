@@ -11,13 +11,14 @@
 
 <jsp:useBean id="mycart" class="fish.operation.cart.Cart" scope="session"/> 
 
-<form>
+
 <table>
 
 			<tr>
 				<td>菜名</td>
 				<td>数量</td>
 			</tr>
+</table>
 	<%	
 		Iterator<Item> cart_list = mycart.getCart().iterator() ;	
 		Item item = new Item() ;
@@ -27,13 +28,21 @@
 		{
 			item = cart_list.next() ;
 			course = (Courseinfo)HibernateSessionFactory.getSession().load(Courseinfo.class, item.getCourse_id()) ;
-	 		out.print("<tr><td>" + course.getName() + "</td>") ;
-	 		out.print("<td>" + item.getCourse_num() + "</td></tr>") ;	 		
+	%>
+	<form action="rmv_course">
+	<table>
+	 		<tr>
+	 			<td><%=course.getName()%></td>
+	 			<td><%=item.getCourse_num()%></td>
+	 			<td><input type="hidden" name="course_id" value=<%=item.getCourse_id()%>></input></td>
+	 			<td><input type="submit" value="删除"></input></td>
+	 		</tr>
+	 </table>
+	 </form>			 
+	<%	
 		}
 	 %>
 
-</table> 
-</form>
 
 </body>
 </html>
