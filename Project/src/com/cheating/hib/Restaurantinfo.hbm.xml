@@ -6,20 +6,20 @@
 -->
 <hibernate-mapping>
     <class name="com.cheating.hib.Restaurantinfo" table="restaurantinfo" catalog="orderonlinedb">
-        <id name="restaurantId" type="integer">
+        <id name="restaurantId" type="java.lang.Integer">
             <column name="RestaurantID" />
             <generator class="native" />
         </id>
-        <property name="name" type="string">
+        <property name="name" type="java.lang.String">
             <column name="Name" length="50" not-null="true" />
         </property>
-        <property name="address" type="string">
+        <property name="address" type="java.lang.String">
             <column name="address" not-null="true" />
         </property>
-        <property name="descript" type="string">
+        <property name="descript" type="java.lang.String">
             <column name="Descript" />
         </property>
-        <property name="managerUpBound" type="integer">
+        <property name="managerUpBound" type="java.lang.Integer">
             <column name="managerUpBound" />
         </property>
         <set name="reservationinfos" inverse="true">

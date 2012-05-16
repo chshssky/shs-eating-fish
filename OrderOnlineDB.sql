@@ -1,5 +1,26 @@
 Create Database OrderOnlineDB;
 use orderonlineDB;
+create table courseType 
+(
+    id int(3) not null AUTO_INCREMENT,
+    TypeName varchar(20) not null,
+    primary key(id)
+);
+create table authority
+(
+    id int(1) not null AUTO_INCREMENT,
+    AuthorName varchar(10) not null,
+    primary key(id)
+);
+create table LoginInfo
+(
+    LoginID int(10) not null AUTO_INCREMENT,
+    LoginName varchar(20) not null,
+    Password varchar(20) not null,
+    Authority int(1) default 1,
+    primary key(LoginID),
+    foreign key(Authority) references authority(id)
+);
 create table CustomerInfo 
 (
     CustomerID int(10) not null AUTO_INCREMENT,
@@ -7,16 +28,9 @@ create table CustomerInfo
     firstName varchar(20),
     lastName varchar(20) not null,
     email varchar(30),
-    primary key(CustomerID)
-);
-create table LoginInfo
-(
-    LoginID int(10) not null AUTO_INCREMENT,
-    LoginName varchar(20) not null,
-    Password varchar(20) not null,
-    CustomerID int(10),
-    primary key(LoginID),
-    foreign key(CustomerID) references CustomerInfo(CustomerID)
+    LoginID int(10),
+    primary key(CustomerID),
+    foreign key(LoginID) references LoginInfo(LoginID)
 );
 create table RestaurantInfo
 (
@@ -30,11 +44,12 @@ create table RestaurantInfo
 create table ManagerInfo
 (
     ManagerID int(10) not null AUTO_INCREMENT,
-    LoginName varchar(20) not null,
-    Password varchar(20) not null,
+    Name varchar(20),
     RestaurantID int(10),
+    LoginID int(10),
     primary key(ManagerID),
-    foreign key(RestaurantID) references RestaurantInfo(RestaurantID)
+    foreign key(RestaurantID) references RestaurantInfo(RestaurantID),
+    foreign key(LoginID) references LoginInfo(LoginID)
 );
 create table CourseInfo
 (
@@ -42,9 +57,11 @@ create table CourseInfo
     Name varchar(50) not null,
     Descript varchar(255),
     price int(10) not null,
+    type int(3) ,
     RestaurantID int(10),
     primary key(CourseID),
-    foreign key(RestaurantID) references RestaurantInfo(RestaurantID)
+    foreign key(RestaurantID) references RestaurantInfo(RestaurantID),
+    foreign key(type) references courseType(id)
 );
 create table OrderInfo
 (
@@ -81,13 +98,33 @@ create table reservationInfo
 create table AdministratorInfo
 (
     AdID int(10) not null AUTO_INCREMENT,
-    LoginName varchar(20) not null,
-    password varchar(20) not null,
-    primary key(AdID)
+    Name varchar(20),
+    LoginID int(10),
+    primary key(AdID),
+    foreign key(LoginID) references LoginInfo(LoginID)
 );
-insert into AdministratorInfo(LoginName, password) values('ch', 'hc');
-insert into AdministratorInfo(LoginName, password) values('eating', 'gnitae');
-insert into AdministratorInfo(LoginName, password) values('fish', 'hsif');
+insert into authority(authorname) values('customer');
+insert into authority(authorname) values('manager');
+insert into authority(authorname) values('admin');
+
+insert into courseType(Typename) values('主食');
+insert into courseType(Typename) values('饮品');
+insert into courseType(Typename) values('凉菜');
+insert into courseType(Typename) values('炒菜');
+insert into courseType(Typename) values('招牌');
+insert into courseType(Typename) values('汤类');
+insert into courseType(Typename) values('甜品');
+insert into courseType(Typename) values('海鲜');
+insert into courseType(Typename) values('排类');
+insert into courseType(Typename) values('鱼类');
+
+insert into LoginInfo(LoginName, password, authority) values('ch', 'hc', 3);
+insert into LoginInfo(LoginName, password, authority) values('eating', 'gnitae', 3);
+insert into LoginInfo(LoginName, password, authority) values('fish', 'hsif', 3);
+
+insert into AdministratorInfo(Name, LoginID) values('崔昊', 1);
+insert into AdministratorInfo(Name, LoginID) values('意婷', 2);
+insert into AdministratorInfo(Name, LoginID) values('于航', 3);
 
 
 insert into restaurantinfo(name, address, Descript, managerUpBound) 
@@ -116,53 +153,36 @@ values('晶采轩 虹桥店','长宁区虹桥路1937号西郊宾馆旁近虹许路',
 
 
 
-insert into courseinfo(name, descript, price, RestaurantID) values
+insert into courseinfo(name, descript, price, RestaurantID, type) values
 ('大虾创意寿司','独特造型的大虾寿司，不仅在味道上保留的传统的风格，
-还加入了创新的元素，使之色香味更具个性',39,1);
-insert into courseinfo(name, descript, price, RestaurantID) values
-('禾风牛排','后用炭火上烤至七成熟，其肉质紧实嫩滑，入口咸鲜适中',68,1);
+还加入了创新的元素，使之色香味更具个性',39,1, 7);
+insert into courseinfo(name, descript, price, RestaurantID, type) values
+('禾风牛排','后用炭火上烤至七成熟，其肉质紧实嫩滑，入口咸鲜适中',68,1,9);
 
 
-insert into courseinfo(name, descript, price, RestaurantID) values
-('缤纷海鲜组合（小）','涮生蚝、响螺海肠、墨鱼仔、蟹腿、蛏子、草虾',79,2);
-insert into courseinfo(name, descript, price, RestaurantID) values
-('菌王锅','各式菌菇，在煨制3小时的老鸡汤内，吸足了“油水”，滋味不凡',12,2);
+insert into courseinfo(name, descript, price, RestaurantID, type) values
+('缤纷海鲜组合（小）','涮生蚝、响螺海肠、墨鱼仔、蟹腿、蛏子、草虾',79,2,8);
+insert into courseinfo(name, descript, price, RestaurantID, type) values
+('菌王锅','各式菌菇，在煨制3小时的老鸡汤内，吸足了“油水”，滋味不凡',12,2,6);
 
 
 
-insert into courseinfo(name, descript, price, RestaurantID) values
-('豆鼓蒸凤爪','，只需轻吮，便整骨脱出，口齿留香，就连啃着酥软的骨头也是一种乐趣。',18,3);
-insert into courseinfo(name, descript, price, RestaurantID) values
-('泰皇咖喱','挑选丰腴肥美的鲜活青蟹，配以鸽子熬制的高汤和原汁原味的泰式黄咖喱',168,3);
+insert into courseinfo(name, descript, price, RestaurantID, type) values
+('豆鼓蒸凤爪','，只需轻吮，便整骨脱出，口齿留香，就连啃着酥软的骨头也是一种乐趣。',18,3,5);
+insert into courseinfo(name, descript, price, RestaurantID, type) values
+('泰皇咖喱','挑选丰腴肥美的鲜活青蟹，配以鸽子熬制的高汤和原汁原味的泰式黄咖喱',168,3,1);
 
-insert into courseinfo(name, descript, price, RestaurantID) values
-('木瓜芝士虾','木瓜芝士虾”，必选新鲜活虾，搭配“马苏里拉芝士”和木瓜烤而成',88,4);
-insert into courseinfo(name, descript, price, RestaurantID) values
-('越式煎羊排','肉质相对鲜嫩。用秘制酱料腌制来保持其更为入味，采用正宗的越式做法，羊排滋味更为浓厚',16,4);
-insert into courseinfo(name, descript, price, RestaurantID) values
-('烟熏鲑鱼','鲜嫩美味，再加上些烟熏口感，更是滋味无穷。',53,5);
-insert into courseinfo(name, descript, price, RestaurantID) values
-('上海熏鱼','色泽酱红油亮，肉质细密鲜嫩，外皮酥而不硬',69,5);
-insert into courseinfo(name, descript, price, RestaurantID) values
-('龙虾汤过桥象','龙虾取自大明湖畔的夏雨荷下，虾肉甜美。',53,6);
-insert into courseinfo(name, descript, price, RestaurantID) values
-('文火焖小牛肉','餐厅选用的质感柔嫩的顶级雪花牛肉，加上秘制酱料文火焖制而成，绵软酥烂',69,6);
-insert into customerinfo(telephoneNum,firstName,lastName,email)
-values('15000802026','Yiting','Zhang','948164356@qq.com');
-insert into logininfo(LoginName,Password,CustomerID)
-values('eating','1234',1);
-insert into orderinfo(address,sumPrice,CustomerID)
-values('上海市嘉定区曹安路4800号同济大学',296,1);
-insert into ordercourses(num,OrderID,CourseID)
-values(1,1,1);
-
-insert into ordercourses(num,OrderID,CourseID)
-values(1,1,4);
-
-insert into ordercourses(num,OrderID,CourseID)
-values(2,1,7);
-
-insert into ordercourses(num,OrderID,CourseID)
-values(1,1,10);
+insert into courseinfo(name, descript, price, RestaurantID, type) values
+('木瓜芝士虾','木瓜芝士虾”，必选新鲜活虾，搭配“马苏里拉芝士”和木瓜烤而成',88,4,8);
+insert into courseinfo(name, descript, price, RestaurantID, type) values
+('越式煎羊排','肉质相对鲜嫩。用秘制酱料腌制来保持其更为入味，采用正宗的越式做法，羊排滋味更为浓厚',16,4,9);
+insert into courseinfo(name, descript, price, RestaurantID, type) values
+('烟熏鲑鱼','鲜嫩美味，再加上些烟熏口感，更是滋味无穷。',53,5,10);
+insert into courseinfo(name, descript, price, RestaurantID, type) values
+('上海熏鱼','色泽酱红油亮，肉质细密鲜嫩，外皮酥而不硬',69,5,10);
+insert into courseinfo(name, descript, price, RestaurantID, type) values
+('龙虾汤','龙虾取自大明湖畔的夏雨荷下，虾肉甜美。',53,6,6);
+insert into courseinfo(name, descript, price, RestaurantID, type) values
+('文火焖小牛肉','餐厅选用的质感柔嫩的顶级雪花牛肉，加上秘制酱料文火焖制而成，绵软酥烂',69,6,5);
 
 

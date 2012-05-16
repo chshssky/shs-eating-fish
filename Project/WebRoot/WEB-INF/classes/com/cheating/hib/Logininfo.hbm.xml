@@ -6,18 +6,36 @@
 -->
 <hibernate-mapping>
     <class name="com.cheating.hib.Logininfo" table="logininfo" catalog="orderonlinedb">
-        <id name="loginId" type="integer">
+        <id name="loginId" type="java.lang.Integer">
             <column name="LoginID" />
             <generator class="native" />
         </id>
-        <many-to-one name="customerinfo" class="com.cheating.hib.Customerinfo" fetch="select">
-            <column name="CustomerID" />
+        <many-to-one name="authority" class="com.cheating.hib.Authority" fetch="select">
+            <column name="Authority" />
         </many-to-one>
-        <property name="loginName" type="string">
+        <property name="loginName" type="java.lang.String">
             <column name="LoginName" length="20" not-null="true" />
         </property>
-        <property name="password" type="string">
+        <property name="password" type="java.lang.String">
             <column name="Password" length="20" not-null="true" />
         </property>
+        <set name="managerinfos" inverse="true">
+            <key>
+                <column name="LoginID" />
+            </key>
+            <one-to-many class="com.cheating.hib.Managerinfo" />
+        </set>
+        <set name="customerinfos" inverse="true">
+            <key>
+                <column name="LoginID" />
+            </key>
+            <one-to-many class="com.cheating.hib.Customerinfo" />
+        </set>
+        <set name="administratorinfos" inverse="true">
+            <key>
+                <column name="LoginID" />
+            </key>
+            <one-to-many class="com.cheating.hib.Administratorinfo" />
+        </set>
     </class>
 </hibernate-mapping>

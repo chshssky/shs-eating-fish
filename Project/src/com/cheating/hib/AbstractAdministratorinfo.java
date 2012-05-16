@@ -1,54 +1,67 @@
 package com.cheating.hib;
 
+
+
 /**
- * AbstractAdministratorinfo entity provides the base persistence definition of
- * the Administratorinfo entity. @author MyEclipse Persistence Tools
+ * AbstractAdministratorinfo entity provides the base persistence definition of the Administratorinfo entity. @author MyEclipse Persistence Tools
  */
 
-public abstract class AbstractAdministratorinfo implements java.io.Serializable {
+public abstract class AbstractAdministratorinfo  implements java.io.Serializable {
 
-	// Fields
 
-	private Integer adId;
-	private String loginName;
-	private String password;
+    // Fields    
 
-	// Constructors
+     private Integer adId;
+     private Logininfo logininfo;
+     private String name;
 
-	/** default constructor */
-	public AbstractAdministratorinfo() {
-	}
 
-	/** full constructor */
-	public AbstractAdministratorinfo(String loginName, String password) {
-		this.loginName = loginName;
-		this.password = password;
-	}
+    // Constructors
 
-	// Property accessors
+    /** default constructor */
+    public AbstractAdministratorinfo() {
+    }
 
-	public Integer getAdId() {
-		return this.adId;
-	}
+    
+    /** full constructor */
+    public AbstractAdministratorinfo(Logininfo logininfo, String name) {
+        this.logininfo = logininfo;
+        this.name = name;
+    }
 
-	public void setAdId(Integer adId) {
-		this.adId = adId;
-	}
+   
+    // Property accessors
 
-	public String getLoginName() {
-		return this.loginName;
-	}
+    public Integer getAdId() {
+        return this.adId;
+    }
+    
+    public void setAdId(Integer adId) {
+        this.adId = adId;
+    }
 
-	public void setLoginName(String loginName) {
-		this.loginName = loginName;
-	}
+    public Logininfo getLogininfo() {
+        return this.logininfo;
+    }
+    
+    public void setLogininfo(Logininfo logininfo) {
+        this.logininfo = logininfo;
+    }
 
-	public String getPassword() {
-		return this.password;
-	}
+    public String getName() {
+        return this.name;
+    }
+    
+    public void setName(String name) {
+        this.name = name;
+    }
+   
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+
+
+
+
+
+
 
 }

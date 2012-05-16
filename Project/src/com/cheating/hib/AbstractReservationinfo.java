@@ -1,82 +1,92 @@
 package com.cheating.hib;
 
-import java.util.Date;
+import java.sql.Timestamp;
+
 
 /**
- * AbstractReservationinfo entity provides the base persistence definition of
- * the Reservationinfo entity. @author MyEclipse Persistence Tools
+ * AbstractReservationinfo entity provides the base persistence definition of the Reservationinfo entity. @author MyEclipse Persistence Tools
  */
 
-public abstract class AbstractReservationinfo implements java.io.Serializable {
+public abstract class AbstractReservationinfo  implements java.io.Serializable {
 
-	// Fields
 
-	private Integer orderId;
-	private Restaurantinfo restaurantinfo;
-	private Customerinfo customerinfo;
-	private Date orderTime;
-	private String state;
+    // Fields    
 
-	// Constructors
+     private Integer orderId;
+     private Restaurantinfo restaurantinfo;
+     private Customerinfo customerinfo;
+     private Timestamp orderTime;
+     private String state;
 
-	/** default constructor */
-	public AbstractReservationinfo() {
-	}
+
+    // Constructors
+
+    /** default constructor */
+    public AbstractReservationinfo() {
+    }
 
 	/** minimal constructor */
-	public AbstractReservationinfo(Date orderTime) {
-		this.orderTime = orderTime;
-	}
+    public AbstractReservationinfo(Timestamp orderTime) {
+        this.orderTime = orderTime;
+    }
+    
+    /** full constructor */
+    public AbstractReservationinfo(Restaurantinfo restaurantinfo, Customerinfo customerinfo, Timestamp orderTime, String state) {
+        this.restaurantinfo = restaurantinfo;
+        this.customerinfo = customerinfo;
+        this.orderTime = orderTime;
+        this.state = state;
+    }
 
-	/** full constructor */
-	public AbstractReservationinfo(Restaurantinfo restaurantinfo,
-			Customerinfo customerinfo, Date orderTime, String state) {
-		this.restaurantinfo = restaurantinfo;
-		this.customerinfo = customerinfo;
-		this.orderTime = orderTime;
-		this.state = state;
-	}
+   
+    // Property accessors
 
-	// Property accessors
+    public Integer getOrderId() {
+        return this.orderId;
+    }
+    
+    public void setOrderId(Integer orderId) {
+        this.orderId = orderId;
+    }
 
-	public Integer getOrderId() {
-		return this.orderId;
-	}
+    public Restaurantinfo getRestaurantinfo() {
+        return this.restaurantinfo;
+    }
+    
+    public void setRestaurantinfo(Restaurantinfo restaurantinfo) {
+        this.restaurantinfo = restaurantinfo;
+    }
 
-	public void setOrderId(Integer orderId) {
-		this.orderId = orderId;
-	}
+    public Customerinfo getCustomerinfo() {
+        return this.customerinfo;
+    }
+    
+    public void setCustomerinfo(Customerinfo customerinfo) {
+        this.customerinfo = customerinfo;
+    }
 
-	public Restaurantinfo getRestaurantinfo() {
-		return this.restaurantinfo;
-	}
+    public Timestamp getOrderTime() {
+        return this.orderTime;
+    }
+    
+    public void setOrderTime(Timestamp orderTime) {
+        this.orderTime = orderTime;
+    }
 
-	public void setRestaurantinfo(Restaurantinfo restaurantinfo) {
-		this.restaurantinfo = restaurantinfo;
-	}
+    public String getState() {
+        return this.state;
+    }
+    
+    public void setState(String state) {
+        this.state = state;
+    }
+   
 
-	public Customerinfo getCustomerinfo() {
-		return this.customerinfo;
-	}
 
-	public void setCustomerinfo(Customerinfo customerinfo) {
-		this.customerinfo = customerinfo;
-	}
 
-	public Date getOrderTime() {
-		return this.orderTime;
-	}
 
-	public void setOrderTime(Date orderTime) {
-		this.orderTime = orderTime;
-	}
 
-	public String getState() {
-		return this.state;
-	}
 
-	public void setState(String state) {
-		this.state = state;
-	}
+
 
 }

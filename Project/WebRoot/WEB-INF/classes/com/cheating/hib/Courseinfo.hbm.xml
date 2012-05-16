@@ -6,21 +6,27 @@
 -->
 <hibernate-mapping>
     <class name="com.cheating.hib.Courseinfo" table="courseinfo" catalog="orderonlinedb">
-        <id name="courseId" type="integer">
+        <id name="courseId" type="java.lang.Integer">
             <column name="CourseID" />
             <generator class="native" />
         </id>
         <many-to-one name="restaurantinfo" class="com.cheating.hib.Restaurantinfo" fetch="select">
             <column name="RestaurantID" />
         </many-to-one>
-        <property name="name" type="string">
+        <many-to-one name="coursetype" class="com.cheating.hib.Coursetype" fetch="select">
+            <column name="type" />
+        </many-to-one>
+        <property name="name" type="java.lang.String">
             <column name="Name" length="50" not-null="true" />
         </property>
-        <property name="descript" type="string">
+        <property name="descript" type="java.lang.String">
             <column name="Descript" />
         </property>
-        <property name="price" type="integer">
+        <property name="price" type="java.lang.Integer">
             <column name="price" not-null="true" />
+        </property>
+        <property name="pic" type="java.lang.String">
+            <column name="pic" />
         </property>
         <set name="ordercourseses" inverse="true">
             <key>

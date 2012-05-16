@@ -45,19 +45,23 @@ public class Register extends ActionSupport{
 		}
 	}
 	public void register() {
+		Session se = HibernateSessionFactory.getSession();
+		
 		Logininfo in = new Logininfo();
 		Customerinfo cu = new Customerinfo();
+		Authority au = (Authority)se.load(Authority.class, 1);
 		
 		cu.setEmail(email);
 		cu.setFirstName(firstname);
 		cu.setLastName(lastname);
 		cu.setTelephoneNum(telephonenum);
+		cu.setLogininfo(in);
 		
 		in.setLoginName(username);
 		in.setPassword(password);
-		in.setCustomerinfo(cu);
+		in.setAuthority(au);
 		
-		Session se = HibernateSessionFactory.getSession();
+		
 		Transaction tran = se.beginTransaction();
 		se.save(cu);
 		se.save(in);

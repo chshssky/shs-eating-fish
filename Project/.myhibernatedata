@@ -1,5 +1,5 @@
 #MyEclipse Hibernate Properties
-#Wed May 09 09:30:02 CST 2012
+#Wed May 16 14:52:18 CST 2012
 sessionFactoryName=com.cheating.hib.HibernateSessionFactory
 genBasicCompId=false
 profile=
@@ -10,7 +10,7 @@ detectM2M=false
 reStrategyClass=
 detectO2O=true
 springDaoFile=
-useJavaTypes=false
+useJavaTypes=true
 keyGenerator=native
 libInstallFolder=WebRoot/WEB-INF/lib
 addLibs2Project=true
@@ -18,7 +18,7 @@ genVersionTag=false
 sessionFactoryId=
 basePersistenceClass=
 genAnnotations=false
-reSettingsFile=
+reSettingsFile=/OrderOnline/hibernate.reveng.xml
 configFile=/OrderOnline/src/hibernate.cfg.xml
 createConfigFile=true
 addLibs2Classpath=true

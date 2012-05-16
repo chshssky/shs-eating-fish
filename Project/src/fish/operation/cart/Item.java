@@ -3,7 +3,6 @@ package fish.operation.cart;
 import com.cheating.hib.Courseinfo;
 
 public class Item {
-	private Courseinfo course ;
 	private int course_id ;
 	private int course_num ;
 	

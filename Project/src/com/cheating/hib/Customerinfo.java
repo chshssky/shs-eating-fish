@@ -2,28 +2,26 @@ package com.cheating.hib;
 
 import java.util.Set;
 
+
 /**
  * Customerinfo entity. @author MyEclipse Persistence Tools
  */
-public class Customerinfo extends AbstractCustomerinfo implements
-		java.io.Serializable {
+public class Customerinfo extends AbstractCustomerinfo implements java.io.Serializable {
 
-	// Constructors
+    // Constructors
 
-	/** default constructor */
-	public Customerinfo() {
-	}
+    /** default constructor */
+    public Customerinfo() {
+    }
 
 	/** minimal constructor */
-	public Customerinfo(String lastName) {
-		super(lastName);
-	}
-
-	/** full constructor */
-	public Customerinfo(String telephoneNum, String firstName, String lastName,
-			String email, Set reservationinfos, Set logininfos, Set orderinfos) {
-		super(telephoneNum, firstName, lastName, email, reservationinfos,
-				logininfos, orderinfos);
-	}
-
+    public Customerinfo(String lastName) {
+        super(lastName);        
+    }
+    
+    /** full constructor */
+    public Customerinfo(Logininfo logininfo, String telephoneNum, String firstName, String lastName, String email, Set reservationinfos, Set orderinfos) {
+        super(logininfo, telephoneNum, firstName, lastName, email, reservationinfos, orderinfos);        
+    }
+   
 }

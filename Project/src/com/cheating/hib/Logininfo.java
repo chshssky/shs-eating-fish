@@ -1,26 +1,27 @@
 package com.cheating.hib;
 
+import java.util.Set;
+
+
 /**
  * Logininfo entity. @author MyEclipse Persistence Tools
  */
-public class Logininfo extends AbstractLogininfo implements
-		java.io.Serializable {
+public class Logininfo extends AbstractLogininfo implements java.io.Serializable {
 
-	// Constructors
+    // Constructors
 
-	/** default constructor */
-	public Logininfo() {
-	}
+    /** default constructor */
+    public Logininfo() {
+    }
 
 	/** minimal constructor */
-	public Logininfo(String loginName, String password) {
-		super(loginName, password);
-	}
-
-	/** full constructor */
-	public Logininfo(Customerinfo customerinfo, String loginName,
-			String password) {
-		super(customerinfo, loginName, password);
-	}
-
+    public Logininfo(String loginName, String password) {
+        super(loginName, password);        
+    }
+    
+    /** full constructor */
+    public Logininfo(Authority authority, String loginName, String password, Set managerinfos, Set customerinfos, Set administratorinfos) {
+        super(authority, loginName, password, managerinfos, customerinfos, administratorinfos);        
+    }
+   
 }

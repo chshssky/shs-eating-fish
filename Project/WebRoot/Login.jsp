@@ -36,6 +36,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<s:radio name="userType" label="用户类型" list="{'管理员', '顾客', '经理'}"></s:radio> 
 			<s:submit value="登陆"/><s:reset value="重置"/>
 			
+			
 		</s:form>
 		</center>
   </body>

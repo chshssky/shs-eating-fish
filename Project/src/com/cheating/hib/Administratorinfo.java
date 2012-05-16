@@ -1,20 +1,22 @@
 package com.cheating.hib;
 
+
+
 /**
  * Administratorinfo entity. @author MyEclipse Persistence Tools
  */
-public class Administratorinfo extends AbstractAdministratorinfo implements
-		java.io.Serializable {
+public class Administratorinfo extends AbstractAdministratorinfo implements java.io.Serializable {
 
-	// Constructors
+    // Constructors
 
-	/** default constructor */
-	public Administratorinfo() {
-	}
+    /** default constructor */
+    public Administratorinfo() {
+    }
 
-	/** full constructor */
-	public Administratorinfo(String loginName, String password) {
-		super(loginName, password);
-	}
-
+    
+    /** full constructor */
+    public Administratorinfo(Logininfo logininfo, String name) {
+        super(logininfo, name);        
+    }
+   
 }

@@ -6,7 +6,7 @@
 -->
 <hibernate-mapping>
     <class name="com.cheating.hib.Ordercourses" table="ordercourses" catalog="orderonlinedb">
-        <id name="orderCoursesId" type="integer">
+        <id name="orderCoursesId" type="java.lang.Integer">
             <column name="OrderCoursesID" />
             <generator class="native" />
         </id>
@@ -16,7 +16,7 @@
         <many-to-one name="orderinfo" class="com.cheating.hib.Orderinfo" fetch="select">
             <column name="OrderID" />
         </many-to-one>
-        <property name="num" type="integer">
+        <property name="num" type="java.lang.Integer">
             <column name="num" not-null="true" />
         </property>
     </class>

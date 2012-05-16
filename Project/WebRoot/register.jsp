@@ -13,8 +13,8 @@
 			<s:textfield name="username" label="用户"/>
 			<s:password name="password" label="密码"/>
 			<s:password name="repassword" label="确认密码"/>
-			<s:textfield name="firstname" label="�/>
-			<s:textfield name="lastname" label="�/>
+			<s:textfield name="firstname" label="名"/>
+			<s:textfield name="lastname" label="姓"/>
 			<s:textfield name="telephonenum" label="电话号码"/>
 			<s:textfield name="email" label="邮箱"/>
 			<s:submit value="注册"/>

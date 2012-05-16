@@ -95,7 +95,7 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
     	}
     	List<Courseinfo> courseinfos = crit.list();
     %>
-    <h2 align="right" ><font color="#FF99FF"><a href="index.jsp">����</a></font></h2>
+    <h2 align="right" ><font color="#FF99FF"><a href="index.jsp">返回</a></font></h2>
     <table align="center" border="2">
 	<tr>
 	<th colspan="4"><h3>菜肴信息</h3></th>
