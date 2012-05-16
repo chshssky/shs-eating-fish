@@ -26,11 +26,8 @@
 		while(cart_list.hasNext())
 		{
 			item = cart_list.next() ;
-			//hibernate我不熟，下面两行报错：Courseinfo cannot be resolved to a variable
-			//course = (Courseinfo)HibernateSessionFactory.getSession().load(Courseinfo, item.getCourse_id()) ;
-	 		//out.print("<tr><td>" + course.getName() + "</td>") ;
-	 		
-	 		out.print("<tr><td>" + item.getCourse_id() + "</td>") ;
+			course = (Courseinfo)HibernateSessionFactory.getSession().load(Courseinfo.class, item.getCourse_id()) ;
+	 		out.print("<tr><td>" + course.getName() + "</td>") ;
 	 		out.print("<td>" + item.getCourse_num() + "</td></tr>") ;	 		
 		}
 	 %>
