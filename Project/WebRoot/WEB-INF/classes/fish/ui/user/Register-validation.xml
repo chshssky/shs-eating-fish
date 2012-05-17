@@ -4,28 +4,28 @@
 <validators>
 	<field name="username">
 		<field-validator type="requiredstring" short-circuit="true">
-			<message>username should not be empty.</message>
+			<message>用户名不能为空</message>
 		</field-validator>
 		<field-validator type="stringlength">
 			<param name="maxLength">18</param>
-			<message>no longer than 18 characters</message>
+			<message>用户名不多于18位</message>
 		</field-validator>
 	</field>
 	
 	<field name="password">
 		<field-validator type="requiredstring" short-circuit="true">
-			<message>password should not be empty.</message>
+			<message>密码不能为空</message>
 		</field-validator>
 		<field-validator type="stringlength">
 			<param name="minLength">6</param>
 			<param name="maxLength">18</param>
-			<message>password should have 6 characters at least and 18 characters at most</message>
+			<message>密码长度应为6至18位</message>
 		</field-validator>
 	</field>
 	
 	<validator type="requiredstring">
 		<param name="fieldName">repassword</param>
-		<message>Confirm password should not be empty.</message>
+		<message>请再次输入密码</message>
 	</validator>
 	
 	<!-- 
@@ -38,10 +38,10 @@
 	
 	<field name="email">
 		<field-validator type="requiredstring" short-circuit="true">
-			<message>Email address should not be empty</message>
+			<message>邮箱不能为空</message>
 		</field-validator>
 		<field-validator type="email" short-circuit="true">
-			<message>please input a correct email address</message>
+			<message>请输入正确的邮箱地址</message>
 		</field-validator>
 	</field>
 </validators>	

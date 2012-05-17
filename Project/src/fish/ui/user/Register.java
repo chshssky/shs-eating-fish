@@ -41,7 +41,7 @@ public class Register extends ActionSupport{
 	public void validate() {
 		if(password != null && repassword != null){
 			if(!repassword.equals(password))
-				this.addActionError("Confirm should be equal to the password");
+				this.addActionError("两次输入密码不一致");
 		}
 	}
 	public void register() {
@@ -70,7 +70,7 @@ public class Register extends ActionSupport{
 	}
 	public String execute() throws Exception{
 		register();
-		return "success";
+		return SUCCESS;
 		
 	}
 	public String getTelephonenum() {

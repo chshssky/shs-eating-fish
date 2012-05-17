@@ -37,11 +37,11 @@
 		
 		<action name="submit_order" class="fish.operation.cart.SubmitOrderAction">
 			<result name="input">/putCart.jsp</result>
-			<result name="success">/showOrder.jsp</result>
+			<result name="success">/payOrder.jsp</result>
 		</action>
 		
 		<action name="payment" class="fish.operation.cart.PaymentAction">
-			<result name="input">/showOrder.jsp</result>
+			<result name="input">/payOrder.jsp</result>
 			<result name="success">/index.jsp</result>
 		</action>
 	</package>
