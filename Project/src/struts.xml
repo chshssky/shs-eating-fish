@@ -44,5 +44,7 @@
 			<result name="input">/payOrder.jsp</result>
 			<result name="success">/index.jsp</result>
 		</action>
+		
+		
 	</package>
 </struts>    
