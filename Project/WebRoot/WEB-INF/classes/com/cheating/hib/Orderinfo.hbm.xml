@@ -20,7 +20,7 @@
             <column name="sumPrice" />
         </property>
         <property name="orderTime" type="java.sql.Timestamp">
-            <column name="orderTime" length="19" not-null="true" />
+            <column name="orderTime" length="0" />
         </property>
         <property name="state" type="java.lang.String">
             <column name="state" length="20" />

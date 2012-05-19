@@ -1,5 +1,7 @@
 package fish.operation.cart;
 
+import java.sql.Timestamp;
+import java.util.Calendar;
 import java.util.Iterator;
 
 import javax.servlet.http.HttpServletRequest;
@@ -38,7 +40,7 @@ public class SubmitOrderAction extends ActionSupport implements ServletRequestAw
 			
 			orderCourses.setNum(cur_order.getCourse_num()) ;
 			orderCourses.setCourseinfo(course) ;
-		//	orderCourses.setOrderinfo(orderInfo) ;
+			orderCourses.setOrderinfo(orderInfo) ;
 		}
 		
 		LoginedUser currUser = (LoginedUser)request.getSession().getAttribute("currUser") ;
@@ -47,12 +49,18 @@ public class SubmitOrderAction extends ActionSupport implements ServletRequestAw
 		orderInfo.setCustomerinfo(currCus) ;
 		orderInfo.setSumPrice(sum_price) ;
 		orderInfo.setAddress("temp") ;
-		
+		orderInfo.setState("dealing") ;
 		Transaction tran = se.beginTransaction();
-		//se.save(orderInfo);
+		se.save(orderInfo);
 		se.save(orderCourses);
 		tran.commit();
 		HibernateSessionFactory.closeSession();
+	}
+	
+	public void validate()
+	{
+		if(Login.getMycart().getCart().isEmpty())
+			this.addActionError("您的购物车为空") ;
 	}
 	
 	public String execute() throws Exception{

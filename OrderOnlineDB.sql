@@ -69,7 +69,7 @@ create table OrderInfo
     OrderID int(10) not null AUTO_INCREMENT,
     address varchar(255) not null,
     sumPrice int(10),
-    orderTime TIMESTAMP not null default current_timestamp,
+    orderTime TIMESTAMP default current_timestamp,
     state varchar(20) default 'dealing',
     CustomerID int(10),
     primary key(OrderID),

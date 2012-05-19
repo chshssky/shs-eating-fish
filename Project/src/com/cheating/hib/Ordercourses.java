@@ -1,26 +1,25 @@
 package com.cheating.hib;
 
-
-
 /**
  * Ordercourses entity. @author MyEclipse Persistence Tools
  */
-public class Ordercourses extends AbstractOrdercourses implements java.io.Serializable {
+public class Ordercourses extends AbstractOrdercourses implements
+		java.io.Serializable {
 
-    // Constructors
+	// Constructors
 
-    /** default constructor */
-    public Ordercourses() {
-    }
+	/** default constructor */
+	public Ordercourses() {
+	}
 
 	/** minimal constructor */
-    public Ordercourses(Integer num) {
-        super(num);        
-    }
-    
-    /** full constructor */
-    public Ordercourses(Courseinfo courseinfo, Orderinfo orderinfo, Integer num) {
-        super(courseinfo, orderinfo, num);        
-    }
-   
+	public Ordercourses(Integer num) {
+		super(num);
+	}
+
+	/** full constructor */
+	public Ordercourses(Courseinfo courseinfo, Orderinfo orderinfo, Integer num) {
+		super(courseinfo, orderinfo, num);
+	}
+
 }
