@@ -1,0 +1,62 @@
+@CHARSET "UTF-8";
+html,body,#wrap
+{
+	height:100%;
+}
+body>#wrap
+{
+	height:auto;
+	min-height:100%;
+}
+#main
+{
+	padding-bottom:70px;
+}
+div.head
+{
+	background-image:url(head.jpg);
+	height:230px;
+	width:1270px;
+}
+h1
+{
+	color:#9999CC;
+	font-family:Kristen ITC;
+}
+div.block2
+{
+	font-color:#FFCCCC;
+	size:30px;
+	float:left;
+
+}
+
+div.block3
+{
+	color:#FFCCCC;
+	margin-left:60px;
+	font-size:30px;
+	float:left;
+}
+a
+{
+	color:#FFCCCC;
+}
+a:link,a.visited
+{
+	color:#FFCCCC;
+}
+a:hover
+{
+	color:#FF66CC;
+}
+#foot
+{
+	position:relative;
+	height:70px;
+	width:1270px;
+	clear:both;
+	margin-top:-70px;
+	background:#3399FF;
+	float:bottom;
+}

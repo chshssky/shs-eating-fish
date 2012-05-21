@@ -1,0 +1,22 @@
+@CHARSET "UTF-8";
+body
+{
+	font-family:Helvetica, arial,sans-serif;
+ 	margin:0px 0px 0px 0px;
+ 	font-size:14px;
+ 	background-color:#CCCCFF;
+ 	/*background-image:url(registerbg2.gif);*/
+ 	background-repeat:no-repeat;
+	
+}
+div.wrapper
+{
+	background-image:url(registerbg.jpg);
+	background-repeat:no-repeat;
+	height:420px;
+	width:470px;
+	margin-top:70px;
+	margin-left:380px;
+	padding-left:90px;
+	padding-top:10px;;
+} 

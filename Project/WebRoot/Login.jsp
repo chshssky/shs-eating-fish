@@ -4,38 +4,54 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
+<link rel="stylesheet" media="screen" type="text/css" href="css/logo.css"/>
+<link rel="stylesheet" media="screen" type="text/css" href="css/LoginCss.css"/>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmls="http://www.w3.org/1999/xhtml">
   <head>
     <base href="<%=basePath%>">
     
     <title>登陆</title>
-    
+    <meat http-equiv="Content-Type" content="text/html; charset=gb2312">
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
 
+	
   </head>
   
   <body>
-  		<center>
-  		
-  		<a href="register.jsp">注册</a>
-  		
-  		<h1><font color="#FF0099">欢迎登陆</font></h1>
+  <div class="head">
+  <h1>welcome to EFC&nbsp;&nbsp;&nbsp;欢迎来到EFC网上订餐系统</h1>
+  </div>
+  		<h1><font color="#9933FF">欢迎登陆</font></h1>
+  		<div class="wrapper">
+  		<div class="ribbon">欢迎登陆&nbsp&nbsp&nbsp&nbsp<a href="register.jsp"><I>注册</I></a></div>
+  		<div class="loginwrapper">
 		<s:form action="login_check">
-			<s:textfield name="loginName" label="用户名"></s:textfield>
+			<s:textfield name="loginName" label="用户名"></s:textfield><br/>
 			<s:password name="password" label="密码"></s:password>
-			<s:radio name="userType" label="用户类型" list="{'管理员', '顾客', '经理'}"></s:radio> 
-			<s:submit value="登陆"/><s:reset value="重置"/>
+			<s:submit cssStyle="float:left; background:url(login_btn.png) 0px 0px;width:92px;height:31px;
+ 		    border:0px; float:right;margin-right:20px;margin-top:5px;" value=""/><s:reset 
+ 		    cssStyle="background:url(reset_bg.png) 0px 0px;width:92px;height:31px;
+ 		    border:0px; float:right;margin-right:20px;margin-top:5px;" value="" />
 			
+		
 		</s:form>
-		</center>
+		</div>
+		<div class="bottomwrapper">
+ 		<a href="#">忘记密码</a><br/>
+ 		<a href="#">注册新用户</a>
+ 		</div>
+		</div>
+		<div class="right">
+ 		<h1>亲爱的请登录：</h1>
+ 		<p>欢迎来到我们的订餐网站</p>
+ 		<p>希望您订餐过程愉快</p>
+ 		<p>&nbsp &nbsp 全体工作人员寄语</p>
+ 	</div>
+		
   </body>
 </html>

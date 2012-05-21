@@ -5,8 +5,9 @@ String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
+<link rel="stylesheet" media="screen" type="text/css" href="css/logo.css"/>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmls="http://www.w3.org/1999/xhtml">
   <head>
     <base href="<%=basePath%>">
     
@@ -14,9 +15,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	
   </head>
   
-  <body>
-  	<h1 align="center"><font color="#330099">欢迎来到EFC网上订餐系统</font></h1>
-  	<jsp:useBean id="currUser" scope="session" class="com.cheating.SessionBean.LoginedUser"></jsp:useBean>
+  <body bgcolor="#CCCCFF">
+  <div id="wrap">
+  <div id="main">
+  <div class="head">
+  <h1>welcome to EFC&nbsp;&nbsp;&nbsp;欢迎来到EFC网上订餐系统</h1>
+  <div class="block2">
+  <jsp:useBean id="currUser" scope="session" class="com.cheating.SessionBean.LoginedUser"></jsp:useBean>
   	<%
   		System.out.println("index.jsp:LoginID:" + currUser.getId());
   		if(currUser.getId() == 0) {
@@ -29,8 +34,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      <%
      	}
       %>
-      <h2 align="center">
+      </div>
+      <div class="block3">
+    
      <a href="RestaurantInfoMenu.jsp?id=0">餐馆信息</a>
-     </h2>
+
+     </div>
+  
+  </div>
+  </div>
+    </div>
+  <div id="foot">
+  <center>
+     <h4>版权所有(copy right)</h4>
+     </center>
+  </div>
+	
   </body>
 </html>
