@@ -10,8 +10,8 @@ public abstract class AbstractAdministratorinfo implements java.io.Serializable 
 	// Fields
 
 	private Integer adId;
-	private String loginName;
-	private String password;
+	private Logininfo logininfo;
+	private String name;
 
 	// Constructors
 
@@ -20,9 +20,9 @@ public abstract class AbstractAdministratorinfo implements java.io.Serializable 
 	}
 
 	/** full constructor */
-	public AbstractAdministratorinfo(String loginName, String password) {
-		this.loginName = loginName;
-		this.password = password;
+	public AbstractAdministratorinfo(Logininfo logininfo, String name) {
+		this.logininfo = logininfo;
+		this.name = name;
 	}
 
 	// Property accessors
@@ -35,20 +35,20 @@ public abstract class AbstractAdministratorinfo implements java.io.Serializable 
 		this.adId = adId;
 	}
 
-	public String getLoginName() {
-		return this.loginName;
+	public Logininfo getLogininfo() {
+		return this.logininfo;
 	}
 
-	public void setLoginName(String loginName) {
-		this.loginName = loginName;
+	public void setLogininfo(Logininfo logininfo) {
+		this.logininfo = logininfo;
 	}
 
-	public String getPassword() {
-		return this.password;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 }

@@ -13,12 +13,12 @@ public abstract class AbstractCustomerinfo implements java.io.Serializable {
 	// Fields
 
 	private Integer customerId;
+	private Logininfo logininfo;
 	private String telephoneNum;
 	private String firstName;
 	private String lastName;
 	private String email;
 	private Set reservationinfos = new HashSet(0);
-	private Set logininfos = new HashSet(0);
 	private Set orderinfos = new HashSet(0);
 
 	// Constructors
@@ -33,15 +33,15 @@ public abstract class AbstractCustomerinfo implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public AbstractCustomerinfo(String telephoneNum, String firstName,
-			String lastName, String email, Set reservationinfos,
-			Set logininfos, Set orderinfos) {
+	public AbstractCustomerinfo(Logininfo logininfo, String telephoneNum,
+			String firstName, String lastName, String email,
+			Set reservationinfos, Set orderinfos) {
+		this.logininfo = logininfo;
 		this.telephoneNum = telephoneNum;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
 		this.reservationinfos = reservationinfos;
-		this.logininfos = logininfos;
 		this.orderinfos = orderinfos;
 	}
 
@@ -53,6 +53,14 @@ public abstract class AbstractCustomerinfo implements java.io.Serializable {
 
 	public void setCustomerId(Integer customerId) {
 		this.customerId = customerId;
+	}
+
+	public Logininfo getLogininfo() {
+		return this.logininfo;
+	}
+
+	public void setLogininfo(Logininfo logininfo) {
+		this.logininfo = logininfo;
 	}
 
 	public String getTelephoneNum() {
@@ -93,14 +101,6 @@ public abstract class AbstractCustomerinfo implements java.io.Serializable {
 
 	public void setReservationinfos(Set reservationinfos) {
 		this.reservationinfos = reservationinfos;
-	}
-
-	public Set getLogininfos() {
-		return this.logininfos;
-	}
-
-	public void setLogininfos(Set logininfos) {
-		this.logininfos = logininfos;
 	}
 
 	public Set getOrderinfos() {

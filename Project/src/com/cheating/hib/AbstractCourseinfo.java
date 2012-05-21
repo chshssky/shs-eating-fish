@@ -14,9 +14,11 @@ public abstract class AbstractCourseinfo implements java.io.Serializable {
 
 	private Integer courseId;
 	private Restaurantinfo restaurantinfo;
+	private Coursetype coursetype;
 	private String name;
 	private String descript;
 	private Integer price;
+	private String pic;
 	private Set ordercourseses = new HashSet(0);
 
 	// Constructors
@@ -32,12 +34,15 @@ public abstract class AbstractCourseinfo implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public AbstractCourseinfo(Restaurantinfo restaurantinfo, String name,
-			String descript, Integer price, Set ordercourseses) {
+	public AbstractCourseinfo(Restaurantinfo restaurantinfo,
+			Coursetype coursetype, String name, String descript, Integer price,
+			String pic, Set ordercourseses) {
 		this.restaurantinfo = restaurantinfo;
+		this.coursetype = coursetype;
 		this.name = name;
 		this.descript = descript;
 		this.price = price;
+		this.pic = pic;
 		this.ordercourseses = ordercourseses;
 	}
 
@@ -57,6 +62,14 @@ public abstract class AbstractCourseinfo implements java.io.Serializable {
 
 	public void setRestaurantinfo(Restaurantinfo restaurantinfo) {
 		this.restaurantinfo = restaurantinfo;
+	}
+
+	public Coursetype getCoursetype() {
+		return this.coursetype;
+	}
+
+	public void setCoursetype(Coursetype coursetype) {
+		this.coursetype = coursetype;
 	}
 
 	public String getName() {
@@ -81,6 +94,14 @@ public abstract class AbstractCourseinfo implements java.io.Serializable {
 
 	public void setPrice(Integer price) {
 		this.price = price;
+	}
+
+	public String getPic() {
+		return this.pic;
+	}
+
+	public void setPic(String pic) {
+		this.pic = pic;
 	}
 
 	public Set getOrdercourseses() {

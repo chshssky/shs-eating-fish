@@ -8,7 +8,7 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmls="http://www.w3.org/1999/xhtml">
   <head>
-  	<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+  	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
     <title>My JSP 'aaa.jsp' starting page</title>
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
@@ -95,6 +95,7 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
     	}
     	List<Courseinfo> courseinfos = crit.list();
     %>
+    <h2 align="right" ><font color="#FF99FF"><a href="index.jsp">返回</a></font></h2>
     <table align="center" border="2">
 	<tr>
 	<th colspan="4"><h3>菜肴信息</h3></th>
@@ -116,9 +117,9 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
 			<td align="center"><%=info.getPrice() %></td>
 			<td align="center">
 			<form action="put_cart">
-       		<input type="hidden" name="id" id="id" value=<%=info.getCourseId()%>>
-       		<input type="text" name="course_count" id="course_count" size="3">
-       		<input type="submit" name="submit" value="加入购物车">
+       		<input type="hidden" name="id" id="id" value=<%=info.getCourseId()%>></input>
+       		<input type="text" name="course_count" id="course_count" size="3"></input>
+       		<input type="submit" name="submit" value="加入购物车"></input>
        		</form>
        		</td>
 			</tr>

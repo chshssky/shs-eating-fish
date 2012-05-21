@@ -1,5 +1,7 @@
 package com.cheating.hib;
 
+import java.util.Set;
+
 /**
  * Logininfo entity. @author MyEclipse Persistence Tools
  */
@@ -18,9 +20,10 @@ public class Logininfo extends AbstractLogininfo implements
 	}
 
 	/** full constructor */
-	public Logininfo(Customerinfo customerinfo, String loginName,
-			String password) {
-		super(customerinfo, loginName, password);
+	public Logininfo(Authority authority, String loginName, String password,
+			Set managerinfos, Set customerinfos, Set administratorinfos) {
+		super(authority, loginName, password, managerinfos, customerinfos,
+				administratorinfos);
 	}
 
 }

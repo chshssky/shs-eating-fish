@@ -1,6 +1,6 @@
 package com.cheating.hib;
 
-import java.util.Date;
+import java.sql.Timestamp;
 
 /**
  * AbstractReservationinfo entity provides the base persistence definition of
@@ -14,7 +14,7 @@ public abstract class AbstractReservationinfo implements java.io.Serializable {
 	private Integer orderId;
 	private Restaurantinfo restaurantinfo;
 	private Customerinfo customerinfo;
-	private Date orderTime;
+	private Timestamp orderTime;
 	private String state;
 
 	// Constructors
@@ -24,13 +24,13 @@ public abstract class AbstractReservationinfo implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public AbstractReservationinfo(Date orderTime) {
+	public AbstractReservationinfo(Timestamp orderTime) {
 		this.orderTime = orderTime;
 	}
 
 	/** full constructor */
 	public AbstractReservationinfo(Restaurantinfo restaurantinfo,
-			Customerinfo customerinfo, Date orderTime, String state) {
+			Customerinfo customerinfo, Timestamp orderTime, String state) {
 		this.restaurantinfo = restaurantinfo;
 		this.customerinfo = customerinfo;
 		this.orderTime = orderTime;
@@ -63,11 +63,11 @@ public abstract class AbstractReservationinfo implements java.io.Serializable {
 		this.customerinfo = customerinfo;
 	}
 
-	public Date getOrderTime() {
+	public Timestamp getOrderTime() {
 		return this.orderTime;
 	}
 
-	public void setOrderTime(Date orderTime) {
+	public void setOrderTime(Timestamp orderTime) {
 		this.orderTime = orderTime;
 	}
 

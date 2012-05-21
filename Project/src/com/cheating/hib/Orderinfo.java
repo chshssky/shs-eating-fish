@@ -1,6 +1,6 @@
 package com.cheating.hib;
 
-import java.util.Date;
+import java.sql.Timestamp;
 import java.util.Set;
 
 /**
@@ -16,13 +16,14 @@ public class Orderinfo extends AbstractOrderinfo implements
 	}
 
 	/** minimal constructor */
-	public Orderinfo(String address, Date orderTime) {
-		super(address, orderTime);
+	public Orderinfo(String address) {
+		super(address);
 	}
 
 	/** full constructor */
 	public Orderinfo(Customerinfo customerinfo, String address,
-			Integer sumPrice, Date orderTime, String state, Set ordercourseses) {
+			Integer sumPrice, Timestamp orderTime, String state,
+			Set ordercourseses) {
 		super(customerinfo, address, sumPrice, orderTime, state, ordercourseses);
 	}
 

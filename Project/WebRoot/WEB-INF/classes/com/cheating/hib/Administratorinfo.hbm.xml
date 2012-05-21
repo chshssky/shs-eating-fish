@@ -6,15 +6,15 @@
 -->
 <hibernate-mapping>
     <class name="com.cheating.hib.Administratorinfo" table="administratorinfo" catalog="orderonlinedb">
-        <id name="adId" type="integer">
+        <id name="adId" type="java.lang.Integer">
             <column name="AdID" />
             <generator class="native" />
         </id>
-        <property name="loginName" type="string">
-            <column name="LoginName" length="20" not-null="true" />
-        </property>
-        <property name="password" type="string">
-            <column name="password" length="20" not-null="true" />
+        <many-to-one name="logininfo" class="com.cheating.hib.Logininfo" fetch="select">
+            <column name="LoginID" />
+        </many-to-one>
+        <property name="name" type="java.lang.String">
+            <column name="Name" length="20" />
         </property>
     </class>
 </hibernate-mapping>

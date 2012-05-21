@@ -1,6 +1,6 @@
 package com.cheating.hib;
 
-import java.util.Date;
+import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -17,7 +17,7 @@ public abstract class AbstractOrderinfo implements java.io.Serializable {
 	private Customerinfo customerinfo;
 	private String address;
 	private Integer sumPrice;
-	private Date orderTime;
+	private Timestamp orderTime;
 	private String state;
 	private Set ordercourseses = new HashSet(0);
 
@@ -28,14 +28,14 @@ public abstract class AbstractOrderinfo implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public AbstractOrderinfo(String address, Date orderTime) {
+	public AbstractOrderinfo(String address) {
 		this.address = address;
-		this.orderTime = orderTime;
 	}
 
 	/** full constructor */
 	public AbstractOrderinfo(Customerinfo customerinfo, String address,
-			Integer sumPrice, Date orderTime, String state, Set ordercourseses) {
+			Integer sumPrice, Timestamp orderTime, String state,
+			Set ordercourseses) {
 		this.customerinfo = customerinfo;
 		this.address = address;
 		this.sumPrice = sumPrice;
@@ -78,11 +78,11 @@ public abstract class AbstractOrderinfo implements java.io.Serializable {
 		this.sumPrice = sumPrice;
 	}
 
-	public Date getOrderTime() {
+	public Timestamp getOrderTime() {
 		return this.orderTime;
 	}
 
-	public void setOrderTime(Date orderTime) {
+	public void setOrderTime(Timestamp orderTime) {
 		this.orderTime = orderTime;
 	}
 

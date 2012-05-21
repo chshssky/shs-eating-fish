@@ -14,13 +14,14 @@ import com.opensymphony.xwork2.ActionSupport;
 
 import fish.ui.user.Login;
 
-public class PutCart extends ActionSupport implements ServletRequestAware, ServletResponseAware{
+public class PutCart extends ActionSupport implements ServletRequestAware{
 	//Cart mycart ;
 	
 	private int id ;
 	private int course_count ;
 	private Item course ;
 	private LoginedUser currUser ;
+	private HttpServletRequest request;
 	
 	public LoginedUser getCurrUser() {
 		return currUser;
@@ -29,8 +30,6 @@ public class PutCart extends ActionSupport implements ServletRequestAware, Servl
 	public void setCurrUser(LoginedUser currUser) {
 		this.currUser = currUser;
 	}
-
-	private HttpServletRequest request;
 	
 	public Item getCourse() {
 		return course;
@@ -119,10 +118,4 @@ public class PutCart extends ActionSupport implements ServletRequestAware, Servl
 		this.request = request;
 	}
 
-	@Override
-	public void setServletResponse(HttpServletResponse arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-	
 }

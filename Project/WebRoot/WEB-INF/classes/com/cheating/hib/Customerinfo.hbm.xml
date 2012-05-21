@@ -6,20 +6,23 @@
 -->
 <hibernate-mapping>
     <class name="com.cheating.hib.Customerinfo" table="customerinfo" catalog="orderonlinedb">
-        <id name="customerId" type="integer">
+        <id name="customerId" type="java.lang.Integer">
             <column name="CustomerID" />
             <generator class="native" />
         </id>
-        <property name="telephoneNum" type="string">
+        <many-to-one name="logininfo" class="com.cheating.hib.Logininfo" fetch="select">
+            <column name="LoginID" />
+        </many-to-one>
+        <property name="telephoneNum" type="java.lang.String">
             <column name="telephoneNum" length="15" />
         </property>
-        <property name="firstName" type="string">
+        <property name="firstName" type="java.lang.String">
             <column name="firstName" length="20" />
         </property>
-        <property name="lastName" type="string">
+        <property name="lastName" type="java.lang.String">
             <column name="lastName" length="20" not-null="true" />
         </property>
-        <property name="email" type="string">
+        <property name="email" type="java.lang.String">
             <column name="email" length="30" />
         </property>
         <set name="reservationinfos" inverse="true">
@@ -27,12 +30,6 @@
                 <column name="CustomerID" />
             </key>
             <one-to-many class="com.cheating.hib.Reservationinfo" />
-        </set>
-        <set name="logininfos" inverse="true">
-            <key>
-                <column name="CustomerID" />
-            </key>
-            <one-to-many class="com.cheating.hib.Logininfo" />
         </set>
         <set name="orderinfos" inverse="true">
             <key>

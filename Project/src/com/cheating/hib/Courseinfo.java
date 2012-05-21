@@ -20,9 +20,11 @@ public class Courseinfo extends AbstractCourseinfo implements
 	}
 
 	/** full constructor */
-	public Courseinfo(Restaurantinfo restaurantinfo, String name,
-			String descript, Integer price, Set ordercourseses) {
-		super(restaurantinfo, name, descript, price, ordercourseses);
+	public Courseinfo(Restaurantinfo restaurantinfo, Coursetype coursetype,
+			String name, String descript, Integer price, String pic,
+			Set ordercourseses) {
+		super(restaurantinfo, coursetype, name, descript, price, pic,
+				ordercourseses);
 	}
 
 }

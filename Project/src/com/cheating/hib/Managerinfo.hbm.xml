@@ -6,18 +6,18 @@
 -->
 <hibernate-mapping>
     <class name="com.cheating.hib.Managerinfo" table="managerinfo" catalog="orderonlinedb">
-        <id name="managerId" type="integer">
+        <id name="managerId" type="java.lang.Integer">
             <column name="ManagerID" />
             <generator class="native" />
         </id>
         <many-to-one name="restaurantinfo" class="com.cheating.hib.Restaurantinfo" fetch="select">
             <column name="RestaurantID" />
         </many-to-one>
-        <property name="loginName" type="string">
-            <column name="LoginName" length="20" not-null="true" />
-        </property>
-        <property name="password" type="string">
-            <column name="Password" length="20" not-null="true" />
+        <many-to-one name="logininfo" class="com.cheating.hib.Logininfo" fetch="select">
+            <column name="LoginID" />
+        </many-to-one>
+        <property name="name" type="java.lang.String">
+            <column name="Name" length="20" />
         </property>
     </class>
 </hibernate-mapping>

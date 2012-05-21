@@ -11,8 +11,8 @@ public abstract class AbstractManagerinfo implements java.io.Serializable {
 
 	private Integer managerId;
 	private Restaurantinfo restaurantinfo;
-	private String loginName;
-	private String password;
+	private Logininfo logininfo;
+	private String name;
 
 	// Constructors
 
@@ -20,18 +20,12 @@ public abstract class AbstractManagerinfo implements java.io.Serializable {
 	public AbstractManagerinfo() {
 	}
 
-	/** minimal constructor */
-	public AbstractManagerinfo(String loginName, String password) {
-		this.loginName = loginName;
-		this.password = password;
-	}
-
 	/** full constructor */
-	public AbstractManagerinfo(Restaurantinfo restaurantinfo, String loginName,
-			String password) {
+	public AbstractManagerinfo(Restaurantinfo restaurantinfo,
+			Logininfo logininfo, String name) {
 		this.restaurantinfo = restaurantinfo;
-		this.loginName = loginName;
-		this.password = password;
+		this.logininfo = logininfo;
+		this.name = name;
 	}
 
 	// Property accessors
@@ -52,20 +46,20 @@ public abstract class AbstractManagerinfo implements java.io.Serializable {
 		this.restaurantinfo = restaurantinfo;
 	}
 
-	public String getLoginName() {
-		return this.loginName;
+	public Logininfo getLogininfo() {
+		return this.logininfo;
 	}
 
-	public void setLoginName(String loginName) {
-		this.loginName = loginName;
+	public void setLogininfo(Logininfo logininfo) {
+		this.logininfo = logininfo;
 	}
 
-	public String getPassword() {
-		return this.password;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 }

@@ -1,5 +1,8 @@
 package fish.ui.user;
+import java.io.IOException;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -54,29 +57,52 @@ public class Login extends ActionSupport implements ServletRequestAware, Servlet
 		currUser = (LoginedUser)request.getSession().getAttribute("currUser");
 		Session se = HibernateSessionFactory.getSession();
 		Criteria crit = se.createCriteria(Logininfo.class);
-		//crit.add(Restrictions.eq("loginName", loginName));
+		crit.add(Restrictions.eq("loginName", loginName));
+		crit.add(Restrictions.eq("password", password));
 		List<Logininfo> infos = crit.list();
-		
-		boolean login = false;
-		for(Logininfo info:infos) {
-			if(loginName.equals(info.getLoginName())) {
-				if(password.equals(info.getPassword())) {
-					System.out.println("Login_Action:LoginID:" + info.getLoginId());
-					currUser.setId(info.getCustomerinfo().getCustomerId());
-					currUser.setFirstname(info.getCustomerinfo().getFirstName());
-					login = true;
-					request.getSession().setAttribute("currUser", currUser);
-					
-					mycart = new Cart() ;
-					
-					break;
-				}
-			}			
-		}
-		if(!login) {
+		if (infos.size() <= 0) {
 			this.addActionError("用户名或密码错误!");
+		} else if (infos.size() == 1) {
+			
+			Logininfo info = infos.get(0);
+			System.out.println("Login_Action:LoginID:" + info.getLoginId());
+			String authority = info.getAuthority().getAuthorName();
+			
+			if (authority.equals("customer")) {	
+				Set set = info.getCustomerinfos();
+				Iterator it = set.iterator();
+				while(it.hasNext()) {
+					Customerinfo customer = (Customerinfo)it.next();
+					System.out.println(customer.getCustomerId());
+					currUser.setId(customer.getCustomerId());
+					currUser.setFirstname(customer.getFirstName());
+				}
+
+				request.getSession().setAttribute("currUser", currUser);
+				
+				mycart = new Cart() ;
+						
+			} else if (authority.equals("manager")) {
+				try {
+					response.sendRedirect("Manager.jsp");
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			} else if (authority.equals("admin")) {
+				try {
+					response.sendRedirect("Admin.jsp");
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			
+			
+			
+			//加一些登陆判断的语句： 比如说判断currUser的种类，或者权限，啥的。。。。
+			HibernateSessionFactory.closeSession();	
 		}
-		
 	}
 	@Override
 	public void setServletRequest(HttpServletRequest request) {
@@ -88,4 +114,5 @@ public class Login extends ActionSupport implements ServletRequestAware, Servlet
 		// TODO Auto-generated method stub
 		this.response = response;
 	}
+	
 }

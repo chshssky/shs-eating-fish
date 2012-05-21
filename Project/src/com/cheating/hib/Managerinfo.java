@@ -12,15 +12,10 @@ public class Managerinfo extends AbstractManagerinfo implements
 	public Managerinfo() {
 	}
 
-	/** minimal constructor */
-	public Managerinfo(String loginName, String password) {
-		super(loginName, password);
-	}
-
 	/** full constructor */
-	public Managerinfo(Restaurantinfo restaurantinfo, String loginName,
-			String password) {
-		super(restaurantinfo, loginName, password);
+	public Managerinfo(Restaurantinfo restaurantinfo, Logininfo logininfo,
+			String name) {
+		super(restaurantinfo, logininfo, name);
 	}
 
 }

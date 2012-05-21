@@ -14,15 +14,13 @@
 			jdbc:mysql://localhost:3306
 		</property>
 		<property name="connection.username">root</property>
-		<property name="connection.password">1234</property>
+		<property name="connection.password">330330</property>
 		<property name="connection.driver_class">
 			com.mysql.jdbc.Driver
 		</property>
-		
-		<property name="myeclipse.connection.profile">
-			eating
-		</property>
-	
+
+		<property name="myeclipse.connection.profile">driver</property>
+
 		<mapping resource="com/cheating/hib/Restaurantinfo.hbm.xml" />
 		<mapping resource="com/cheating/hib/Logininfo.hbm.xml" />
 		<mapping resource="com/cheating/hib/Courseinfo.hbm.xml" />
@@ -32,6 +30,8 @@
 		<mapping resource="com/cheating/hib/Orderinfo.hbm.xml" />
 		<mapping resource="com/cheating/hib/Ordercourses.hbm.xml" />
 		<mapping resource="com/cheating/hib/Customerinfo.hbm.xml" />
+		<mapping resource="com/cheating/hib/Coursetype.hbm.xml" />
+		<mapping resource="com/cheating/hib/Authority.hbm.xml" />
 
 	</session-factory>
 

@@ -41,23 +41,27 @@ public class Register extends ActionSupport{
 	public void validate() {
 		if(password != null && repassword != null){
 			if(!repassword.equals(password))
-				this.addActionError("Confirm should be equal to the password");
+				this.addActionError("两次输入密码不一致");
 		}
 	}
 	public void register() {
+		Session se = HibernateSessionFactory.getSession();
+		
 		Logininfo in = new Logininfo();
 		Customerinfo cu = new Customerinfo();
+		Authority au = (Authority)se.load(Authority.class, 1);
 		
 		cu.setEmail(email);
 		cu.setFirstName(firstname);
 		cu.setLastName(lastname);
 		cu.setTelephoneNum(telephonenum);
+		cu.setLogininfo(in);
 		
 		in.setLoginName(username);
 		in.setPassword(password);
-		in.setCustomerinfo(cu);
+		in.setAuthority(au);
 		
-		Session se = HibernateSessionFactory.getSession();
+		
 		Transaction tran = se.beginTransaction();
 		se.save(cu);
 		se.save(in);
@@ -66,7 +70,7 @@ public class Register extends ActionSupport{
 	}
 	public String execute() throws Exception{
 		register();
-		return "success";
+		return SUCCESS;
 		
 	}
 	public String getTelephonenum() {

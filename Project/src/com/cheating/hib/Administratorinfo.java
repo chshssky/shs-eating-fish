@@ -13,8 +13,8 @@ public class Administratorinfo extends AbstractAdministratorinfo implements
 	}
 
 	/** full constructor */
-	public Administratorinfo(String loginName, String password) {
-		super(loginName, password);
+	public Administratorinfo(Logininfo logininfo, String name) {
+		super(logininfo, name);
 	}
 
 }
