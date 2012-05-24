@@ -32,24 +32,6 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
 		height:30px;
 		overflow:hidden;
 	}
-	<%--td
-	{ 
-		background:#ff66cc; 
-		border-left:10px solid #ff99ff; 
-		border-top:3px solid #ff99ff; 
-		border-bottom:3px solid #ff33cc; 
-		border-right:10px solid #ff33cc;
-		}
-		--%>
-	<%--.bar
-	{
-		font:12px;   
-		background:buttonface;
-		color:#000000;
-		border:1px solid buttonface;
-		cursor:default;   
-		behavior:url(img/button.htc)
-	}--%>
  
 	td
 	{
@@ -108,7 +90,7 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
     </tr>
 	
 	<%
-		for(Courseinfo info: courseinfos)
+		for(Courseinfo info:courseinfos)
 		{
 	%>	
 			<tr>

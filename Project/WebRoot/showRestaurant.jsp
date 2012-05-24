@@ -1,17 +1,15 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8" import="javax.swing.JOptionPane"%>
-<%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
-
+<%@ page language="java" import="java.util.*" 
+import="com.cheating.hib.*" 
+import="org.hibernate.Criteria" 
+import="org.hibernate.Session"
+import="hibernate.*"
+import="org.hibernate.criterion.Restrictions"
+pageEncoding="UTF-8" import="javax.swing.JOptionPane"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-    <base href="<%=basePath%>">
-    
     <title>My JSP 'test.jsp' starting page</title>
-    
-	<meta http-equiv="pragma" content="no-cache">
+   	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
@@ -40,12 +38,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <table>
     <tr><td>你想浏览哪个饭店的菜肴呢？</td></tr>
     <tr><td><a href="showCourse.jsp?id=0" target="right" >全部店家</a></td></tr>
-    <tr><td><a href="showCourse.jsp?id=1" target="right">禾风韩国烧烤 五角场店</a></td></tr>
-    <tr><td><a href="showCourse.jsp?id=2" target="right">豆捞坊 五角场店</a></td></tr>
-    <tr><td><a href="showCourse.jsp?id=3" target="right">又一会</a></td></tr>
-    <tr><td><a href="showCourse.jsp?id=4" target="right">万裕采蝶轩 又一城店</a></td></tr>
-    <tr><td><a href="showCourse.jsp?id=5" target="right">观景台</a></td></tr>
-    <tr><td><a href="showCourse.jsp?id=6" target="right">晶采轩 虹桥店</a></td></tr>
+    <%
+		Session se = HibernateSessionFactory.getSession();
+    	Criteria crit = se.createCriteria(Restaurantinfo.class);
+    	List<Restaurantinfo> restinfos = crit.list();
+		for(Restaurantinfo info:restinfos)
+		{
+	%>
+    
+    <tr><td><a href="showCourse.jsp?id=<%=info.getRestaurantId()%>" target="right"><%=info.getName()%></a></td></tr>
+    <% } %>
     </table>
     
   </body>
