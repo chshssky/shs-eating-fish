@@ -16,8 +16,8 @@
 			<s:textfield name="username" cssStyle="background:url(text_field.png)" label="用户"/>
 			<s:password name="password" cssStyle="background:url(text_field.png)" label="密码"/>
 			<s:password name="repassword" cssStyle="background:url(text_field.png)" label="确认密码"/>
-			<s:textfield name="firstname" cssStyle="background:url(text_field.png)" label="�/>
-			<s:textfield name="lastname" cssStyle="background:url(text_field.png)" label="�/>
+			<s:textfield name="firstname" cssStyle="background:url(text_field.png)" label="姓"/>
+			<s:textfield name="lastname" cssStyle="background:url(text_field.png)" label="名"/>
 			<s:textfield name="telephonenum" cssStyle="background:url()" label="电话号码"/>
 			<s:textfield name="email" cssStyle="background:url(text_field.png)" label="邮箱"/>
 			<s:submit value="注册"/>
