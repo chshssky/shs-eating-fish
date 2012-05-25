@@ -29,7 +29,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   		<h1><font color="#9933FF">欢迎登陆</font></h1>
   		<div class="wrapper">
   		<div class="ribbon">欢迎登陆&nbsp&nbsp&nbsp&nbsp<a href="register.jsp"><I>注册</I></a></div>
-  		<a href="index.jsp">返回</a></
+  		<a href="index.jsp">返回</a>
   		<div class="loginwrapper">
 		<s:form action="login_check">
 			<s:textfield name="loginName" label="用户"></s:textfield><br/>
