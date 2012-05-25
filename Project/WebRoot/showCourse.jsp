@@ -32,24 +32,6 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
 		height:30px;
 		overflow:hidden;
 	}
-	<%--td
-	{ 
-		background:#ff66cc; 
-		border-left:10px solid #ff99ff; 
-		border-top:3px solid #ff99ff; 
-		border-bottom:3px solid #ff33cc; 
-		border-right:10px solid #ff33cc;
-		}
-		--%>
-	<%--.bar
-	{
-		font:12px;   
-		background:buttonface;
-		color:#000000;
-		border:1px solid buttonface;
-		cursor:default;   
-		behavior:url(img/button.htc)
-	}--%>
  
 	td
 	{
@@ -81,7 +63,7 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
   <body>
 
     <%
-    	int id =Integer.valueOf(request.getParameter("id"));
+       	int id =Integer.valueOf(request.getParameter("param"));
     	Session se = HibernateSessionFactory.getSession();
     	Criteria crit = se.createCriteria(Courseinfo.class);
     	if(id != 0)
@@ -95,7 +77,7 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
     	}
     	List<Courseinfo> courseinfos = crit.list();
     %>
-    <h2 align="right" ><font color="#FF99FF"><a href="index.jsp">返回</a></font></h2>
+    <h4 align="right" ><font color="#FF99FF"><a href="index.jsp">返回</a></font></h4>
     <table align="center" border="2">
 	<tr>
 	<th colspan="4"><h3>菜肴信息</h3></th>
@@ -108,7 +90,7 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
     </tr>
 	
 	<%
-		for(Courseinfo info: courseinfos)
+		for(Courseinfo info:courseinfos)
 		{
 	%>	
 			<tr>
