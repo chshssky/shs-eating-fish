@@ -1,0 +1,16 @@
+@CHARSET "UTF-8";
+div.restaurant
+{
+	padding-left:50px;
+	padding-top:55px;
+	width:230px;
+	height:384px;
+	float:left;
+}
+div.course
+{
+	margin-left:80px;
+	width:850px;
+	height:auto;
+	float:left;
+}

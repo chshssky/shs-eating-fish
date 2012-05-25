@@ -63,7 +63,7 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
   <body>
 
     <%
-    	int id =Integer.valueOf(request.getParameter("id"));
+       	int id =Integer.valueOf(request.getParameter("param"));
     	Session se = HibernateSessionFactory.getSession();
     	Criteria crit = se.createCriteria(Courseinfo.class);
     	if(id != 0)
@@ -77,7 +77,7 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
     	}
     	List<Courseinfo> courseinfos = crit.list();
     %>
-    <h2 align="right" ><font color="#FF99FF"><a href="index.jsp">返回</a></font></h2>
+    <h4 align="right" ><font color="#FF99FF"><a href="index.jsp">返回</a></font></h4>
     <table align="center" border="2">
 	<tr>
 	<th colspan="4"><h3>菜肴信息</h3></th>
