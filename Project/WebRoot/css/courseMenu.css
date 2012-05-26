@@ -1,0 +1,46 @@
+@CHARSET "UTF-8";
+.accordion
+{
+	background:#eee;
+	border:1px solid #999;
+	margin:2em;
+	width:300px;
+}
+.accordion h2
+{
+	maring:0;
+	padding:12px 0;
+	background:#ccc;
+}
+.accordion .section
+{
+	border-bottom:1px solid #ccc;
+	background:#fff;
+}
+
+.accordion h3
+{
+	margin:0;
+	padding:0;
+	background:#eee;
+	padding:3px 1em;
+}
+.accordion h3 a
+{
+	font-weight:normal;
+	text-decoration:none;
+}
+.accordion :target h3 a{font-weight:bold;}
+.accordion h3 + div
+{
+	height:0;
+	padding:0 1em;
+	overflow:hidden;
+	-webkit-transition:height 0.3s ease-in;
+}
+.accordion h3 + div form {margin:4px;}
+.accordion :target h3 + div
+{
+	height:200px;
+	overflow:auto;
+}

@@ -14,23 +14,46 @@ body>#wrap
 }
 div.head
 {
-	background-image:url(head.jpg);
-	height:230px;
+	background-image:url(head.png);
+	height:100px;
 	width:1270px;
 }
+div.logo
+{
+	height:100px;
+	width:126px;
+	float:left;
+}
+
 h1
 {
-	color:#9999CC;
-	font-family:Kristen ITC;
+	color:#CC0033;
+	font-size:32px;
+	font-family:Kristen ITC,华文行楷;
+	display : inline
 }
-div.block2
+h2
+{
+	color:#3300FF ;
+	font-size:32px;
+	font-family:Kristen ITC,华文行楷;
+	display : inline
+}
+div.ifLogin
 {
 	font-color:#FFCCCC;
 	size:30px;
-	float:left;
+	float:right;
+	margin-right:100px;
+	padding-top:50px;
 
 }
-
+div.welcome
+{
+	margin-left:150px;
+	float:left;
+	
+}
 div.block3
 {
 	color:#FFCCCC;
@@ -40,15 +63,17 @@ div.block3
 }
 a
 {
-	color:#FFCCCC;
+	color:#FFFF00;
+	font-family:华文行楷;
+	font-size:30px;
 }
 a:link,a.visited
 {
-	color:#FFCCCC;
+	color:#330000;
 }
 a:hover
 {
-	color:#FF66CC;
+	color:#33CCCC;
 }
 #foot
 {
@@ -57,6 +82,6 @@ a:hover
 	width:1270px;
 	clear:both;
 	margin-top:-70px;
-	background:#3399FF;
+	background:#FF6600;
 	float:bottom;
 }
