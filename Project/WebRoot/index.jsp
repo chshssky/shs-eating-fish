@@ -12,15 +12,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <base href="<%=basePath%>">
     
     <title>网上订餐系统</title>
-	
+	<%--  --%>
   </head>
   
-  <body bgcolor="#CCCCFF">
+  <body bgcolor="#FFCC99">
   <div id="wrap">
   <div id="main">
   <div class="head">
-  <h1>welcome to EFC&nbsp;&nbsp;&nbsp;欢迎来到EFC网上订餐系统</h1>
-  <div class="block2">
+  <div class="logo">
+   <a href="showRestaurant.jsp?id=0"><img src="logo5.png" width="126" height="100"/></a>
+  </div>
+  <div class="welcome">
+ <h1>Welcome to</h1><h2> EFC </h2><br/><h1>欢迎来到</h1><h2>EFC</h2><h1>网上订餐系统</h1>
+  </div>
+  <div class="ifLogin">
   <jsp:useBean id="currUser" scope="session" class="com.cheating.SessionBean.LoginedUser"></jsp:useBean>
   	<%
   		System.out.println("index.jsp:LoginID:" + currUser.getId());
@@ -38,7 +43,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       <div class="block3">
     
      <a href="showRestaurant.jsp?id=0">餐馆信息</a>
-
+    
      </div>
   
   </div>
