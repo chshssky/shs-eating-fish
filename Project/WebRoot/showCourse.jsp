@@ -6,6 +6,9 @@ import="hibernate.*"
 import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
 <%-- <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">--%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<link rel="stylesheet" media="screen" type="text/css" href="css/RestaurantDetail.css"/>
+
 <html xmls="http://www.w3.org/1999/xhtml">
   <head>
   	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
@@ -61,7 +64,6 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
   
   
   <body>
-
     <%
        	int id =Integer.valueOf(request.getParameter("param"));
     	Session se = HibernateSessionFactory.getSession();
@@ -71,12 +73,26 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
     		Criteria crit2 = se.createCriteria(Restaurantinfo.class);
 			crit2.add(Restrictions.eq("restaurantId", id));
 			List<Restaurantinfo> restinfos = crit2.list();
-			
+			Iterator<Restaurantinfo> restlist = restinfos.iterator() ;
+		
 			crit.add(Restrictions.eq("restaurantinfo", restinfos.get(0)));
 			
-    	}
-    	List<Courseinfo> courseinfos = crit.list();
+			Restaurantinfo rest = new Restaurantinfo() ;
+			if(restlist.hasNext())
+    		{
+    			rest = restlist.next() ;
+    		} 
     %>
+    
+   			<div class="logo"><h1>欢迎来到~<%=rest.getName() %> </h1></div>
+   			<div class="desc"><h3><%=rest.getDescript() %></h3></div>
+   			
+    
+    <%	
+    	}
+    	
+    	List<Courseinfo> courseinfos = crit.list();
+     %>
     <h4 align="right" ><font color="#FF99FF"><a href="index.jsp">返回</a></font></h4>
     <table align="center" border="2">
 	<tr>
@@ -100,6 +116,7 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
 			<td align="center">
 			<form action="put_cart">
        		<input type="hidden" name="id" id="id" value=<%=info.getCourseId()%>></input>
+       		<input type="hidden" name="restaurant_id" value=<%=id%>></input>
        		<input type="text" name="course_count" id="course_count" size="3"></input>
        		<input type="submit" name="submit" value="加入购物车"></input>
        		</form>

@@ -12,14 +12,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <base href="<%=basePath%>">
     
     <title>网上订餐系统</title>
-	
+	<%--  --%>
   </head>
   
-  <body bgcolor="#CCCCFF">
+  <body bgcolor="#FFCC99">
   <div id="wrap">
 		<div class="head">
-		  <h1>welcome to EFC&nbsp;&nbsp;&nbsp;欢迎来到EFC网上订餐系统</h1>
-			<div class="block2">
+  <div id="main">
+  <div class="head">
+  <div class="logo">
+   <a href="showRestaurant.jsp?id=0"><img src="logo5.png" width="126" height="100"/></a>
+  </div>
+  <div class="welcome">
+ <h1>Welcome to</h1><h2> EFC </h2><br/><h1>欢迎来到</h1><h2>EFC</h2><h1>网上订餐系统</h1>
+  </div>
+  <div class="ifLogin">
 			<jsp:useBean id="currUser" scope="session" class="com.cheating.SessionBean.LoginedUser"></jsp:useBean>
 			<%
 				System.out.println("index.jsp:LoginID:" + currUser.getId());
@@ -34,23 +41,40 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				}
 			%>
 			 </div>
-			
+  <jsp:useBean id="currUser" scope="session" class="com.cheating.SessionBean.LoginedUser"></jsp:useBean>
+  	<%
+  		System.out.println("index.jsp:LoginID:" + currUser.getId());
+  		if(currUser.getId() == 0) {
+  	 %>
+    <jsp:include page="HeadLoggedout.jsp"></jsp:include>
+    <%
+    	} else {
+     %>
+     <jsp:include page="HeadLoggedin.jsp"></jsp:include>
+     <%
+     	}
+      %>
+      </div>
+      <div class="block3">
+    
+     <a href="showRestaurant.jsp?id=0">餐馆信息</a>
+    
 		</div>
 		<div class="block4">
 		<jsp:include page="courseMenu.jsp"></jsp:include>
 		</div>
-		 <div class="block3">		
-			<a href="showRestaurant.jsp?id=0">餐馆信息</a>
-			</div>  
-		<div class="block5"><h1>woshizhu</h1></div>
-		
+  	<div >
+  	<jsp:include page="courseMenu.jsp"></jsp:include>
+  	</div>
+  </div>
+  
 		
 	</div>
 
 	
   	<div id="foot">
   	<center>
-    <h4>版权所有(copy right)</h4>
+    <h4>版权所�copy right)</h4>
     </center>
   </div>
 	

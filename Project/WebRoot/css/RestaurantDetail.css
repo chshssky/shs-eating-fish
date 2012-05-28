@@ -1,0 +1,26 @@
+@CHARSET "UTF-8" ;
+div.logo
+{
+	margin-left:50px;
+	float:left;
+}
+.logo h1
+{
+	color:#FF0066;
+	font-size:50px;
+	font-family:华文行楷;
+	display : inline
+}
+
+div.desc
+{
+	margin-left:70px;
+	float:left;
+}
+.desc h3
+{
+	color:#FFCC00;
+	font-size:20px;
+	font-family:楷体;
+	display : inline
+}

@@ -1,5 +1,6 @@
 package fish.operation.cart;
 
+import java.io.IOException;
 import java.util.Iterator;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,14 +15,16 @@ import com.opensymphony.xwork2.ActionSupport;
 
 import fish.ui.user.Login;
 
-public class PutCart extends ActionSupport implements ServletRequestAware{
+public class PutCart extends ActionSupport implements ServletRequestAware, ServletResponseAware{
 	//Cart mycart ;
 	
 	private int id ;
 	private int course_count ;
+	private int restaurant_id ;
 	private Item course ;
 	private LoginedUser currUser ;
 	private HttpServletRequest request;
+	private HttpServletResponse response;	
 	
 	public LoginedUser getCurrUser() {
 		return currUser;
@@ -40,7 +43,7 @@ public class PutCart extends ActionSupport implements ServletRequestAware{
 	}
 
 
-	public void put()
+	public void put() throws IOException
 	{
 		course = new Item() ;
 		if(course_count == 0)
@@ -76,7 +79,7 @@ public class PutCart extends ActionSupport implements ServletRequestAware{
 		
 		request.getSession().setAttribute("mycart", Login.getMycart()) ;
 		
-		
+		response.sendRedirect("showRestaurant.jsp?id=" + restaurant_id);
 	}
 	
 	
@@ -116,6 +119,19 @@ public class PutCart extends ActionSupport implements ServletRequestAware{
 
 	public void setServletRequest(HttpServletRequest request) {
 		this.request = request;
+	}
+
+	@Override
+	public void setServletResponse(HttpServletResponse response) {
+		this.response = response ;
+	}
+
+	public int getRestaurant_id() {
+		return restaurant_id;
+	}
+
+	public void setRestaurant_id(int restaurant_id) {
+		this.restaurant_id = restaurant_id;
 	}
 
 }
