@@ -41,7 +41,6 @@ pageEncoding="UTF-8" import="javax.swing.JOptionPane"%>
     <tr><td>你想浏览哪个饭店的菜肴呢？</td></tr>
     <tr><td><a href="showRestaurant.jsp?id=0" target="right" >全部店家</a></td></tr>
     <%
-		int id =Integer.valueOf(request.getParameter("id"));
 		Session se = HibernateSessionFactory.getSession();
     	Criteria crit = se.createCriteria(Restaurantinfo.class);
     	List<Restaurantinfo> restinfos = crit.list();
@@ -52,12 +51,13 @@ pageEncoding="UTF-8" import="javax.swing.JOptionPane"%>
     <tr><td><a href="showRestaurant.jsp?id=<%=info.getRestaurantId()%>" target="right"><%=info.getName()%></a></td></tr>
     <% 
     } 
+		int id =Integer.valueOf(request.getParameter("id"));
     	%>
     </table>
     </div>
     <%-- <%@ include file="showCourse.jsp？param=id2" %> --%>
     <div class="course">
-    <jsp:include page="showCourse.jsp"><jsp:param name="param" value="<%=id%>"/>
+    <jsp:include page="showCourse.jsp"><jsp:param name="param" value="<%=id%>"></jsp:param>
     </jsp:include>
     </div>
     
