@@ -38,11 +38,28 @@ div.block3
 	font-size:30px;
 	float:left;
 }
-a
+div.block4
+{
+	border-style:outset;
+	color:#000000;
+	margin-left:2px;
+	width:250px;
+ 	height:auto;
+ 	float:left;
+}
+div.block5
+{
+	float:left;
+}
+.block4 a
+{
+	color:#ffffff;
+}
+.head a
 {
 	color:#FFCCCC;
 }
-a:link,a.visited
+.head a:link,a.visited
 {
 	color:#FFCCCC;
 }
