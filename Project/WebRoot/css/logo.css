@@ -32,7 +32,7 @@ h1
 	font-family:Kristen ITC,华文行楷;
 	display : inline
 }
-h2
+.welcome h2
 {
 	color:#3300FF ;
 	font-size:32px;
@@ -61,19 +61,25 @@ div.block3
 	font-size:30px;
 	float:left;
 }
-a
+.ifLogin a
 {
 	color:#FFFF00;
 	font-family:华文行楷;
 	font-size:30px;
 }
-a:link,a.visited
+.ifLogin a:link,a.visited
 {
 	color:#330000;
 }
-a:hover
+.ifLogin a:hover
 {
 	color:#33CCCC;
+}
+div.courseMenu
+{
+	float:left;
+	font-family:宋体;
+	font-size:20px;
 }
 #foot
 {

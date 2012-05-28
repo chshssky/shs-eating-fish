@@ -47,7 +47,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      </div>
   
   </div>
+  	<div >
+  	<jsp:include page="courseMenu.jsp"></jsp:include>
+  	</div>
   </div>
+  
     </div>
   <div id="foot">
   <center>
