@@ -17,6 +17,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body bgcolor="#FFCC99">
   <div id="wrap">
+		<div class="head">
   <div id="main">
   <div class="head">
   <div class="logo">
@@ -26,6 +27,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
  <h1>Welcome to</h1><h2> EFC </h2><br/><h1>欢迎来到</h1><h2>EFC</h2><h1>网上订餐系统</h1>
   </div>
   <div class="ifLogin">
+			<jsp:useBean id="currUser" scope="session" class="com.cheating.SessionBean.LoginedUser"></jsp:useBean>
+			<%
+				System.out.println("index.jsp:LoginID:" + currUser.getId());
+				if(currUser.getId() == 0) {
+			%>
+			<jsp:include page="HeadLoggedout.jsp"></jsp:include>
+			<%
+				} else {
+			%>
+			<jsp:include page="HeadLoggedin.jsp"></jsp:include>
+			<%
+				}
+			%>
+			 </div>
   <jsp:useBean id="currUser" scope="session" class="com.cheating.SessionBean.LoginedUser"></jsp:useBean>
   	<%
   		System.out.println("index.jsp:LoginID:" + currUser.getId());
@@ -44,19 +59,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
      <a href="showRestaurant.jsp?id=0">餐馆信息</a>
     
-     </div>
-  
-  </div>
+		</div>
+		<div class="block4">
+		<jsp:include page="courseMenu.jsp"></jsp:include>
+		</div>
   	<div >
   	<jsp:include page="courseMenu.jsp"></jsp:include>
   	</div>
   </div>
   
-    </div>
-  <div id="foot">
-  <center>
-     <h4>版权所有(copy right)</h4>
-     </center>
+		
+	</div>
+
+	
+  	<div id="foot">
+  	<center>
+    <h4>版权所有copy right)</h4>
+    </center>
   </div>
 	
   </body>
