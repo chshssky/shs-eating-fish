@@ -65,7 +65,7 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
   
   <body>
     <%
-       	int id =Integer.valueOf(request.getParameter("param"));
+       	int id = Integer.valueOf(request.getParameter("param"));
     	Session se = HibernateSessionFactory.getSession();
     	Criteria crit = se.createCriteria(Courseinfo.class);
     	if(id != 0)

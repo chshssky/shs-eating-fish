@@ -1,0 +1,42 @@
+@CHARSET "UTF-8";
+
+div.courseName
+{
+	color:#FF0033;
+	font-size:35px;
+	font-family:幼圆;
+	display : inline
+}
+
+
+div.des
+{
+	margin-top:50px;
+	margin-left:400px;
+	float:left;
+	color:#9900FF;
+	font-size:18px;
+	font-family:幼圆;
+	display : inline
+}
+
+div.putCart
+{
+	margin-top:100px;
+	margin-left:700px;
+	float:left;
+}
+.putCart h1
+{
+	color:#FF0000;
+	font-size:50px;
+	font-family:华文行楷;
+	display : inline
+}
+.putCart h2
+{
+	color:#FF3366;
+	font-size:18px;
+	font-family:幼圆;
+	display : inline
+}

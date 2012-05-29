@@ -146,7 +146,7 @@ values('万裕采蝶轩 又一城店','杨浦区淞沪路8号百联又一城6楼近翔殷',
 靠窗位釉彩玻璃吊灯，独现小资风情',2);
 insert into restaurantinfo(name, address, Descript, managerUpBound)
 values('观景台','浦东新区滨江大道2852号1楼沿江近丰和路',
-'　整幢通透明丽的玻璃墙，靠窗位可以欣赏令人炫目的外滩景色，占了黄浦江边游轮码头的绝好位置',5);
+'整幢通透明丽的玻璃墙，靠窗位可以欣赏令人炫目的外滩景色，占了黄浦江边游轮码头的绝好位置',5);
 insert into restaurantinfo(name, address, Descript, managerUpBound)
 values('晶采轩 虹桥店','长宁区虹桥路1937号西郊宾馆旁近虹许路',
 '店内私密幽静的包房，采用了古色古香的装饰风格，气派宽敞，装饰的雍容华贵',5);
@@ -169,7 +169,7 @@ insert into courseinfo(name, descript, price, RestaurantID, type) values
 
 
 insert into courseinfo(name, descript, price, RestaurantID, type) values
-('豆鼓蒸凤爪','，只需轻吮，便整骨脱出，口齿留香，就连啃着酥软的骨头也是一种乐趣。',18,3,5);
+('豆鼓蒸凤爪','只需轻吮，便整骨脱出，口齿留香，就连啃着酥软的骨头也是一种乐趣。',18,3,5);
 insert into courseinfo(name, descript, price, RestaurantID, type) values
 ('泰皇咖喱','挑选丰腴肥美的鲜活青蟹，配以鸽子熬制的高汤和原汁原味的泰式黄咖喱',168,3,1);
 

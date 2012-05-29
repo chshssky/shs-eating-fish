@@ -17,7 +17,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body bgcolor="#FFCC99">
   <div id="wrap">
-		<div class="head">
+  <div class="head">
   <div class="head">
   <div class="logo">
    <a href="showRestaurant.jsp?id=0"><img src="logo5.png" width="126" height="100"/></a>
@@ -42,7 +42,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</div>
   
       </div>
-       <div class="block4">
+     <div class="block4">
 		<jsp:include page="courseMenu.jsp"></jsp:include>
 	 </div>
      <div class="block3">

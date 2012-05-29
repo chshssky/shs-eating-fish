@@ -48,9 +48,9 @@ pageEncoding="UTF-8" import="javax.swing.JOptionPane"%>
 		{
 	%>
     
-    <tr><td><a href="showRestaurant.jsp?id=<%=info.getRestaurantId()%>" target="right"><%=info.getName()%></a></td></tr>
+    		<tr><td><a href="showRestaurant.jsp?id=<%=info.getRestaurantId()%>" target="right"><%=info.getName()%></a></td></tr>
     <% 
-    } 
+    	} 
 		int id =Integer.valueOf(request.getParameter("id"));
     	%>
     </table>
