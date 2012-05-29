@@ -62,21 +62,15 @@ div.block3
 	font-size:30px;
 	float:left;
 }
-div.block3
-{
-	color:#FFCCCC;
-	margin-left:60px;
-	font-size:30px;
-	float:left;
-}
 div.block4
 {
-	border-style:outset;
-	color:#000000;
-	margin-left:2px;
-	width:250px;
+	
+	color:#6699FF;
+	margin-left:0px;
+	width:300px;
  	height:auto;
  	float:left;
+ 	padding-left:0px;
 }
 div.block5
 {
@@ -84,7 +78,7 @@ div.block5
 }
 .block4 a
 {
-	color:#ffffff;
+	color:#0066FF;
 }
 .head a
 {
