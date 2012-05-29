@@ -3,8 +3,9 @@
 {
 	background:#eee;
 	border:1px solid #999;
-	margin:2em;
-	width:300px;
+	margin-left:15px;
+	width:240px;
+	
 }
 .accordion h2
 {
@@ -41,6 +42,6 @@
 .accordion h3 + div form {margin:4px;}
 .accordion :target h3 + div
 {
-	height:200px;
+	height:150px;
 	overflow:auto;
 }
