@@ -78,7 +78,7 @@ pageEncoding="UTF-8" import="javax.swing.JOptionPane"%>
     <% 
     	} 
 		int id =Integer.valueOf(request.getParameter("id"));
-    	%>
+    %>
     </table>
     </div>
     <%-- <%@ include file="showCourse.jsp？param=id2" %> --%>

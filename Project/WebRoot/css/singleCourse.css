@@ -2,10 +2,13 @@
 
 div.courseName
 {
+	margin-top:30px;
+	margin-left:300px;
+	float:left;
 	color:#FF0033;
 	font-size:35px;
 	font-family:幼圆;
-	display : inline
+	display : inline;
 }
 
 
@@ -18,6 +21,13 @@ div.des
 	font-size:18px;
 	font-family:幼圆;
 	display : inline
+}
+
+div.pic
+{
+	margin-top:100px;
+	margin-left:0px;
+	float:left;
 }
 
 div.putCart

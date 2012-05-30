@@ -26,7 +26,6 @@ public class PaymentAction extends ActionSupport{
 		Login.getMycart().getCart().clear() ;
 		JOptionPane.showMessageDialog(null, "Ô¤¶©³É¹¦") ;
 		return SUCCESS;
-		
 	}
 	
 	public String getAddress() {

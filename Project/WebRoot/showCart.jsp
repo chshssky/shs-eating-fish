@@ -40,12 +40,19 @@
 	}
 	tr:nth-child(even)
 	{
-		background-color:#f5fafe;
+		background-color:#FFFFCC;
+	}
+	tr:nth-child(odd)
+	{
+		background-color:#FFFF99;
 	}
 	</style>
 
+
+
+
 </head>
-<body bgcolor="#FFCCCC">
+<body>
 
 <div id="wrap">
 <div class="head">
