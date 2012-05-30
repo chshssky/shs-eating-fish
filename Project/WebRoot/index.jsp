@@ -18,9 +18,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body bgcolor="#FFCC99">
   <div id="wrap">
   <div class="head">
-  <div class="head">
   <div class="logo">
-   <a href="showRestaurant.jsp?id=0"><img src="logo5.png" width="126" height="100"/></a>
+   <a href="index.jsp"><img src="logo5.png" width="126" height="100"/></a>
   </div>
   <div class="welcome">
  <h1>Welcome to</h1><h2> EFC </h2><br/><h1>欢迎来到</h1><h2>EFC</h2><h1>网上订餐系统</h1>
@@ -41,7 +40,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			%>
 	</div>
   
-      </div>
+    </div>
      <div class="block4">
 		<jsp:include page="courseMenu.jsp"></jsp:include>
 	 </div>
@@ -52,7 +51,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	</div>
 
 	
-  	<div id="foot">
+  <div id="foot">
   	<center>
     <h4>版权所(@copy right)</h4>
     </center>

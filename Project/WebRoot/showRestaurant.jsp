@@ -6,6 +6,7 @@ import="hibernate.*"
 import="org.hibernate.criterion.Restrictions"
 pageEncoding="UTF-8" import="javax.swing.JOptionPane"%>
 <link rel="stylesheet" media="screen" type="text/css" href="css/showRestAndCours.css"/>
+<link rel="stylesheet" media="screen" type="text/css" href="css/logo.css"/>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmls="http://www.w3.org/1999/xhtml">
   <head>
@@ -21,16 +22,41 @@ pageEncoding="UTF-8" import="javax.swing.JOptionPane"%>
 
   </head>
   
-  <body topmargin="100" >
+  <body bgcolor="#FFFFCC">
+  
+<div id="wrap">  
+<div class="head">
+  <div class="logo">
+   <a href="index.jsp"><img src="logo5.png" width="126" height="100"/></a>
+  </div>
+  <div class="welcome">
+ 	<h1>Welcome to</h1><h2> EFC </h2><br/><h1>欢迎来到</h1><h2>EFC</h2><h1>网上订餐系统</h1>
+  </div>
+  <div class="ifLogin">
+			<jsp:useBean id="currUser" scope="session" class="com.cheating.SessionBean.LoginedUser"></jsp:useBean>
+			<%
+				System.out.println("index.jsp:LoginID:" + currUser.getId());
+				if(currUser.getId() == 0) {
+			%>
+			<jsp:include page="HeadLoggedout.jsp"></jsp:include>
+			<%
+				} else {
+			%>
+			<jsp:include page="HeadLoggedin.jsp"></jsp:include>
+			<%
+				}
+			%>
+ </div>
+</div>
+  
   <div class="restaurant">
-  	<jsp:useBean id="currUser" scope="session" class="com.cheating.SessionBean.LoginedUser"></jsp:useBean>
-  	<%-- <%! int id;%>--%>
+ <%-- <%! int id;%>--%>
   	<%
   		if(currUser.getId() != 0) 
   		{
   	 %>
  	<table>
- 		<tr><td><a href="putCart.jsp">我的购物车</a></td></tr>
+ 		<tr><td><a href="showCart.jsp">我的购物车</a></td></tr>
  		<tr/>
  		<tr/>
  	</table>
@@ -60,6 +86,13 @@ pageEncoding="UTF-8" import="javax.swing.JOptionPane"%>
     <jsp:include page="showCourse.jsp"><jsp:param name="param" value="<%=id%>"></jsp:param>
     </jsp:include>
     </div>
+   </div>
+   
+    <div id="foot">
+  		<center>
+    		<h4>版权所(@copy right)</h4>
+    	</center>
+  	</div>
     
   </body>
 </html>
