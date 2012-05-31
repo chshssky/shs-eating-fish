@@ -11,7 +11,7 @@
 	  	<%=currUser.getFirstname() %>
 	  	</a>!   	
     	<a href="orders.jsp">订单</a>
-    	<a href="putCart.jsp">购物车</a>
+    	<a href="showCart.jsp">购物车</a>
     	<a href="logout.jsp">登出</a>  <!-- 登出的时候删除购物车 -->
     </h3>
   </body>

@@ -18,48 +18,89 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
+
+	
   </head>
   
   <body>
+  </head>
+  
+  <body>
+  
+  <%
+  		if(request.getAttribute("needLogin") != null)
+  		{
+ %>
+  			<script>
+				alert("        请先登录"); 
+			</script>
+<%
+		}
+   %>
+   
+   
+  <!-- 
   <div id="wrap">
-  <div class="head">
+<div class="head">
   <div class="logo">
-   <a href="showRestaurant.jsp?id=0"><img src="logo5.png" width="126" height="100"/></a>
+   <a href="index.jsp"><img src="logo5.png" width="126" height="100"/></a>
   </div>
   <div class="welcome">
-  <font size="40px" color="#000033" face="华文行楷">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~~欢迎登陆~~</font>
+ 	<h1>Welcome to</h1><h2> EFC </h2><br/><h1>欢迎来到</h1><h2>EFC</h2><h1>网上订餐系统</h1>
   </div>
-  </div>
-  	<div class="right">
- 		<h1>亲爱的请登录</h1>
- 		<p>欢迎来到我们的订餐网</p>
- 		<p>希望您订餐过程愉快</p>
- 		<p>&nbsp; &nbsp; 全体工作人员寄语</p>
- 	</div>
+  <div class="ifLogin">
+			<jsp:useBean id="currUser" scope="session" class="com.cheating.SessionBean.LoginedUser"></jsp:useBean>
+			<%
+				System.out.println("index.jsp:LoginID:" + currUser.getId());
+				if(currUser.getId() == 0) {
+			%>
+			<jsp:include page="HeadLoggedout.jsp"></jsp:include>
+			<%
+				} else {
+			%>
+			<jsp:include page="HeadLoggedin.jsp"></jsp:include>
+			<%
+				}
+			%>
+ </div>
+</div>
+ -->
+
+  		<h1><font color="#9933FF">欢迎登陆</font></h1>
   		<div class="wrapper">
+  		<div class="ribbon">欢迎登陆&nbsp&nbsp&nbsp&nbsp<a href="register.jsp"><I>注册</I></a></div>
+  		<a href="index.jsp">返回</a>
   		<div class="loginwrapper">
 		<s:form action="login_check">
-			<s:textfield name="loginName" cssStyle="background:url(text_field.png)" label="用户"></s:textfield><br/>
-			<s:password name="password" cssStyle="background:url(text_field.png)" label="密码"></s:password>
-			<s:submit cssStyle="float:left; background:url(ok.jpg) 0px 0px;width:92px;height:31px;
+			<s:textfield name="loginName" label="用户"></s:textfield><br/>
+			<s:password name="password" label="密码"></s:password>
+			<s:submit cssStyle="float:left; background:url(login_btn.png) 0px 0px;width:92px;height:31px;
  		    border:0px; float:right;margin-right:20px;margin-top:5px;" value=""/><s:reset 
- 		    cssStyle="background:url(reset.jpg) 0px 0px;width:92px;height:31px;
+ 		    cssStyle="background:url(reset_bg.png) 0px 0px;width:92px;height:31px;
  		    border:0px; float:right;margin-right:20px;margin-top:5px;" value="" />
+			
+		
 		</s:form>
 		</div>
 		<div class="bottomwrapper">
- 		<a href="register.jsp">注册新用户</a>&nbsp;&nbsp;&nbsp;<a href="index.jsp">返回</a>
+ 		<a href="#">忘记密码</a><br/>
+ 		<a href="#">注册新用</a>
  		</div>
 		</div>
-		
- </div>
- <div id="foot2">
- <center>
- <h4>版权所有(@all rights reserved) eating; chshs ; fish</h4>
-    <h4>Any question please call 18801791172</h4>
+		<div class="right">
+ 		<h1>亲爱的请登录</h1>
+ 		<p>欢迎来到我们的订餐网</p>
+ 		<p>希望您订餐过程愉�/p>
+ 		<p>&nbsp &nbsp 全体工作人员寄语</p>
+ 	</div>
+<!-- 		
+</div>
+<div id="foot">
+  	<center>
+    	<h4>版权所(@copy right)</h4>
     </center>
- </div>
- 	
+</div>		
+ -->
 		
   </body>
 </html>

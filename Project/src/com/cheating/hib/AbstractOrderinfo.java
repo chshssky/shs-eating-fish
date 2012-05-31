@@ -16,6 +16,9 @@ public abstract class AbstractOrderinfo implements java.io.Serializable {
 	private Integer orderId;
 	private Customerinfo customerinfo;
 	private String address;
+	private String telephoneNum;
+	private String firstName;
+	private String lastName;
 	private Integer sumPrice;
 	private Timestamp orderTime;
 	private String state;
@@ -27,17 +30,16 @@ public abstract class AbstractOrderinfo implements java.io.Serializable {
 	public AbstractOrderinfo() {
 	}
 
-	/** minimal constructor */
-	public AbstractOrderinfo(String address) {
-		this.address = address;
-	}
-
 	/** full constructor */
 	public AbstractOrderinfo(Customerinfo customerinfo, String address,
+			String telephoneNum, String firstName, String lastName,
 			Integer sumPrice, Timestamp orderTime, String state,
 			Set ordercourseses) {
 		this.customerinfo = customerinfo;
 		this.address = address;
+		this.telephoneNum = telephoneNum;
+		this.firstName = firstName;
+		this.lastName = lastName;
 		this.sumPrice = sumPrice;
 		this.orderTime = orderTime;
 		this.state = state;
@@ -68,6 +70,30 @@ public abstract class AbstractOrderinfo implements java.io.Serializable {
 
 	public void setAddress(String address) {
 		this.address = address;
+	}
+
+	public String getTelephoneNum() {
+		return this.telephoneNum;
+	}
+
+	public void setTelephoneNum(String telephoneNum) {
+		this.telephoneNum = telephoneNum;
+	}
+
+	public String getFirstName() {
+		return this.firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return this.lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	public Integer getSumPrice() {

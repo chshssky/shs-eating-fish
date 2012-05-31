@@ -32,11 +32,11 @@
 		
 		<action name="rmv_course" class="fish.operation.cart.RmvCourseAction">
 			<result name="input">/RestaurantInfoMenu.jsp</result>
-			<result name="success">/putCart.jsp</result>
+			<result name="success">/showCart.jsp</result>
 		</action>
 		
 		<action name="submit_order" class="fish.operation.cart.SubmitOrderAction">
-			<result name="input">/putCart.jsp</result>
+			<result name="input">/showCart.jsp</result>
 			<result name="success">/payOrder.jsp</result>
 		</action>
 		
