@@ -16,6 +16,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body bgcolor="#FFCC99">
+  
+  <%
+  		if(request.getAttribute("orderSuc") != null)
+   		{
+   %>
+   			<script>
+   				alert("       预订成功") ;
+   			</script>
+   <%
+   		}
+   %>
+  
+  
   <div id="wrap">
   <div class="head">
   <div class="logo">
