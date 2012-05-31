@@ -22,6 +22,7 @@ import fish.ui.user.Login;
 
 public class SubmitOrderAction extends ActionSupport implements ServletRequestAware{
 	private HttpServletRequest request ;
+	private static int orderID ;
 	
 	private void create_order()
 	{
@@ -48,13 +49,21 @@ public class SubmitOrderAction extends ActionSupport implements ServletRequestAw
 		
 		orderInfo.setCustomerinfo(currCus) ;
 		orderInfo.setSumPrice(sum_price) ;
-		orderInfo.setAddress("temp") ;
 		orderInfo.setState("dealing") ;
+		orderInfo.setAddress("temp") ;
+		orderInfo.setLastName("temp") ;
 		Transaction tran = se.beginTransaction();
 		se.save(orderInfo);
 		se.save(orderCourses);
 		tran.commit();
 		HibernateSessionFactory.closeSession();
+		
+		orderID = orderInfo.getOrderId() ;
+	} 
+	
+	public static int curOrderID()
+	{
+		return orderID ;
 	}
 	
 	public void validate()

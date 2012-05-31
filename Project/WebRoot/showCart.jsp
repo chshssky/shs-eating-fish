@@ -123,7 +123,7 @@
 	</table>
 	<form action="submit_order">
 		总金额：<%=sum_price %>
-		<input type="submit" value="提交订单"></input>
+		<input type="submit" name="提交订单"></input>
 	</form>
 			
 </center>
