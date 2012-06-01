@@ -1,26 +1,19 @@
-<%@ page language="java" import="java.util.*" pageEncoding="gb2312"%>
-<link rel="stylesheet" media="screen" type="text/css" href="css/courseMenu.css"/>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmls="http://www.w3.org/1999/xhtml">
+<%@ page language="java" contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
-    <title>My JSP 'test.jsp' starting page</title>
-    
-
-  </head>
-  
-  <body>
-    <div class="accordion">
-    	<h2>this is a test</h2>
-    	<div id="one" class="section">
-    	<h3><a href="#one">ÕÛµşÀ¸1</a></h3>
-    	<div><img src="reset_bg.png"/></div>
-    	</div>
-    	<div id="two" class="section">
-    	<h3><a href="#two">ÕÛµşÀ¸2</a></h3>
-    	<div><img src="reset_bg.png"/></div>
-    	</div>
-    </div>
-  </body>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>æ·»åŠ æ§ä»¶</title>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.3"></script>
+</head>
+<body>
+<div style="width:800px;height:800px;border:1px solid gray" id="container"></div>
+</body>
 </html>
+<script type="text/javascript">
+
+var map = new BMap.Map("container");  
+map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);  
+map.addControl(new BMap.NavigationControl());  
+
+</script>

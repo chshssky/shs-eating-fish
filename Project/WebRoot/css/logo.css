@@ -1,13 +1,4 @@
 @CHARSET "UTF-8";
-html,body,#wrap
-{
-	height:100%;
-}
-body>#wrap
-{
-	height:auto;
-	min-height:100%;
-}
 #main
 {
 	padding-bottom:70px;
@@ -27,7 +18,7 @@ div.logo
 
 .welcome h1
 {
-	color:#CC0033;
+	color:#009933;
 	font-size:32px;
 	font-family:Kristen ITC,华文行楷;
 	display : inline
@@ -109,4 +100,11 @@ div.courseMenu
 	margin-top:-70px;
 	background:#FF6600;
 	float:bottom;
+}
+#foot2
+{
+	height:50px;
+	width:1270px;
+	clear:both;
+	background:#FF6600;
 }
