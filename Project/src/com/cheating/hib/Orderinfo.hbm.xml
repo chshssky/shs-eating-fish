@@ -14,7 +14,7 @@
             <column name="CustomerID" />
         </many-to-one>
         <property name="address" type="java.lang.String">
-            <column name="address" />
+            <column name="address" not-null="true" />
         </property>
         <property name="telephoneNum" type="java.lang.String">
             <column name="telephoneNum" length="15" />
@@ -23,13 +23,13 @@
             <column name="firstName" length="20" />
         </property>
         <property name="lastName" type="java.lang.String">
-            <column name="lastName" length="20" />
+            <column name="lastName" length="20" not-null="true" />
         </property>
         <property name="sumPrice" type="java.lang.Integer">
             <column name="sumPrice" />
         </property>
         <property name="orderTime" type="java.sql.Timestamp">
-            <column name="orderTime" length="0" />
+            <column name="orderTime" length="0" not-null="true" />
         </property>
         <property name="state" type="java.lang.String">
             <column name="state" length="20" />

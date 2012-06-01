@@ -89,7 +89,7 @@ public class PutCart extends ActionSupport implements ServletRequestAware, Servl
 		if(currUser.getId() == 0)
 		{
 			request.setAttribute("needLogin", "ÇëÏÈµÇÂ¼") ;
-			return INPUT;
+			return INPUT ;
 		}
 		
 		put() ;

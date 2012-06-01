@@ -32,9 +32,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   		{
  %>
   			<script>
-				alert("        请先登录"); 
+				alert("请先登录") ; 
 			</script>
-<%
+  <%
+		request.removeAttribute("needLogin") ;
 		}
    %>
    
@@ -90,7 +91,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="right">
  		<h1>亲爱的请登录</h1>
  		<p>欢迎来到我们的订餐网</p>
- 		<p>希望您订餐过程愉�/p>
+ 		<p>希望您订餐过程愉乐</p>
  		<p>&nbsp &nbsp 全体工作人员寄语</p>
  	</div>
 <!-- 		

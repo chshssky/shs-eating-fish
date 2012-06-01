@@ -26,7 +26,7 @@
             <column name="price" not-null="true" />
         </property>
         <property name="pic" type="java.lang.String">
-            <column name="pic" />
+            <column name="pic" length="200" />
         </property>
         <set name="ordercourseses" inverse="true">
             <key>

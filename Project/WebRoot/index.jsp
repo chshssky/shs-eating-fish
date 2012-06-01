@@ -16,15 +16,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body bgcolor="#FFCC99">
-  
+ 
   <%
   		if(request.getAttribute("orderSuc") != null)
    		{
    %>
    			<script>
-   				alert("       预订成功") ;
+   				alert("预订成功") ;
    			</script>
+   			
    <%
+   		request.removeAttribute("orderSuc") ;
    		}
    %>
   

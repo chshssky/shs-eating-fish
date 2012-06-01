@@ -1,28 +1,39 @@
-<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
-<%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
+<%@ page language="java" import="com.cheating.hib.*" import="org.hibernate.*" pageEncoding="UTF-8"%>
+<%@ page import="java.util.*" import="fish.man.manager.*" import="java.io.File"%>
+
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-    <base href="<%=basePath%>">
-    
-    <title>My JSP 'Manager.jsp' starting page</title>
-    
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
-
+    <title>manager page</title>
   </head>
   
   <body>
-    This is my JSP page. manager<br>
+
+   <%
+   		if(request.getAttribute("nullPath") != null)
+   		{
+   			out.print("<script>alert('"+request.getAttribute("nullPath")+"');</script>") ;
+   		}
+   		
+   		Path.setCurPath(request.getSession().getServletContext().getRealPath("/")) ;
+   		System.out.println(request.getSession().getServletContext().getRealPath("/")) ;
+   		String curPath = Path.getCurPath() ;
+   		String docPath = curPath + "/pictures" ;
+   		Path.setDocPath(docPath) ;
+   		
+		File picDoc = new File(docPath) ;
+		if(!picDoc.exists())
+		{
+			picDoc.mkdir() ;
+		}
+    %>
+    
+    <form action="uploadPic">
+    	请输入图片路径：<input type="text" name="picPath"></input>
+    	<input type="submit" value="上传"></input>
+    </form>
+    
+
   </body>
 </html>

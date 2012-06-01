@@ -45,6 +45,10 @@
 			<result name="success">/index.jsp</result>
 		</action>
 		
+		<action name="uploadPic" class="fish.man.manager.managerAction">
+			<result name="input">/manager.jsp</result> <!-- ????which page is needed -->
+			<result name="success">/manager.jsp</result>
+		</action>
 		
 	</package>
 </struts>    
