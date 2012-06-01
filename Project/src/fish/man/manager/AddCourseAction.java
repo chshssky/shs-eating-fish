@@ -14,7 +14,7 @@ import org.apache.struts2.interceptor.ServletRequestAware;
 import com.cheating.SessionBean.LoginedUser;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class managerAction extends ActionSupport implements ServletRequestAware {
+public class AddCourseAction extends ActionSupport implements ServletRequestAware {
 	private String picPath ;
 	private HttpServletRequest request ;
 	
@@ -22,13 +22,24 @@ public class managerAction extends ActionSupport implements ServletRequestAware 
 	{
 		File pic = new File(picPath) ;
 		if(!pic.exists())
+		{
+			request.setAttribute("nullPath", "图片路径错误") ;
 			return false ;
+		}
 		
 		System.out.println(picPath) ;
 		
 		try {
 			InputStream inStream = new FileInputStream(pic);
-	        FileOutputStream fs = new FileOutputStream(Path.getDocPath() + "/" + pic.getName()) ; 
+			File newPic = new File(Path.getDocPath() + "/" + pic.getName()) ;
+			if(newPic.exists())
+			{
+				request.setAttribute("nullPath", "请重命名图片") ;  //或者后面考虑把上传的图片改名为以饭店ID为前缀？
+				return false ;
+			}
+			
+	        FileOutputStream fs = new FileOutputStream(newPic) ; 
+	        
 	        byte[] buffer = new byte[1444] ;  
 	        int byteread = 0 ;        
 			while ( (byteread = inStream.read(buffer)) != -1)  
@@ -56,11 +67,8 @@ public class managerAction extends ActionSupport implements ServletRequestAware 
 		
 		if(loadPic())
 			return SUCCESS ;
-		else
-		{
-			request.setAttribute("nullPath", "图片路径错误") ;
+		else			
 			return INPUT ;
-		}
 	}
 
 	public String getPicPath() {

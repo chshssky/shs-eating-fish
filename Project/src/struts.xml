@@ -45,9 +45,9 @@
 			<result name="success">/index.jsp</result>
 		</action>
 		
-		<action name="uploadPic" class="fish.man.manager.managerAction">
-			<result name="input">/manager.jsp</result> <!-- ????which page is needed -->
-			<result name="success">/manager.jsp</result>
+		<action name="uploadPic" class="fish.man.manager.AddCourseAction">
+			<result name="input">/addCourse.jsp</result> <!-- ????which page is needed -->
+			<result name="success">/addCourse.jsp</result>
 		</action>
 		
 	</package>
