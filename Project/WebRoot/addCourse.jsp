@@ -11,7 +11,7 @@
     <title>manager page</title>
   </head>
   
-  <body bgcolor="#FF99CC">
+  <body bgcolor="#FFCC66">
 
    <%
    		if(request.getAttribute("nullPath") != null)
@@ -35,27 +35,14 @@
     <div id="wrap">
 	<div class="head">
 	  <div class="logo">
-	   <a href="index.jsp"><img src="logo5.png" width="126" height="100"/></a>
+	   <img src="logo5.png" width="126" height="100"/>
 	  </div>
 	  <div class="welcome">
 	 	<h1>Welcome to</h1><h2> EFC </h2><br/><h1>欢迎来到</h1><h2>EFC</h2><h1>网上订餐系统</h1>
-	  </div>
-	  <div class="ifLogin">
-				<jsp:useBean id="currUser" scope="session" class="com.cheating.SessionBean.LoginedUser"></jsp:useBean>
-				<%
-					System.out.println("index.jsp:LoginID:" + currUser.getId());
-					if(currUser.getId() == 0) {
-				%>
-				<jsp:include page="HeadLoggedout.jsp"></jsp:include>   //manager的要换吧？？
-				<%
-					} else {
-				%>
-				<jsp:include page="HeadLoggedin.jsp"></jsp:include>
-				<%
-					}
-				%>
+	 	<h2> &nbsp &nbsp &nbsp &nbsp  &nbsp  &nbsp &nbsp &nbsp Manager Page</h2>
+	 	&nbsp &nbsp &nbsp <a href="manager.jsp">return</a>
 	 </div>
-	</div>
+	 </div>
     
     <form action="uploadPic">
     	<div class="addCourse">
@@ -68,7 +55,7 @@
     	</div>
     </form>
     
-   	 </div>
+   	</div>
 	<div id="foot">
   		<center>
     		<h4>版权所(@copy right)</h4>

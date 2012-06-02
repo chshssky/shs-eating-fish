@@ -15,3 +15,82 @@ div.bar
 	float:left;
 	display:inline;
 }
+
+div.funcMenu
+{
+	margin-top:50px;
+	float:left;
+	font-size:22px;
+	color:#0033FF;
+	font-family:华文楷体;
+	display:inline;
+}
+
+div.infoName
+{
+	margin-top:50px;
+	margin-left:100px;
+	float:left;
+	display:inline;
+}
+
+.infoName h1
+{
+	font-size:25px;
+	color:#FF3366;
+	font-family:华文行楷
+}
+
+div.info
+{
+	margin-top:70px;
+	margin-left:10px;
+	float:left;
+	display:inline;
+}
+
+.info h2
+{
+	font-size:20px;
+	color:#FF3366;
+	font-family:华文行楷
+}
+
+div.cinfoName
+{
+	margin-top:50px;
+	margin-left:230px;
+	float:left;
+	display:inline;
+}
+
+.cinfoName h1
+{
+	font-size:25px;
+	color:#FF3366;
+	font-family:华文行楷
+}
+
+div.cinfo
+{
+	margin-top:70px;
+	margin-left:10px;
+	float:left;
+	display:inline;
+}
+
+.cinfo h2
+{
+	font-size:20px;
+	color:#FF3366;
+	font-family:华文行楷
+}
+
+div.up
+{
+	
+}
+div.down
+{
+	clear:both;
+}
