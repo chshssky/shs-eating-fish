@@ -1,4 +1,13 @@
 @CHARSET "UTF-8";
+html,body,#wrap
+{
+	height:100%;
+}
+body>#wrap
+{
+	height:auto;
+	min-height:100%;
+}
 #main
 {
 	padding-bottom:70px;
@@ -15,10 +24,16 @@ div.logo
 	width:126px;
 	float:left;
 }
+	div.eating
+ 	{
+ 		background-image:url("F:\test2.jpg");
+ 		width:100px;
+ 		height:100px;
+ 	}
 
-.welcome h1
+h1
 {
-	color:#009933;
+	color:#CC0033;
 	font-size:32px;
 	font-family:Kristen ITC,华文行楷;
 	display : inline
@@ -100,11 +115,4 @@ div.courseMenu
 	margin-top:-70px;
 	background:#FF6600;
 	float:bottom;
-}
-#foot2
-{
-	height:50px;
-	width:1270px;
-	clear:both;
-	background:#FF6600;
 }

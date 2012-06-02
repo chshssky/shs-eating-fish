@@ -59,7 +59,7 @@ import="java.util.*"%>
 			<div class="courseName"><%=info.getName() %></div>
 			
 			<div class="pic">
-				~~~此处放图片~~~
+				<img src="pictures/test2.jpg" height="100px" width="100px"/>
 			</div>
 			<div class="des">
 				<%=info.getDescript() %>

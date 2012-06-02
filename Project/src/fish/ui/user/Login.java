@@ -84,7 +84,7 @@ public class Login extends ActionSupport implements ServletRequestAware, Servlet
 						
 			} else if (authority.equals("manager")) {
 				try {
-					response.sendRedirect("Manager.jsp");
+					response.sendRedirect("manager.jsp");
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

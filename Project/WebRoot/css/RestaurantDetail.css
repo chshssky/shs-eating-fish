@@ -1,10 +1,10 @@
 @CHARSET "UTF-8" ;
-div.restName
+div.logo
 {
 	margin-left:50px;
 	float:left;
 }
-.restName h1
+.logo h1
 {
 	color:#FF0066;
 	font-size:50px;
@@ -15,8 +15,6 @@ div.restName
 div.desc
 {
 	margin-left:70px;
-	margin-top:15px;
-	margin-bottom:15px;
 	float:left;
 }
 .desc h3
@@ -25,10 +23,4 @@ div.desc
 	font-size:20px;
 	font-family:楷体;
 	display : inline
-}
-
-div.restBar
-{
-	margin-top:50px;
-	float:left;
 }
