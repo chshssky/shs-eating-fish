@@ -30,7 +30,11 @@
     %>
     
     <form action="uploadPic">
-    	请输入图片路径：<input type="text" name="picPath"></input>
+    	请选择菜的类别：<input type="text" name="courseType">//额。。现在先输入类的ID吧。。。<br/> 
+    	请输入菜名：<input type="text" name="courseName"><br/>
+    	请输入菜价：<input type="text" name="coursePrice"><br/>
+    	请输入菜的简介：<input type="text" name="courseDesc"><br/>
+    	请输入图片路径：<input type="text" name="picPath"></input><br/>
     	<input type="submit" value="上传"></input>
     </form>
     

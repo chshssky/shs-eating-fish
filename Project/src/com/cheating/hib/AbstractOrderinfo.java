@@ -31,11 +31,9 @@ public abstract class AbstractOrderinfo implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public AbstractOrderinfo(String address, String lastName,
-			Timestamp orderTime) {
+	public AbstractOrderinfo(String address, String lastName) {
 		this.address = address;
 		this.lastName = lastName;
-		this.orderTime = orderTime;
 	}
 
 	/** full constructor */
