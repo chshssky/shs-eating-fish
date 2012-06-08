@@ -52,7 +52,6 @@ import="org.hibernate.Criteria" import="org.hibernate.criterion.Restrictions"%>
     
     <s:form action="uploadPic">
     	<div class="addCourse">
-    	<!-- <div >请选择菜的类别：</div><div><input type="text" name="courseType">//额。。现在先输入类的ID吧。。.</div><br/> -->
     	<div>请选择菜的类别：
     		<select name="courseType">
     			<%

@@ -41,9 +41,8 @@ import="org.hibernate.criterion.Restrictions" import="java.util.*"%>
 			
 				<div class="info">
 					<h2><%=curRest.getDescript() %></h2>
-					<form action="modifyRest">
-    						<input type="submit" value="修改">
-    				</form>
+					
+    				<input type="button" value="修改" onclick="window.location='modifyRest.jsp'"/>
 				</div>
 			</div>
 			
