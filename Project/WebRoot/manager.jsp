@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html;" pageEncoding="UTF-8"%>
+<%@ page import="com.cheating.hib.*" import="org.hibernate.Session" import="org.hibernate.Criteria"
+import="org.hibernate.criterion.Restrictions" import="java.util.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <link rel="stylesheet" media="screen" type="text/css" href="css/logo.css"/>
 <link rel="stylesheet" media="screen" type="text/css" href="css/manager.css"/>
@@ -8,6 +10,14 @@
 		<title>Manager Page</title>
 	</head>
 	<body>
+		<% 
+			int restId = (Integer)request.getSession().getAttribute("restId") ; 
+			Session se = HibernateSessionFactory.getSession() ;
+			Restaurantinfo curRest = (Restaurantinfo)se.load(Restaurantinfo.class, restId) ;
+			Criteria courseList = se.createCriteria(Courseinfo.class) ;
+			courseList.add(Restrictions.eq("restaurantinfo", curRest));
+			Iterator<Courseinfo> courseIt = courseList.list().iterator() ;
+		 %>
 		<div id="wrap">
 		<div class="head">
 		  <div class="logo">
@@ -27,23 +37,30 @@
 			</div>
 			
 			
-			<div class="up">
 			<div class="infoName">
 				<h1>饭店信息：</h1>
-			</div>
-			<div class="info">
-				<h2>这是饭店信息</h2>
-			</div>
+			
+				<div class="info">
+					<h2><%=curRest.getDescript() %></h2>
+				</div>
 			</div>
 			
-			<div class="down">
 			<div class="cinfoName">
 				<h1>菜品信息：</h1>
+			
+				<div class="cinfo">
+				<%
+					while(courseIt.hasNext())
+					{
+						Courseinfo curCourse = courseIt.next() ;
+				 %>
+						<h2><%=curCourse.getName() %></h2>
+				<%
+					}
+				 %>
+				</div>
 			</div>
-			<div class="cinfo">
-				<h2>这是菜品信息</h2>
-			</div>
-			</div>
+			
 		</div>
 		
 		

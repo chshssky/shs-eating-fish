@@ -50,5 +50,6 @@
 			<result name="success">/addCourse.jsp</result>
 		</action>
 		
+		
 	</package>
 </struts>    

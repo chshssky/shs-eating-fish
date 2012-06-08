@@ -43,23 +43,23 @@ div.infoName
 
 div.info
 {
-	margin-top:70px;
-	margin-left:10px;
+	margin-top:10px;
+	margin-left:30px;
 	float:left;
 	display:inline;
+	width:200px;
 }
 
 .info h2
 {
 	font-size:20px;
-	color:#FF3366;
-	font-family:华文行楷
+	color:#0033FF;
+	font-family:华文楷体
 }
 
 div.cinfoName
 {
 	margin-top:50px;
-	margin-left:230px;
 	float:left;
 	display:inline;
 }
@@ -67,30 +67,23 @@ div.cinfoName
 .cinfoName h1
 {
 	font-size:25px;
+	margin-left:30px;
 	color:#FF3366;
 	font-family:华文行楷
 }
 
 div.cinfo
 {
-	margin-top:70px;
-	margin-left:10px;
+	margin-top:10px;
+	margin-left:60px;
 	float:left;
 	display:inline;
+	width:200px;
 }
 
 .cinfo h2
 {
 	font-size:20px;
-	color:#FF3366;
-	font-family:华文行楷
-}
-
-div.up
-{
-	
-}
-div.down
-{
-	clear:both;
+	color:#0033FF;
+	font-family:华文楷体
 }

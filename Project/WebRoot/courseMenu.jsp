@@ -27,8 +27,6 @@ import="java.util.*"%>
     			Coursetype type = typeinfo.next() ;
     			String idi = type.getTypeName();
     			String idii = "#" + type.getTypeName();
-    			System.out.println(idi);
-    			System.out.println(idii);
 		 %>
 		 	<%-- <table>
 		 	<tr>

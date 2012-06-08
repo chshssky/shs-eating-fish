@@ -1,5 +1,6 @@
 <%@ page language="java" import="com.cheating.hib.*" import="org.hibernate.*" pageEncoding="UTF-8"%>
-<%@ page import="java.util.*" import="fish.man.manager.*" import="java.io.File"%>
+<%@ page import="java.util.*" import="fish.man.manager.*" import="java.io.File"
+import="org.hibernate.Criteria" import="org.hibernate.criterion.Restrictions"%>
 
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -20,10 +21,14 @@
    		}
    		
    		Path.setCurPath(request.getSession().getServletContext().getRealPath("/")) ;
+   		Session se = HibernateSessionFactory.getSession() ;
    		System.out.println(request.getSession().getServletContext().getRealPath("/")) ;
    		String curPath = Path.getCurPath() ;
    		String docPath = curPath + "/pictures" ;
    		Path.setDocPath(docPath) ;
+   		
+   		Criteria cri = se.createCriteria(Coursetype.class) ;
+   		Iterator<Coursetype> typeit = cri.list().iterator() ;
    		
 		File picDoc = new File(docPath) ;
 		if(!picDoc.exists())
@@ -46,7 +51,18 @@
     
     <form action="uploadPic">
     	<div class="addCourse">
-    	<div >请选择菜的类别：</div><div><input type="text" name="courseType">//额。。现在先输入类的ID吧。。.</div><br/>
+    	<!-- <div >请选择菜的类别：</div><div><input type="text" name="courseType">//额。。现在先输入类的ID吧。。.</div><br/> -->
+    	<div>请选择菜的类别：
+    		<select name="courseType">
+    			<%
+    				while(typeit.hasNext()) 
+    				{
+    					String curName = typeit.next().getTypeName() ;
+    			%>
+    					<option value=<%=curName%>><%=curName %></option>
+    			<%	} %>
+    		</select>
+    	</div><br>
     	<div>请输入菜名：</div><div><input type="text" name="courseName"></div><br/>
     	<div>请输入菜价：</div><div><input type="text" name="coursePrice"></div><br/>
     	<div>请输入菜的简介：</div><div><input type="text" name="courseDesc"></div><br/>

@@ -16,7 +16,6 @@ import org.apache.struts2.interceptor.ServletResponseAware;
 import org.hibernate.*;
 import org.hibernate.criterion.Restrictions;
 
-import sun.org.mozilla.javascript.internal.Context;
 import fish.operation.cart.*;
 
 public class Login extends ActionSupport implements ServletRequestAware, ServletResponseAware {
@@ -84,7 +83,15 @@ public class Login extends ActionSupport implements ServletRequestAware, Servlet
 						
 			} else if (authority.equals("manager")) {
 				try {
-					response.sendRedirect("manager.jsp");
+					Set set = info.getManagerinfos() ;
+					Iterator it = set.iterator();
+					if(it.hasNext()) {
+						Managerinfo manager = (Managerinfo)it.next();
+						int restId = manager.getRestaurantinfo().getRestaurantId() ;
+						request.getSession().setAttribute("restId", restId);
+					
+						response.sendRedirect("manager.jsp");
+					}
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
