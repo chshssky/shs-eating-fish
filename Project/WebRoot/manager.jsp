@@ -33,7 +33,6 @@ import="org.hibernate.criterion.Restrictions" import="java.util.*"%>
 			<div class="funcMenu">
 				<a href="addCourse.jsp">添加新菜</a><br/><br/>
 				修改个人资料<br/><br/>
-				修改饭店信息<br/><br/>
 			</div>
 			
 			
@@ -42,6 +41,9 @@ import="org.hibernate.criterion.Restrictions" import="java.util.*"%>
 			
 				<div class="info">
 					<h2><%=curRest.getDescript() %></h2>
+					<form action="modifyRest">
+    						<input type="submit" value="修改">
+    				</form>
 				</div>
 			</div>
 			
@@ -49,15 +51,26 @@ import="org.hibernate.criterion.Restrictions" import="java.util.*"%>
 				<h1>菜品信息：</h1>
 			
 				<div class="cinfo">
+				
 				<%
 					while(courseIt.hasNext())
 					{
 						Courseinfo curCourse = courseIt.next() ;
-				 %>
-						<h2><%=curCourse.getName() %></h2>
+				 %>	
+				 		<form action="modifyCourse">
+				 		<div class="modifyButton">
+							<h2><%=curCourse.getName() %></h2>
+						</div>
+						<div class="modifyButton2">
+							<input type="hidden" name="courseID" value=<%=curCourse.getCourseId() %> />
+							&nbsp &nbsp<input type="submit" value="修改" />
+    					</div>
+    					</form>
+    				
 				<%
 					}
 				 %>
+				 
 				</div>
 			</div>
 			

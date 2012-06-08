@@ -50,6 +50,14 @@
 			<result name="success">/addCourse.jsp</result>
 		</action>
 		
+		<action name="modifyCourse" class="fish.man.manager.ModifyCourseAction">
+			<result name="input">/modifyCourse.jsp</result>
+			<result name="success">/modifyCourse.jsp</result>
+		</action>
 		
+		<action name="modifyOp" class="fish.man.manager.ModifyCourseAction">
+			<result name="input">/modifyCourse.jsp</result>
+			<result name="success">/manager.jsp</result>
+		</action>
 	</package>
 </struts>    
