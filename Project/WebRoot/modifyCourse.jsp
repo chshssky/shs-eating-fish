@@ -47,8 +47,10 @@ import="java.util.*"%>
 				<h1>名称：</h1>
 				<input type="text" value=<%=info.getName() %> name="modifyName" class="input2" />
 				<h1>类别：</h1>
-    			<select name="modifyType" class="input2"> //显示当前的类别
+    			<select name="modifyType" class="input2">
+    					<option value=<%=info.getCoursetype().getId() %>><%=info.getCoursetype().getTypeName() %></option>
 	    			<%
+	    				System.out.println(info.getCoursetype().getTypeName()) ;
 	    				while(typeit.hasNext()) 
 	    				{
 	    					Coursetype curType = typeit.next() ;
@@ -69,11 +71,12 @@ import="java.util.*"%>
 			</div><br>
 			
 			<div class="des">
-				<h1>简介：</h1><input type="text" value=<%=info.getDescript() %> name="modifyDesc" class="input" />
+				<h1>简介：</h1><textarea name="courseDesc" cols="50" rows="7" class="input2"><%=info.getDescript() %></textarea>
 			</div><br>
-			
+			<div>
        				<input type="hidden" name="courseID" value=<%=info.getCourseId()%>></input>
        				<input type="submit" name="submit" value="修改" class="input2"></input>
+       		</div>
        		</s:form>
        	</div>
 </div>

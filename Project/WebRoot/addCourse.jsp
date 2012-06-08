@@ -67,8 +67,9 @@ import="org.hibernate.Criteria" import="org.hibernate.criterion.Restrictions"%>
     	</div><br>
     	<div>请输入菜名：</div><div><input type="text" name="courseName"></div><br/>   	
     	<div>请输入菜价：</div><div><input type="text" name="coursePrice"></div><br/>
-    	<div>请输入菜的简介：</div><div><input type="text" name="courseDesc"></div><br/>
     	<div>请输入图片路径：</div><div><input type="text" name="picPath"></input></div><br/>
+    	<div>请输入菜的简介：</div>
+    	<div><textarea name="courseDesc" cols="50" rows="8"></textarea></div><br/>   	
     	<input type="submit" value="上传"></input>
     	</div>
     </s:form>

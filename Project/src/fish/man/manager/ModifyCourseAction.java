@@ -3,6 +3,7 @@ package fish.man.manager;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts2.interceptor.ServletRequestAware;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -11,15 +12,13 @@ import com.cheating.hib.Coursetype;
 import com.cheating.hib.HibernateSessionFactory;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class ModifyCourseAction extends ActionSupport implements ServletRequestAware{
+public class ModifyCourseAction extends ActionSupport {
 	private int courseID ;
 	private String modifyName ;
-	private String modifyType ;
+	private int modifyType ;
 	private String modifyPrice ;
 	private String modifyPic ;
 	private String modifyDesc ;
-
-	private HttpServletRequest request ;
 	
 	private void modify()
 	{
@@ -27,8 +26,9 @@ public class ModifyCourseAction extends ActionSupport implements ServletRequestA
 		Courseinfo curCourse = (Courseinfo) se.load(Courseinfo.class, courseID) ;
 		if(modifyName != null && !modifyName.isEmpty())
 			curCourse.setName(modifyName) ;
-		//类别还要再考虑怎么弄
 		
+		Coursetype type = (Coursetype) se.load(Coursetype.class, modifyType) ;
+		curCourse.setCoursetype(type) ;
 		if(modifyPrice != null && !modifyPrice.isEmpty())
 			curCourse.setPrice(Integer.valueOf(modifyPrice)) ;
 		if(modifyPic != null && !modifyPic.isEmpty())
@@ -42,12 +42,7 @@ public class ModifyCourseAction extends ActionSupport implements ServletRequestA
 	}
 	
 	public String execute() throws Exception {
-		if(request.getSession().getAttribute("if_modify") != null)
-		{
-			modify() ;
-			request.getSession().removeAttribute("if_modify") ;
-		}
-		request.getSession().setAttribute("courseID", courseID) ;
+		modify() ;
 		return SUCCESS ;
 	}
 
@@ -67,11 +62,11 @@ public class ModifyCourseAction extends ActionSupport implements ServletRequestA
 		this.modifyName = modifyName;
 	}
 
-	public String getModifyType() {
+	public int getModifyType() {
 		return modifyType;
 	}
 
-	public void setModifyType(String modifyType) {
+	public void setModifyType(int modifyType) {
 		this.modifyType = modifyType;
 	}
 
@@ -99,8 +94,4 @@ public class ModifyCourseAction extends ActionSupport implements ServletRequestA
 		this.modifyDesc = modifyDesc;
 	}
 
-	@Override
-	public void setServletRequest(HttpServletRequest request) {
-		this.request = request ;
-	}
 }

@@ -50,7 +50,7 @@
 			<result name="success">/addCourse.jsp</result>
 		</action>
 		
-		<action name="modifyCourse" class="fish.man.manager.ModifyCourseAction">
+		<action name="modifyCourse" class="fish.man.manager.PostIdAction">
 			<result name="input">/modifyCourse.jsp</result>
 			<result name="success">/modifyCourse.jsp</result>
 		</action>
