@@ -140,3 +140,20 @@ div.modifyButton2
 	font-size:16px;
 	color:#0033FF;
 }
+
+div.restinfo
+{
+	margin-top:50px;
+	margin-left:400px;
+	float:left;
+	display:inline;
+}
+
+.restinfo h1
+{
+	font-size:25px;
+	margin-left:30px;
+	color:#FF3366;
+	font-family:华文行楷
+	
+}

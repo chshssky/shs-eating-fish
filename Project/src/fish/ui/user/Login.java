@@ -89,7 +89,7 @@ public class Login extends ActionSupport implements ServletRequestAware, Servlet
 						Managerinfo manager = (Managerinfo)it.next();
 						int restId = manager.getRestaurantinfo().getRestaurantId() ;
 						request.getSession().setAttribute("restId", restId);
-					
+						request.getSession().setAttribute("curManager", manager);
 						response.sendRedirect("manager.jsp");
 					}
 				} catch (IOException e) {

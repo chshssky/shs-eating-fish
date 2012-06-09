@@ -36,7 +36,7 @@ public class ModifyCourseAction extends ActionSupport {
 		if(modifyDesc != null && !modifyDesc.isEmpty())
 			curCourse.setDescript(modifyDesc) ;
 		Transaction tran = se.beginTransaction() ;
-		se.save(curCourse) ;
+		se.update(curCourse) ;
 		tran.commit() ;
 		HibernateSessionFactory.closeSession() ;
 	}

@@ -15,7 +15,7 @@ import="java.util.*"%>
 	<title>Modify Course</title>
 </head>
 
-<body>
+<body bgcolor="#FFCC66">
 <div id="wrap">
 		<div class="head">
 		  <div class="logo">

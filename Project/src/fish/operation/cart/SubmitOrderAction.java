@@ -26,12 +26,12 @@ public class SubmitOrderAction extends ActionSupport implements ServletRequestAw
 	
 	private void create_order()
 	{
+		Session se = HibernateSessionFactory.getSession();
+		Transaction tran = se.beginTransaction();
 		Iterator<Item> order = Login.getMycart().getCart().iterator() ;
-		Ordercourses orderCourses = new Ordercourses() ;
+		
 		Orderinfo orderInfo = new Orderinfo() ;
 		int sum_price = 0 ;
-		
-		Session se = HibernateSessionFactory.getSession();
 		
 		while(order.hasNext())
 		{
@@ -39,9 +39,12 @@ public class SubmitOrderAction extends ActionSupport implements ServletRequestAw
 			Courseinfo course = (Courseinfo)se.load(Courseinfo.class, cur_order.getCourse_id()) ;
 			sum_price += course.getPrice() ;
 			
+			Ordercourses orderCourses = new Ordercourses() ;
 			orderCourses.setNum(cur_order.getCourse_num()) ;
 			orderCourses.setCourseinfo(course) ;
 			orderCourses.setOrderinfo(orderInfo) ;
+			
+			se.save(orderCourses);
 		}
 		
 		LoginedUser currUser = (LoginedUser)request.getSession().getAttribute("currUser") ;
@@ -52,9 +55,8 @@ public class SubmitOrderAction extends ActionSupport implements ServletRequestAw
 		orderInfo.setState("dealing") ;
 		orderInfo.setAddress("temp") ;
 		orderInfo.setLastName("temp") ;
-		Transaction tran = se.beginTransaction();
+		
 		se.save(orderInfo);
-		se.save(orderCourses);
 		tran.commit();
 		HibernateSessionFactory.closeSession();
 		

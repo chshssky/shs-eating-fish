@@ -9,7 +9,7 @@ import="org.hibernate.criterion.Restrictions" import="java.util.*"%>
 	<head>
 		<title>Manager Page</title>
 	</head>
-	<body>
+	<body bgcolor="#FFCC66">
 		<% 
 			int restId = (Integer)request.getSession().getAttribute("restId") ; 
 			Session se = HibernateSessionFactory.getSession() ;
@@ -32,7 +32,7 @@ import="org.hibernate.criterion.Restrictions" import="java.util.*"%>
 		<div>
 			<div class="funcMenu">
 				<a href="addCourse.jsp">添加新菜</a><br/><br/>
-				修改个人资料<br/><br/>
+				<a href="managerinfo.jsp">修改个人资料</a><br/><br/>
 			</div>
 			
 			
