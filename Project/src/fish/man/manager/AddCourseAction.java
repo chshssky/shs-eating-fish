@@ -17,6 +17,7 @@ import com.cheating.SessionBean.LoginedUser;
 import com.cheating.hib.Courseinfo;
 import com.cheating.hib.Coursetype;
 import com.cheating.hib.HibernateSessionFactory;
+import com.cheating.hib.Restaurantinfo;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class AddCourseAction extends ActionSupport implements ServletRequestAware {
@@ -26,9 +27,13 @@ public class AddCourseAction extends ActionSupport implements ServletRequestAwar
 	private String courseDesc ;
 	private String coursePrice ;
 	private HttpServletRequest request ;
+	private Restaurantinfo curRest ;
 	
 	private boolean loadPic()
 	{
+		Session se = HibernateSessionFactory.getSession() ;
+		int restId = (Integer)request.getSession().getAttribute("restId") ;
+		curRest = (Restaurantinfo) se.load(Restaurantinfo.class, restId) ;
 		File pic = new File(picPath) ;
 		if(!pic.exists())
 		{
@@ -41,7 +46,7 @@ public class AddCourseAction extends ActionSupport implements ServletRequestAwar
 		try {
 			InputStream inStream = new FileInputStream(pic);
 			//或者后面考虑把上传的图片改名为以饭店ID为前缀？			
-			File newPic = new File(Path.getDocPath() + "/" + pic.getName()) ; 
+			File newPic = new File(Path.getDocPath() + "/" + curRest.getRestaurantId() + pic.getName()) ; 
 			//newPic.renameTo(restName + name) ;
 			if(newPic.exists())
 			{
@@ -103,6 +108,7 @@ public class AddCourseAction extends ActionSupport implements ServletRequestAwar
 		newCourse.setPrice(Integer.valueOf(coursePrice)) ;
 		newCourse.setDescript(courseDesc) ;
 		newCourse.setPic(Path.getNewPicPath()) ;
+		newCourse.setRestaurantinfo(curRest) ;
 		
 		Transaction tran = se.beginTransaction() ;
 		se.save(newCourse) ;

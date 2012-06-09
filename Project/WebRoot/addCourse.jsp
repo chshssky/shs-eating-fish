@@ -2,6 +2,7 @@
 <%@ page import="java.util.*" import="fish.man.manager.*" import="java.io.File"
 import="org.hibernate.Criteria" import="org.hibernate.criterion.Restrictions"%>
 
+<%@ taglib uri="/struts-tags" prefix="s" %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <link rel="stylesheet" media="screen" type="text/css" href="css/logo.css"/>
@@ -49,32 +50,33 @@ import="org.hibernate.Criteria" import="org.hibernate.criterion.Restrictions"%>
 	 </div>
 	 </div>
     
-    <form action="uploadPic">
+    <s:form action="uploadPic">
     	<div class="addCourse">
-    	<!-- <div >请选择菜的类别：</div><div><input type="text" name="courseType">//额。。现在先输入类的ID吧。。.</div><br/> -->
     	<div>请选择菜的类别：
     		<select name="courseType">
     			<%
     				while(typeit.hasNext()) 
     				{
-    					String curName = typeit.next().getTypeName() ;
+    					Coursetype curType = typeit.next() ;
+    					
     			%>
-    					<option value=<%=curName%>><%=curName %></option>
+    					<option value=<%=curType.getId()%>><%=curType.getTypeName() %></option>	
     			<%	} %>
     		</select>
     	</div><br>
-    	<div>请输入菜名：</div><div><input type="text" name="courseName"></div><br/>
+    	<div>请输入菜名：</div><div><input type="text" name="courseName"></div><br/>   	
     	<div>请输入菜价：</div><div><input type="text" name="coursePrice"></div><br/>
-    	<div>请输入菜的简介：</div><div><input type="text" name="courseDesc"></div><br/>
     	<div>请输入图片路径：</div><div><input type="text" name="picPath"></input></div><br/>
+    	<div>请输入菜的简介：</div>
+    	<div><textarea name="courseDesc" cols="50" rows="8"></textarea></div><br/>   	
     	<input type="submit" value="上传"></input>
     	</div>
-    </form>
+    </s:form>
     
    	</div>
 	<div id="foot">
   		<center>
-    		<h4>版权所(@copy right)</h4>
+    		<h4>版权所有(@copy right)</h4>
     	</center>
 	</div> 
 
