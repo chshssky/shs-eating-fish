@@ -64,13 +64,15 @@ div.welcome
 div.block3
 {
 	color:#FFCCCC;
-	margin-left:60px;
+	margin-left:30px;
 	font-size:30px;
+	width:920px;
+	height:600px;
 	float:left;
 }
 div.block4
 {
-	
+	font-size:20px;	
 	color:#6699FF;
 	margin-left:0px;
 	width:300px;

@@ -61,9 +61,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	 </div>
      <div class="block3">
     	<a href="showRestaurant.jsp?id=0">餐馆信息</a>
+    	<jsp:include page="Maps.jsp"></jsp:include>
      </div>
 	
   	</div>
+  	
 
 	
   <div id="foot">
