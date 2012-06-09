@@ -38,6 +38,8 @@ create table RestaurantInfo
     Name varchar(50) not null,
     address varchar(255) not null,
     Descript varchar(255),
+    latitude float(10),
+    longtitude float(10),
     managerUpBound int(10),
     primary key(RestaurantID)
 );
@@ -73,6 +75,7 @@ create table OrderInfo
     lastName varchar(20) not null,
     sumPrice int(10),
     orderTime TIMESTAMP default current_timestamp,
+    demandTime DATETIME,
     state varchar(20) default 'dealing',
     CustomerID int(10),
     primary key(OrderID),
@@ -111,82 +114,82 @@ insert into authority(authorname) values('customer');
 insert into authority(authorname) values('manager');
 insert into authority(authorname) values('admin');
 
-insert into courseType(Typename) values('Ö÷Ê³');
-insert into courseType(Typename) values('ÒûÆ·');
-insert into courseType(Typename) values('Á¹²Ë');
-insert into courseType(Typename) values('³´²Ë');
-insert into courseType(Typename) values('ÕĞÅÆ');
-insert into courseType(Typename) values('ÌÀÀà');
-insert into courseType(Typename) values('ÌğÆ·');
-insert into courseType(Typename) values('º£ÏÊ');
-insert into courseType(Typename) values('ÅÅÀà');
-insert into courseType(Typename) values('ÓãÀà');
+insert into courseType(Typename) values('ä¸»é£Ÿ');
+insert into courseType(Typename) values('é¥®å“');
+insert into courseType(Typename) values('å‡‰èœ');
+insert into courseType(Typename) values('ç‚’èœ');
+insert into courseType(Typename) values('æ‹›ç‰Œ');
+insert into courseType(Typename) values('æ±¤ç±»');
+insert into courseType(Typename) values('ç”œå“');
+insert into courseType(Typename) values('æµ·é²œ');
+insert into courseType(Typename) values('æ’ç±»');
+insert into courseType(Typename) values('é±¼ç±»');
 
 insert into LoginInfo(LoginName, password, authority) values('ch', 'hc', 3);
 insert into LoginInfo(LoginName, password, authority) values('eating', 'gnitae', 3);
 insert into LoginInfo(LoginName, password, authority) values('fish', 'hsif', 3);
 
-insert into AdministratorInfo(Name, LoginID) values('´Şê»', 1);
-insert into AdministratorInfo(Name, LoginID) values('ÒâæÃ', 2);
-insert into AdministratorInfo(Name, LoginID) values('ÓÚº½', 3);
+insert into AdministratorInfo(Name, LoginID) values('å´”æ˜Š', 1);
+insert into AdministratorInfo(Name, LoginID) values('æ„å©·', 2);
+insert into AdministratorInfo(Name, LoginID) values('äºèˆª', 3);
 
 
 insert into restaurantinfo(name, address, Descript, managerUpBound) 
-values('ºÌ·çº«¹úÉÕ¿¾ Îå½Ç³¡µê','ÑîÆÖÇøäÁ»¦Â·151ºÅÖĞ»·¹ú¼Ê´óÏÃ1Â¥½üÕşÍ¨Â·',
- 'ºÌ·ç²ÍÌüµÄÁÏÀíÆ·ÖÖ·á¸»£¬¾İµê¾­Àí½éÉÜ£¬ËûÃÇµÄÊ³²Ä¶¼ÊÇ¾­¹ı³øÊ¦³¤¡¢ÁÏÀí³¤µÈ
- Ïà¹Ø¸ºÔğÈË²ã²ã°Ñ¹Ø£¬È·±£Ã¿ÌìÌá¹©¸ø¿ÍÈËµÄ¶¼ÊÇÓÅÖÊ¡¢ĞÂÏÊµÄÊ³Îï',3);
+values('ç¦¾é£éŸ©å›½çƒ§çƒ¤ äº”è§’åœºåº—','æ¨æµ¦åŒºæ·æ²ªè·¯151å·ä¸­ç¯å›½é™…å¤§å¦1æ¥¼è¿‘æ”¿é€šè·¯',
+ 'ç¦¾é£é¤å…çš„æ–™ç†å“ç§ä¸°å¯Œï¼Œæ®åº—ç»ç†ä»‹ç»ï¼Œä»–ä»¬çš„é£Ÿæéƒ½æ˜¯ç»è¿‡å¨å¸ˆé•¿ã€æ–™ç†é•¿ç­‰
+ ç›¸å…³è´Ÿè´£äººå±‚å±‚æŠŠå…³ï¼Œç¡®ä¿æ¯å¤©æä¾›ç»™å®¢äººçš„éƒ½æ˜¯ä¼˜è´¨ã€æ–°é²œçš„é£Ÿç‰©',3);
 insert into restaurantinfo(name, address, Descript, managerUpBound)
-values('¶¹ÀÌ·» Îå½Ç³¡µê','ÑîÆÖÇøºªµ¦Â·600ºÅÍò´ï¹ã³¡Ê³Æ·Ò»µê4Â¥Ú¡»¦Â·',
-'¡°¶¹ÀÌ¡±ÊÇÉÏº£Ä¿Ç°¡°ÈËÆø×îÍú¡±µÄ»ğ¹ø²ÍÌüÖ®Ò»£¬¡°ÌØÉ«Ä«Óã»¬¡±¡¢¡°ÃÀÎ¶ÏÊÏº»¬Ãæ¡±
-µÈ¸÷ÖÖÌØÉ«»¬Àà£¬ÊÇ²ÍÌü×îÊÜÊ³¿Í»¶Ó­µÄÈËÆøäÌÆ·',3);
+values('è±†æåŠ äº”è§’åœºåº—','æ¨æµ¦åŒºé‚¯éƒ¸è·¯600å·ä¸‡è¾¾å¹¿åœºé£Ÿå“ä¸€åº—4æ¥¼å‡‡æ²ªè·¯',
+'â€œè±†æâ€æ˜¯ä¸Šæµ·ç›®å‰â€œäººæ°”æœ€æ—ºâ€çš„ç«é”…é¤å…ä¹‹ä¸€ï¼Œâ€œç‰¹è‰²å¢¨é±¼æ»‘â€ã€â€œç¾å‘³é²œè™¾æ»‘é¢â€
+ç­‰å„ç§ç‰¹è‰²æ»‘ç±»ï¼Œæ˜¯é¤å…æœ€å—é£Ÿå®¢æ¬¢è¿çš„äººæ°”æ¶®å“',3);
 insert into restaurantinfo(name, address, Descript, managerUpBound)
-values('ÓÖÒ»»á','ÑîÆÖÇøäÁ»¦Â·8ºÅ°ÙÁªÓÖÒ»³Ç¹ºÎïÖĞĞÄ7Â¥±±²à½üÏèÒóÂ·',
-'½øÃÅ×ßÀÈºÜ³¤£¬30À´Ã×£¬ÂäµØ²£Á§¾Æ¹ñ°ÚÂúÁË¸÷ÖÖ¾Æ£¬ÁÕÀÅÂúÄ¿¡£ÔÙ½øÈ¥Ò»
-µãÊÇÒ»¸ö»·ĞÎµÄ°ÉÌ¨£¬ÓĞ¸÷ÖÖ¾ÆË®ÒûÁÏ£¬ºÜÓĞÇéµ÷',3);
+values('åˆä¸€ä¼š','æ¨æµ¦åŒºæ·æ²ªè·¯8å·ç™¾è”åˆä¸€åŸè´­ç‰©ä¸­å¿ƒ7æ¥¼åŒ—ä¾§è¿‘ç¿”æ®·è·¯',
+'è¿›é—¨èµ°å»Šå¾ˆé•¿ï¼Œ30æ¥ç±³ï¼Œè½åœ°ç»ç’ƒé…’æŸœæ‘†æ»¡äº†å„ç§é…’ï¼Œç³ç…æ»¡ç›®ã€‚å†è¿›å»ä¸€
+ç‚¹æ˜¯ä¸€ä¸ªç¯å½¢çš„å§å°ï¼Œæœ‰å„ç§é…’æ°´é¥®æ–™ï¼Œå¾ˆæœ‰æƒ…è°ƒ',3);
 insert into restaurantinfo(name, address, Descript, managerUpBound)
-values('ÍòÔ£²ÉµûĞù ÓÖÒ»³Çµê','ÑîÆÖÇøäÁ»¦Â·8ºÅ°ÙÁªÓÖÒ»³Ç6Â¥½üÏèÒó',
-'´óÌüÃ×É«Ä¾Ç½ÉÏ¿ÌÓĞ²»¹æÔòµÄïÎ¿ÕºûµûĞÍ³á°ò£¬´îÅäÇ³»ÒÉ«µØÌº£¬¼ò½à´ó·½¡£
-¿¿´°Î»ÓÔ²Ê²£Á§µõµÆ£¬¶ÀÏÖĞ¡×Ê·çÇé',2);
+values('ä¸‡è£•é‡‡è¶è½© åˆä¸€åŸåº—','æ¨æµ¦åŒºæ·æ²ªè·¯8å·ç™¾è”åˆä¸€åŸ6æ¥¼è¿‘ç¿”æ®·',
+'å¤§å…ç±³è‰²æœ¨å¢™ä¸Šåˆ»æœ‰ä¸è§„åˆ™çš„é•‚ç©ºè´è¶å‹ç¿…è†€ï¼Œæ­é…æµ…ç°è‰²åœ°æ¯¯ï¼Œç®€æ´å¤§æ–¹ã€‚
+é çª—ä½é‡‰å½©ç»ç’ƒåŠç¯ï¼Œç‹¬ç°å°èµ„é£æƒ…',2);
 insert into restaurantinfo(name, address, Descript, managerUpBound)
-values('¹Û¾°Ì¨','ÆÖ¶«ĞÂÇø±õ½­´óµÀ2852ºÅ1Â¥ÑØ½­½ü·áºÍÂ·',
-'Õû´±Í¨Í¸Ã÷ÀöµÄ²£Á§Ç½£¬¿¿´°Î»¿ÉÒÔĞÀÉÍÁîÈËìÅÄ¿µÄÍâÌ²¾°É«£¬Õ¼ÁË»ÆÆÖ½­±ßÓÎÂÖÂëÍ·µÄ¾øºÃÎ»ÖÃ',5);
+values('è§‚æ™¯å°','æµ¦ä¸œæ–°åŒºæ»¨æ±Ÿå¤§é“2852å·1æ¥¼æ²¿æ±Ÿè¿‘ä¸°å’Œè·¯',
+'æ•´å¹¢é€šé€æ˜ä¸½çš„ç»ç’ƒå¢™ï¼Œé çª—ä½å¯ä»¥æ¬£èµä»¤äººç‚«ç›®çš„å¤–æ»©æ™¯è‰²ï¼Œå äº†é»„æµ¦æ±Ÿè¾¹æ¸¸è½®ç å¤´çš„ç»å¥½ä½ç½®',5);
 insert into restaurantinfo(name, address, Descript, managerUpBound)
-values('¾§²ÉĞù ºçÇÅµê','³¤ÄşÇøºçÇÅÂ·1937ºÅÎ÷½¼±ö¹İÅÔ½üºçĞíÂ·',
-'µêÄÚË½ÃÜÓÄ¾²µÄ°ü·¿£¬²ÉÓÃÁË¹ÅÉ«¹ÅÏãµÄ×°ÊÎ·ç¸ñ£¬ÆøÅÉ¿í³¨£¬×°ÊÎµÄÓºÈİ»ª¹ó',5);
+values('æ™¶é‡‡è½© è™¹æ¡¥åº—','é•¿å®åŒºè™¹æ¡¥è·¯1937å·è¥¿éƒŠå®¾é¦†æ—è¿‘è™¹è®¸è·¯',
+'åº—å†…ç§å¯†å¹½é™çš„åŒ…æˆ¿ï¼Œé‡‡ç”¨äº†å¤è‰²å¤é¦™çš„è£…é¥°é£æ ¼ï¼Œæ°”æ´¾å®½æ•ï¼Œè£…é¥°çš„é›å®¹åè´µ',5);
 
 
 
 
 insert into courseinfo(name, descript, price, RestaurantID, type) values
-('´óÏº´´ÒâÊÙË¾','¶ÀÌØÔìĞÍµÄ´óÏºÊÙË¾£¬²»½öÔÚÎ¶µÀÉÏ±£ÁôµÄ´«Í³µÄ·ç¸ñ£¬
-»¹¼ÓÈëÁË´´ĞÂµÄÔªËØ£¬Ê¹Ö®É«ÏãÎ¶¸ü¾ß¸öĞÔ',39,1, 7);
+('å¤§è™¾åˆ›æ„å¯¿å¸','ç‹¬ç‰¹é€ å‹çš„å¤§è™¾å¯¿å¸ï¼Œä¸ä»…åœ¨å‘³é“ä¸Šä¿ç•™çš„ä¼ ç»Ÿçš„é£æ ¼ï¼Œ
+è¿˜åŠ å…¥äº†åˆ›æ–°çš„å…ƒç´ ï¼Œä½¿ä¹‹è‰²é¦™å‘³æ›´å…·ä¸ªæ€§',39,1, 7);
 insert into courseinfo(name, descript, price, RestaurantID, type) values
-('ºÌ·çÅ£ÅÅ','ºóÓÃÌ¿»ğÉÏ¿¾ÖÁÆß³ÉÊì£¬ÆäÈâÖÊ½ôÊµÄÛ»¬£¬Èë¿ÚÏÌÏÊÊÊÖĞ',68,1,9);
+('ç¦¾é£ç‰›æ’','åç”¨ç‚­ç«ä¸Šçƒ¤è‡³ä¸ƒæˆç†Ÿï¼Œå…¶è‚‰è´¨ç´§å®å«©æ»‘ï¼Œå…¥å£å’¸é²œé€‚ä¸­',68,1,9);
 
 
 insert into courseinfo(name, descript, price, RestaurantID, type) values
-('çÍ·×º£ÏÊ×éºÏ£¨Ğ¡£©','äÌÉúòº¡¢ÏìÂİº£³¦¡¢Ä«Óã×Ğ¡¢Ğ·ÍÈ¡¢òÉ×Ó¡¢²İÏº',79,2,8);
+('ç¼¤çº·æµ·é²œç»„åˆï¼ˆå°ï¼‰','æ¶®ç”Ÿèšã€å“èºæµ·è‚ ã€å¢¨é±¼ä»”ã€èŸ¹è…¿ã€è›å­ã€è‰è™¾',79,2,8);
 insert into courseinfo(name, descript, price, RestaurantID, type) values
-('¾úÍõ¹ø','¸÷Ê½¾ú¹½£¬ÔÚìĞÖÆ3Ğ¡Ê±µÄÀÏ¼¦ÌÀÄÚ£¬Îü×ãÁË¡°ÓÍË®¡±£¬×ÌÎ¶²»·²',12,2,6);
+('èŒç‹é”…','å„å¼èŒè‡ï¼Œåœ¨ç…¨åˆ¶3å°æ—¶çš„è€é¸¡æ±¤å†…ï¼Œå¸è¶³äº†â€œæ²¹æ°´â€ï¼Œæ»‹å‘³ä¸å‡¡',12,2,6);
 
 
 
 insert into courseinfo(name, descript, price, RestaurantID, type) values
-('¶¹¹ÄÕô·ï×¦','Ö»ĞèÇáË±£¬±ãÕû¹ÇÍÑ³ö£¬¿Ú³İÁôÏã£¬¾ÍÁ¬¿Ğ×ÅËÖÈíµÄ¹ÇÍ·Ò²ÊÇÒ»ÖÖÀÖÈ¤¡£',18,3,5);
+('è±†é¼“è’¸å‡¤çˆª','åªéœ€è½»å®ï¼Œä¾¿æ•´éª¨è„±å‡ºï¼Œå£é½¿ç•™é¦™ï¼Œå°±è¿å•ƒç€é…¥è½¯çš„éª¨å¤´ä¹Ÿæ˜¯ä¸€ç§ä¹è¶£ã€‚',18,3,5);
 insert into courseinfo(name, descript, price, RestaurantID, type) values
-('Ì©»Ê¿§à¬','ÌôÑ¡·áëé·ÊÃÀµÄÏÊ»îÇàĞ·£¬ÅäÒÔ¸ë×Ó°¾ÖÆµÄ¸ßÌÀºÍÔ­Ö­Ô­Î¶µÄÌ©Ê½»Æ¿§à¬',168,3,1);
+('æ³°çš‡å’–å–±','æŒ‘é€‰ä¸°è…´è‚¥ç¾çš„é²œæ´»é’èŸ¹ï¼Œé…ä»¥é¸½å­ç†¬åˆ¶çš„é«˜æ±¤å’ŒåŸæ±åŸå‘³çš„æ³°å¼é»„å’–å–±',168,3,1);
 
 insert into courseinfo(name, descript, price, RestaurantID, type) values
-('Ä¾¹ÏÖ¥Ê¿Ïº','Ä¾¹ÏÖ¥Ê¿Ïº¡±£¬±ØÑ¡ĞÂÏÊ»îÏº£¬´îÅä¡°ÂíËÕÀïÀ­Ö¥Ê¿¡±ºÍÄ¾¹Ï¿¾¶ø³É',88,4,8);
+('æœ¨ç“œèŠå£«è™¾','æœ¨ç“œèŠå£«è™¾â€ï¼Œå¿…é€‰æ–°é²œæ´»è™¾ï¼Œæ­é…â€œé©¬è‹é‡Œæ‹‰èŠå£«â€å’Œæœ¨ç“œçƒ¤è€Œæˆ',88,4,8);
 insert into courseinfo(name, descript, price, RestaurantID, type) values
-('Ô½Ê½¼åÑòÅÅ','ÈâÖÊÏà¶ÔÏÊÄÛ¡£ÓÃÃØÖÆ½´ÁÏëçÖÆÀ´±£³ÖÆä¸üÎªÈëÎ¶£¬²ÉÓÃÕı×ÚµÄÔ½Ê½×ö·¨£¬ÑòÅÅ×ÌÎ¶¸üÎªÅ¨ºñ',16,4,9);
+('è¶Šå¼ç…ç¾Šæ’','è‚‰è´¨ç›¸å¯¹é²œå«©ã€‚ç”¨ç§˜åˆ¶é…±æ–™è…Œåˆ¶æ¥ä¿æŒå…¶æ›´ä¸ºå…¥å‘³ï¼Œé‡‡ç”¨æ­£å®—çš„è¶Šå¼åšæ³•ï¼Œç¾Šæ’æ»‹å‘³æ›´ä¸ºæµ“åš',16,4,9);
 insert into courseinfo(name, descript, price, RestaurantID, type) values
-('ÑÌÑ¬öÙÓã','ÏÊÄÛÃÀÎ¶£¬ÔÙ¼ÓÉÏĞ©ÑÌÑ¬¿Ú¸Ğ£¬¸üÊÇ×ÌÎ¶ÎŞÇî¡£',53,5,10);
+('çƒŸç†é²‘é±¼','é²œå«©ç¾å‘³ï¼Œå†åŠ ä¸Šäº›çƒŸç†å£æ„Ÿï¼Œæ›´æ˜¯æ»‹å‘³æ— ç©·ã€‚',53,5,10);
 insert into courseinfo(name, descript, price, RestaurantID, type) values
-('ÉÏº£Ñ¬Óã','É«Ôó½´ºìÓÍÁÁ£¬ÈâÖÊÏ¸ÃÜÏÊÄÛ£¬ÍâÆ¤ËÖ¶ø²»Ó²',69,5,10);
+('ä¸Šæµ·ç†é±¼','è‰²æ³½é…±çº¢æ²¹äº®ï¼Œè‚‰è´¨ç»†å¯†é²œå«©ï¼Œå¤–çš®é…¥è€Œä¸ç¡¬',69,5,10);
 insert into courseinfo(name, descript, price, RestaurantID, type) values
-('ÁúÏºÌÀ','ÁúÏºÈ¡×Ô´óÃ÷ºşÅÏµÄÏÄÓêºÉÏÂ£¬ÏºÈâÌğÃÀ¡£',53,6,6);
+('é¾™è™¾æ±¤','é¾™è™¾å–è‡ªå¤§æ˜æ¹–ç•”çš„å¤é›¨è·ä¸‹ï¼Œè™¾è‚‰ç”œç¾ã€‚',53,6,6);
 insert into courseinfo(name, descript, price, RestaurantID, type) values
-('ÎÄ»ğìËĞ¡Å£Èâ','²ÍÌüÑ¡ÓÃµÄÖÊ¸ĞÈáÄÛµÄ¶¥¼¶Ñ©»¨Å£Èâ£¬¼ÓÉÏÃØÖÆ½´ÁÏÎÄ»ğìËÖÆ¶ø³É£¬ÃàÈíËÖÀÃ',69,6,5);
+('æ–‡ç«ç„–å°ç‰›è‚‰','é¤å…é€‰ç”¨çš„è´¨æ„ŸæŸ”å«©çš„é¡¶çº§é›ªèŠ±ç‰›è‚‰ï¼ŒåŠ ä¸Šç§˜åˆ¶é…±æ–™æ–‡ç«ç„–åˆ¶è€Œæˆï¼Œç»µè½¯é…¥çƒ‚',69,6,5);
 
 

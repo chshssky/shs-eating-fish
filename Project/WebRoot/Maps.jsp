@@ -11,15 +11,34 @@
       src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDx-Lt6Fo7PcTJor_zjtlp8IXyb4Drk5TQ&sensor=true">
     </script>
     <script type="text/javascript">
-      function initialize() {
-        var myOptions = {
-          center: new google.maps.LatLng(31.254, 121.483),
-          zoom: 12,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        var map = new google.maps.Map(document.getElementById("map_canvas"),
-            myOptions);
-      }
+   		var myLatlng = new  google.maps.LatLng(31.254, 121.483);
+		function initialize() {
+		  var myOptions = {
+		    center: myLatlng,
+		    zoom: 12,
+		    mapTypeId: google.maps.MapTypeId.ROADMAP
+		  };
+		  var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+		 
+	 
+		  var marker = new google.maps.Marker({
+		      position: myLatlng,
+		      map: map,
+		     // draggable: true,
+		      title:"Hello World!",
+		      animation: google.maps.Animation.DROP
+		  });
+		  marker.setMap(map);
+		  google.maps.event.addListener(marker, 'click', function() {
+			  if (marker.getAnimation() != null) {
+			    marker.setAnimation(null);
+			  } else {
+			    marker.setAnimation(google.maps.Animation.BOUNCE);
+			  }
+		  });	
+		  
+		}
+
     </script>
   </head>
   <body onload="initialize()">
