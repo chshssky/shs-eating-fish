@@ -23,7 +23,7 @@ public class PaymentAction extends ActionSupport implements ServletRequestAware{
 	private void order()
 	{
 		Session se = HibernateSessionFactory.getSession() ;
-		Orderinfo curorder = (Orderinfo)se.load(Orderinfo.class, SubmitOrderAction.curOrderID()) ;
+		Orderinfo curorder = (Orderinfo)se.load(Orderinfo.class, SubmitOrderAction.getOrderID()) ;
 		curorder.setAddress(address) ;
 		curorder.setFirstName(firstName) ; 
 		curorder.setLastName(lastName) ;

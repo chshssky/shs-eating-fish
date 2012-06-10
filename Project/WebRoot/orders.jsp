@@ -3,7 +3,7 @@ import="com.cheating.hib.*"
 import="org.hibernate.Criteria" 
 import="org.hibernate.Session"
 import="hibernate.*"
-import="org.hibernate.criterion.Restrictions"	pageEncoding="gb2312"%>
+import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>  
@@ -37,31 +37,32 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="gb2312"%>
 			Criteria crit3 = se2.createCriteria(Ordercourses.class);
 			crit3.add(Restrictions.eq("orderinfo", info));
 			List<Ordercourses> odcourses = crit3.list();
+			if(info.getState().equals("finish"))
+			{
 	%>
-			<table align="center" border="2">
-			<tr>
-			<td>¶©µ¥ºÅ:<%=info.getOrderId() %></td>
-			<td colspan="2">¶©µ¥Éú³ÉÊ±¼ä£º<%=String.valueOf(info.getOrderTime()) %></td>
-			<td>×Ü¼Û¸ñ£º<%=info.getSumPrice()%></td>
-			</tr>
-			<tr>
-			<td>²ËëÈÃû</td>
-			<td>ÊıÁ¿</td>
-			<td>µ¥¼Û</td>
-			<td>ÅäËÍµØÖ·</td>
-			</tr>
-			<%
-				for(Ordercourses info2: odcourses)
-				{
-					Session se3 = HibernateSessionFactory.getSession();
-					Criteria crit4 = se3.createCriteria(Courseinfo.class);
-					if(info2.getOrderinfo().getState().equals("finish"))
+			
+				<table align="center" border="2">
+				<tr>
+				<td>è®¢å•å·:<%=info.getOrderId() %></td>
+				<td colspan="2">è®¢å•ç”Ÿæˆæ—¶é—´ï¼š<%=String.valueOf(info.getOrderTime()) %></td>
+				<td>æ€»ä»·æ ¼ï¼š<%=info.getSumPrice()%></td>
+				</tr>
+				<tr>
+				<td>èœè‚´å</td>
+				<td>æ•°é‡</td>
+				<td>å•ä»·</td>
+				<td>é…é€åœ°å€</td>
+				</tr>
+				<%
+					for(Ordercourses info2: odcourses)
 					{
+						Session se3 = HibernateSessionFactory.getSession();
+						Criteria crit4 = se3.createCriteria(Courseinfo.class);
 						crit4.add(Restrictions.eq("courseId", info2.getCourseinfo().getCourseId()));
 						List<Courseinfo> courseinfo = crit4.list();
-					
-			%>
-						<tr>
+						
+				%>
+							<tr>
 						<td align="center"><%=courseinfo.get(0).getName()%></td>
 						<td align="center"><%=info2.getNum()%></td>
 						<td align="center"><%=courseinfo.get(0).getPrice() %></td>

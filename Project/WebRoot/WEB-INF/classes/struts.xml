@@ -69,5 +69,10 @@
 			<result name="input">/managerinfo.jsp</result>
 			<result name="success">/manager.jsp</result>
 		</action>
+		
+		<action name="conOrder" class="fish.operation.cart.ConOrderAction">
+			<result name="input">/handleOrder.jsp</result>
+			<result name="success">/payOrder.jsp</result>
+		</action>
 	</package>
 </struts>    
