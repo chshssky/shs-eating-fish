@@ -33,6 +33,7 @@ import="org.hibernate.criterion.Restrictions" import="java.util.*"%>
 			<div class="funcMenu">
 				<a href="addCourse.jsp">添加新菜</a><br/><br/>
 				<a href="managerinfo.jsp">修改个人资料</a><br/><br/>
+				<a href="manOrder.jsp">查看当前订单</a><br/><br/>
 			</div>
 			
 			
