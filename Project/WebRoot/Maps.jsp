@@ -69,7 +69,7 @@ pageEncoding="gb2312" %>
 				var contentString = '<div id="content">'+
 				    '<div id="siteNotice">'+
 				    '</div>'+
-				    '<h1 id="firstHeading" class="firstHeading"><%=res.getName()%></h1>'+
+				    '<h2 id="firstHeading" class="firstHeading"><%=res.getName()%></h1>'+
 				    '<div id="bodyContent">'+
 				    '<p><b>µÿ÷∑£∫</b>'+ 
 				    '<%=res.getAddress()%></p>'+
