@@ -1,0 +1,13 @@
+@CHARSET "UTF-8";
+div.userInfoGuide
+{
+	float:left;
+	width:200px;
+	height:400px;
+}
+div.change
+{
+	float:left;
+	width:300px;
+	height:400px;
+}

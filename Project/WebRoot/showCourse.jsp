@@ -76,7 +76,6 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
 			Iterator<Restaurantinfo> restlist = restinfos.iterator() ;
 		
 			crit.add(Restrictions.eq("restaurantinfo", restinfos.get(0)));
-			
 			Restaurantinfo rest = new Restaurantinfo() ;
 			if(restlist.hasNext())
     		{
@@ -92,6 +91,7 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
     	}
     	
     	List<Courseinfo> courseinfos = crit.list();
+    	se.close();
      %>
     <h4 align="right" ><font color="#FF99FF"></font></h4>
     

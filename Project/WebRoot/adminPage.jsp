@@ -1,11 +1,5 @@
 <%@ page language="java" import="java.util.*" 
-import="org.hibernate.Criteria" 
-import="org.hibernate.Session"
-import="hibernate.*"
-import="org.hibernate.criterion.Restrictions"	
-pageEncoding="UTF-8"
-%>
-<%@ taglib uri="/struts-tags" prefix="s" %>
+pageEncoding="UTF-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -14,7 +8,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-    <title>欢迎Administrator登录</title>
+    
+    
+    <title>这是Administrator页面</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -28,6 +24,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    This is my JSP page.  Admin<br>
+    <table>
+    <tr>
+    <td>查看所有管理员信息</td>
+    </tr>
+    <tr>
+    <td>添加管理员</td>
+    </tr>
+    <tr>
+    <td>删除管理员</td>
+    </tr>
+    </table>
   </body>
 </html>
