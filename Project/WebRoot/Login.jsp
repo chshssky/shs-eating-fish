@@ -45,9 +45,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<s:form action="login_check">
 			<s:textfield name="loginName" label="用户"></s:textfield><br/>
 			<s:password name="password" label="密码"></s:password>
-			<s:submit cssStyle="float:left; background:url(login_btn.png) 0px 0px;width:92px;height:31px;
+			<s:submit cssStyle="float:left; background:url(login_btn.jpg) 0px 0px;width:92px;height:31px;
  		    border:0px; float:right;margin-right:20px;margin-top:5px;" value=""/>
- 		    <s:reset cssStyle="background:url(reset_bg.png) 0px 0px;width:92px;height:31px;
+ 		    <s:reset cssStyle="background:url(reset_btn.jpg) 0px 0px;width:92px;height:31px;
  		    border:0px; float:right;margin-right:20px;margin-top:5px;" value="" />
 			
 		

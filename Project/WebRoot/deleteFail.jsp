@@ -1,11 +1,4 @@
-<%@ page language="java" import="java.util.*" 
-import="org.hibernate.Criteria" 
-import="org.hibernate.Session"
-import="hibernate.*"
-import="org.hibernate.criterion.Restrictions"	
-pageEncoding="UTF-8"
-%>
-<%@ taglib uri="/struts-tags" prefix="s" %>
+<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -14,7 +7,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-    <title>欢迎Administrator登录</title>
+    <base href="<%=basePath%>">
+    
+    <title>My JSP 'deleteFail.jsp' starting page</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -28,6 +23,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    This is my JSP page.  Admin<br>
+    This is my JSP page. <br>
   </body>
 </html>

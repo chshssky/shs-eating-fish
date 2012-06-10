@@ -1,0 +1,17 @@
+@CHARSET "UTF-8";
+div.addCourse
+{
+	margin-top:30px;
+	margin-left:500px;
+	float:left;
+	font-size:20px;
+	font-family:幼圆;
+	display:inline;	
+}
+
+div.bar
+{
+	margin-top:30px;
+	float:left;
+	display:inline;
+}

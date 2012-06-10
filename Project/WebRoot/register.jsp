@@ -5,7 +5,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmls="http://www.w3.org/1999/xhtml">
 <head>
-	<title>Register Page</title>
+	<title>addManager Page</title>
 </head>
 	<body>
 		
@@ -16,8 +16,8 @@
 			<s:textfield name="username" cssStyle="background:url(text_field.png)" label="用户"/>
 			<s:password name="password" cssStyle="background:url(text_field.png)" label="密码"/>
 			<s:password name="repassword" cssStyle="background:url(text_field.png)" label="确认密码"/>
-			<s:textfield name="firstname" cssStyle="background:url(text_field.png)" label="名"/>
-			<s:textfield name="lastname" cssStyle="background:url(text_field.png)" label="姓"/>
+			<s:textfield name="firstname" cssStyle="background:url(text_field.png)" label="姓"/>
+			<s:textfield name="lastname" cssStyle="background:url(text_field.png)" label="名"/>
 			<s:textfield name="telephonenum" cssStyle="background:url()" label="电话号码"/>
 			<s:textfield name="email" cssStyle="background:url(text_field.png)" label="邮箱"/>
 			<s:submit value="注册"/>

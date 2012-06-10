@@ -24,14 +24,13 @@
  		margin-left:120px;
  		padding-top:75px;
  		float:left;
-
  	}
  
  	div.ribbon
  	{
- 		background-image:url(ribbon.png);
+ 		background-image:url(ribbon2.png);
  		background-repeat:no-repeat;
- 		width:350px;
+ 		width:320px;
  		height:45px;
  		float:left;
  		margin-top:5px;
