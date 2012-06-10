@@ -81,7 +81,6 @@ public class PutCart extends ActionSupport implements ServletRequestAware, Servl
 		response.sendRedirect("showRestaurant.jsp?id=" + restaurant_id);
 	}
 	
-	
 	@Override
 	public String execute() throws Exception {
 		currUser = (LoginedUser)request.getSession().getAttribute("currUser") ;
