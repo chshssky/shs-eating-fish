@@ -46,20 +46,16 @@ import="java.util.*"%>
 		Session se = HibernateSessionFactory.getSession() ;
 		int courseId =Integer.valueOf(request.getParameter("id")) ;
 		Criteria critCourse = se.createCriteria(Courseinfo.class) ;
-		//critCourse.add(Restrictions.eq("CourseId", courseId)) ;
+		critCourse.add(Restrictions.eq("courseId", courseId)) ;
     	Iterator<Courseinfo> courseinfos = critCourse.list().iterator() ;
     	
-		while(courseinfos.hasNext())
-		{
-			Courseinfo info = courseinfos.next() ;
-			if(info.getCourseId() != courseId)
-				continue ;
+		Courseinfo info = courseinfos.next() ;
 	%>	
 		
 			<div class="courseName"><%=info.getName() %></div>
 			
 			<div class="pic">
-				<img src="pictures/test2.jpg" height="100px" width="100px"/>
+				<img src=<%=info.getPic() %> height="100px" width="100px"/>
 			</div>
 			<div class="des">
 				<%=info.getDescript() %>
@@ -72,17 +68,13 @@ import="java.util.*"%>
        				<input type="submit" name="submit" value="加入购物车"></input>
        			</form>
        		</div>
-		
-	 <%
-	 		break ;
-	 	}
-	  %>
+	
 	</center>
 	
 </div>
 <div id="foot">
   	<center>
-    	<h4>版权所(@copy right)</h4>
+    	<h4>版权所有(@copy right)</h4>
     </center>
 </div>
 	

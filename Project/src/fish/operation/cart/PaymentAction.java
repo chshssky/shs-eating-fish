@@ -47,7 +47,7 @@ public class PaymentAction extends ActionSupport implements ServletRequestAware{
 		Login.getMycart().getCart().clear() ;
 		
 		order() ;
-		request.setAttribute("orderSuc", "预订成功") ;		
+		request.getSession().setAttribute("orderSuc", "预订成功") ;		
 		return SUCCESS;
 	}
 	

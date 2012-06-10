@@ -15,3 +15,145 @@ div.bar
 	float:left;
 	display:inline;
 }
+
+div.funcMenu
+{
+	margin-top:50px;
+	float:left;
+	font-size:22px;
+	color:#0033FF;
+	font-family:华文楷体;
+	display:inline;
+}
+
+div.infoName
+{
+	margin-top:50px;
+	margin-left:100px;
+	float:left;
+	display:inline;
+	display:inline;
+}
+
+.infoName h1
+{
+	font-size:25px;
+	color:#FF3366;
+	font-family:华文行楷;
+	
+}
+
+div.info
+{
+	margin-top:10px;
+	margin-left:30px;
+	float:left;
+	display:inline;
+	width:400px;
+}
+
+.info h2
+{
+	font-size:20px;
+	color:#0033FF;
+	font-family:华文楷体
+}
+
+div.cinfoName
+{
+	margin-top:50px;
+	float:left;
+	display:inline;
+}
+
+.cinfoName h1
+{
+	font-size:25px;
+	margin-left:30px;
+	color:#FF3366;
+	font-family:华文行楷
+	
+}
+
+div.cinfo
+{
+	margin-top:10px;
+	margin-left:60px;
+	float:left;
+	display:inline;
+	width:300px;
+}
+
+.cinfo h2
+{
+	font-size:20px;
+	color:#0033FF;
+	font-family:华文楷体;
+	display:inline;
+}
+
+div.modifyCourse
+{
+	margin-top:50px;
+	margin-left:300px;
+	float:left;
+	font-size:22px;
+	color:#0033FF;
+	width:700px;
+	font-family:楷体;
+	display:inline;
+}
+
+.modifyCourse h1
+{
+	font-size:22px;
+	color:#FF0033;
+	display:inline;
+}
+
+div.modifyButton
+{
+	display:inline;
+	margin-top:5px;
+	width:150px;
+	float:left;
+}
+
+div.modifyButton2
+{
+	margin-left:5px;
+	margin-top:5px;
+	display:inline;
+	float:left;
+}
+
+.input 
+{
+	font-size:16px;
+	color:#0033FF;
+	height: 100px;
+	width: 300px;
+}
+
+.input2 
+{
+	font-size:16px;
+	color:#0033FF;
+}
+
+div.restinfo
+{
+	margin-top:50px;
+	margin-left:400px;
+	float:left;
+	display:inline;
+}
+
+.restinfo h1
+{
+	font-size:25px;
+	margin-left:30px;
+	color:#FF3366;
+	font-family:华文行楷
+	
+}
