@@ -21,6 +21,7 @@ public abstract class AbstractOrderinfo implements java.io.Serializable {
 	private String lastName;
 	private Integer sumPrice;
 	private Timestamp orderTime;
+	private Timestamp demandTime;
 	private String state;
 	private Set ordercourseses = new HashSet(0);
 
@@ -31,16 +32,15 @@ public abstract class AbstractOrderinfo implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public AbstractOrderinfo(String address, String lastName) {
+	public AbstractOrderinfo(String address) {
 		this.address = address;
-		this.lastName = lastName;
 	}
 
 	/** full constructor */
 	public AbstractOrderinfo(Customerinfo customerinfo, String address,
 			String telephoneNum, String firstName, String lastName,
-			Integer sumPrice, Timestamp orderTime, String state,
-			Set ordercourseses) {
+			Integer sumPrice, Timestamp orderTime, Timestamp demandTime,
+			String state, Set ordercourseses) {
 		this.customerinfo = customerinfo;
 		this.address = address;
 		this.telephoneNum = telephoneNum;
@@ -48,6 +48,7 @@ public abstract class AbstractOrderinfo implements java.io.Serializable {
 		this.lastName = lastName;
 		this.sumPrice = sumPrice;
 		this.orderTime = orderTime;
+		this.demandTime = demandTime;
 		this.state = state;
 		this.ordercourseses = ordercourseses;
 	}
@@ -116,6 +117,14 @@ public abstract class AbstractOrderinfo implements java.io.Serializable {
 
 	public void setOrderTime(Timestamp orderTime) {
 		this.orderTime = orderTime;
+	}
+
+	public Timestamp getDemandTime() {
+		return this.demandTime;
+	}
+
+	public void setDemandTime(Timestamp demandTime) {
+		this.demandTime = demandTime;
 	}
 
 	public String getState() {

@@ -19,6 +19,12 @@
         <property name="descript" type="java.lang.String">
             <column name="Descript" />
         </property>
+        <property name="latitude" type="java.lang.Float">
+            <column name="latitude" precision="12" scale="0" />
+        </property>
+        <property name="longtitude" type="java.lang.Float">
+            <column name="longtitude" precision="12" scale="0" />
+        </property>
         <property name="managerUpBound" type="java.lang.Integer">
             <column name="managerUpBound" />
         </property>

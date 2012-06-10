@@ -21,10 +21,10 @@ public class Restaurantinfo extends AbstractRestaurantinfo implements
 
 	/** full constructor */
 	public Restaurantinfo(String name, String address, String descript,
-			Integer managerUpBound, Set reservationinfos, Set managerinfos,
-			Set courseinfos) {
-		super(name, address, descript, managerUpBound, reservationinfos,
-				managerinfos, courseinfos);
+			Float latitude, Float longtitude, Integer managerUpBound,
+			Set reservationinfos, Set managerinfos, Set courseinfos) {
+		super(name, address, descript, latitude, longtitude, managerUpBound,
+				reservationinfos, managerinfos, courseinfos);
 	}
 
 }
