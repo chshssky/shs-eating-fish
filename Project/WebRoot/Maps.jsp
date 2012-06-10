@@ -51,6 +51,7 @@ pageEncoding="gb2312" %>
 			  	} else {
 			    	marker[<%=i%>].setAnimation(google.maps.Animation.BOUNCE);
 			  	}
+			  	window.location.href="showRestaurant.jsp?id="+<%=i%>;
 		  	});				
 	<%		
 		}
