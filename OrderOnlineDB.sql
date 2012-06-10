@@ -134,28 +134,31 @@ insert into AdministratorInfo(Name, LoginID) values('意婷', 2);
 insert into AdministratorInfo(Name, LoginID) values('于航', 3);
 
 
-insert into restaurantinfo(name, address, Descript, managerUpBound) 
+insert into restaurantinfo(name, address, Descript, managerUpBound, latitude, longtitude) 
 values('禾风韩国烧烤 五角场店','杨浦区淞沪路151号中环国际大厦1楼近政通路',
  '禾风餐厅的料理品种丰富，据店经理介绍，他们的食材都是经过厨师长、料理长等
- 相关负责人层层把关，确保每天提供给客人的都是优质、新鲜的食物',3);
-insert into restaurantinfo(name, address, Descript, managerUpBound)
-values('豆捞坊 五角场店','杨浦区邯郸路600号万达广场食品一店4楼凇沪路',
-'“豆捞”是上海目前“人气最旺”的火锅餐厅之一，“特色墨鱼滑”、“美味鲜虾滑面”
-等各种特色滑类，是餐厅最受食客欢迎的人气涮品',3);
-insert into restaurantinfo(name, address, Descript, managerUpBound)
-values('又一会','杨浦区淞沪路8号百联又一城购物中心7楼北侧近翔殷路',
-'进门走廊很长，30来米，落地玻璃酒柜摆满了各种酒，琳琅满目。再进去一
-点是一个环形的吧台，有各种酒水饮料，很有情调',3);
-insert into restaurantinfo(name, address, Descript, managerUpBound)
-values('万裕采蝶轩 又一城店','杨浦区淞沪路8号百联又一城6楼近翔殷',
-'大厅米色木墙上刻有不规则的镂空蝴蝶型翅膀，搭配浅灰色地毯，简洁大方。
-靠窗位釉彩玻璃吊灯，独现小资风情',2);
-insert into restaurantinfo(name, address, Descript, managerUpBound)
+ 相关负责人层层把关，确保每天提供给客人的都是优质、新鲜的食物',3, 31.307595, 121.514111);
+insert into restaurantinfo(name, address, Descript, managerUpBound, latitude, longtitude)
+values('新宋记香辣蟹 长阳店','杨浦区长阳路1675号近黄兴路',
+'提起香辣蟹，上海人最先想到的，必定是宋记，在上海开了10多年，人气够旺，口味够好！',
+3, 31.274149, 121.534367);
+insert into restaurantinfo(name, address, Descript, managerUpBound, latitude, longtitude)
+values('牛市','虹口区沙泾路10号1933老场坊1幢2楼近溧阳路',
+'“牛市”，绝对是1933老场房里“最牛”的餐厅，在一片原始水泥的林立中蜕变成神秘而又时尚的创意园区',
+3, 31.260063, 121.491451);
+insert into restaurantinfo(name, address, Descript, managerUpBound, latitude, longtitude)
+values('同济戴斯大酒店','杨浦区彰武路50号同济戴斯大酒店2楼近四平路',
+'暖色调的装修，典雅华丽。精心设计的菜单上，不同食材被分类并标注菜系，以满足客人的不同口味。
+服务有求必应，最值得“褒奖”，很适合商务宴请。',2, 31.285006, 121.509132);
+insert into restaurantinfo(name, address, Descript, managerUpBound, latitude, longtitude)
 values('观景台','浦东新区滨江大道2852号1楼沿江近丰和路',
-'整幢通透明丽的玻璃墙，靠窗位可以欣赏令人炫目的外滩景色，占了黄浦江边游轮码头的绝好位置',5);
-insert into restaurantinfo(name, address, Descript, managerUpBound)
-values('晶采轩 虹桥店','长宁区虹桥路1937号西郊宾馆旁近虹许路',
-'店内私密幽静的包房，采用了古色古香的装饰风格，气派宽敞，装饰的雍容华贵',5);
+'整幢通透明丽的玻璃墙，靠窗位可以欣赏令人炫目的外滩景色，占了黄浦江边游轮码头的绝好位置',5,
+31.246416, 121.496944);
+insert into restaurantinfo(name, address, Descript, managerUpBound, latitude, longtitude)
+values('长春不老私房菜','虹口区长春路101号福馨宾馆近溧阳路',
+'长春不老私房菜，绝对是虹口区高档的宴请餐厅，全包房设计，隐秘性极好。VIP包房装修像皇宫一样
+，仅一套“帝王黄骨瓷”餐具就价值10万，倍显尊贵。Ipad图片点菜，紧跟潮流时尚'
+,5, 31.264172, 121.485100);
 
 
 

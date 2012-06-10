@@ -16,6 +16,8 @@ public abstract class AbstractRestaurantinfo implements java.io.Serializable {
 	private String name;
 	private String address;
 	private String descript;
+	private Float latitude;
+	private Float longtitude;
 	private Integer managerUpBound;
 	private Set reservationinfos = new HashSet(0);
 	private Set managerinfos = new HashSet(0);
@@ -35,11 +37,13 @@ public abstract class AbstractRestaurantinfo implements java.io.Serializable {
 
 	/** full constructor */
 	public AbstractRestaurantinfo(String name, String address, String descript,
-			Integer managerUpBound, Set reservationinfos, Set managerinfos,
-			Set courseinfos) {
+			Float latitude, Float longtitude, Integer managerUpBound,
+			Set reservationinfos, Set managerinfos, Set courseinfos) {
 		this.name = name;
 		this.address = address;
 		this.descript = descript;
+		this.latitude = latitude;
+		this.longtitude = longtitude;
 		this.managerUpBound = managerUpBound;
 		this.reservationinfos = reservationinfos;
 		this.managerinfos = managerinfos;
@@ -78,6 +82,22 @@ public abstract class AbstractRestaurantinfo implements java.io.Serializable {
 
 	public void setDescript(String descript) {
 		this.descript = descript;
+	}
+
+	public Float getLatitude() {
+		return this.latitude;
+	}
+
+	public void setLatitude(Float latitude) {
+		this.latitude = latitude;
+	}
+
+	public Float getLongtitude() {
+		return this.longtitude;
+	}
+
+	public void setLongtitude(Float longtitude) {
+		this.longtitude = longtitude;
 	}
 
 	public Integer getManagerUpBound() {
