@@ -45,14 +45,43 @@ pageEncoding="gb2312" %>
 		      	animation: google.maps.Animation.DROP
 		  	});
 		  	marker[<%=i%>].setMap(map);
-		  	google.maps.event.addListener(marker[<%=i%>], 'click', function() {
+		  	google.maps.event.addListener(marker[<%=i%>], 'dblclick', function() {
+			  	window.location.href="showRestaurant.jsp?id="+<%=i%>;
+		  	});			
+		  	google.maps.event.addListener(marker[<%=i%>], 'mouseover', function() {
 			  	if (marker[<%=i%>].getAnimation() != null) {
 			    	marker[<%=i%>].setAnimation(null);
 			  	} else {
 			    	marker[<%=i%>].setAnimation(google.maps.Animation.BOUNCE);
 			  	}
-			  	window.location.href="showRestaurant.jsp?id="+<%=i%>;
-		  	});				
+		  	});
+		  	google.maps.event.addListener(marker[<%=i%>], 'mouseout', function() {
+			  	if (marker[<%=i%>].getAnimation() != null) {
+			    	marker[<%=i%>].setAnimation(null);
+			  	} else {
+			    	marker[<%=i%>].setAnimation(google.maps.Animation.BOUNCE);
+			  	}
+		  	});	
+
+
+
+		  	google.maps.event.addListener(marker[<%=i%>], 'click', function() {
+				var contentString = '<div id="content">'+
+				    '<div id="siteNotice">'+
+				    '</div>'+
+				    '<h1 id="firstHeading" class="firstHeading"><%=res.getName()%></h1>'+
+				    '<div id="bodyContent">'+
+				    '<p><b>µÿ÷∑£∫</b>'+ 
+				    '<%=res.getAddress()%></p>'+
+				    '<p>«Îø¥:<a href="showRestaurant.jsp?id=<%=i%>">'+
+				    'æ∆µÍœÍ«È</a> ª∂”≠∂©≤Õ~~</p>'+
+				    '</div>'+
+				    '</div>';
+				var infowindow = new google.maps.InfoWindow({
+				    content: contentString
+				});    
+				infowindow.open(map,marker[<%=i%>]);
+		  	});									  		
 	<%		
 		}
      %>
