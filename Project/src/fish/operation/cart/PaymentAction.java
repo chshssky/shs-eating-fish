@@ -28,6 +28,7 @@ public class PaymentAction extends ActionSupport implements ServletRequestAware{
 		curorder.setFirstName(firstName) ; 
 		curorder.setLastName(lastName) ;
 		curorder.setTelephoneNum(telephoneNum) ;
+		curorder.setState("finish") ;
 		Transaction tran = se.beginTransaction();
 		se.update(curorder) ;
 		tran.commit() ;

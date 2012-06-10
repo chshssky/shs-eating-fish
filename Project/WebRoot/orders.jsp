@@ -34,15 +34,10 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="gb2312"%>
 		for(Orderinfo info: orderinfos)
 		{
 			Session se2 = HibernateSessionFactory.getSession();
-			//Orderinfo ord = (Orderinfo)se2.load(com.cheating.hib.Orderinfo.class, info.getOrderId());
-			//Set<Ordercourses> odcourses= ord.getOrdercourseses();
 			Criteria crit3 = se2.createCriteria(Ordercourses.class);
 			crit3.add(Restrictions.eq("orderinfo", info));
 			List<Ordercourses> odcourses = crit3.list();
-			//List<Ordercourses> odcourses = crit3.list();
-			//Criteria crit4 = se2.createCriteria(Courseinfo.class);
-			//crit3.add(Restrictions.eq("courseId", info));
-			%>
+	%>
 			<table align="center" border="2">
 			<tr>
 			<td>¶©µ¥ºÅ:<%=info.getOrderId() %></td>
@@ -60,17 +55,21 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="gb2312"%>
 				{
 					Session se3 = HibernateSessionFactory.getSession();
 					Criteria crit4 = se3.createCriteria(Courseinfo.class);
-					crit4.add(Restrictions.eq("courseId", info2.getCourseinfo().getCourseId()));
-					List<Courseinfo> courseinfo = crit4.list();
-					%>
-					<tr>
-					<td align="center"><%=courseinfo.get(0).getName()%></td>
-				
-					<td align="center"><%=info2.getNum()%></td>
-					<td align="center"><%=courseinfo.get(0).getPrice() %></td>
-					<td align="center"><%=info.getAddress()%></td>
-					</tr>
-				<%}
+					if(info2.getOrderinfo().getState().equals("finish"))
+					{
+						crit4.add(Restrictions.eq("courseId", info2.getCourseinfo().getCourseId()));
+						List<Courseinfo> courseinfo = crit4.list();
+					
+			%>
+						<tr>
+						<td align="center"><%=courseinfo.get(0).getName()%></td>
+						<td align="center"><%=info2.getNum()%></td>
+						<td align="center"><%=courseinfo.get(0).getPrice() %></td>
+						<td align="center"><%=info.getAddress()%></td>
+						</tr>
+			<%
+					}
+				}
 			 %>
 			</table>
 			
