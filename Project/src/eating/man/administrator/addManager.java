@@ -15,20 +15,6 @@ public class addManager extends ActionSupport{
 	private String managerName;
 	private String restaurant;
 	private ArrayList<Restaurant> restaurantList;
-	public String populate()
-	{
-		restaurantList = new ArrayList<Restaurant>();
-		Session se = HibernateSessionFactory.getSession();
-		Criteria crit = se.createCriteria(Restaurantinfo.class);
-		List<Restaurantinfo> restinfos = crit.list();
-
-		for(Restaurantinfo info:restinfos)
-		{
-			restaurantList.add(new Restaurant(info.getRestaurantId(),info.getName()));
-		}
-		se.close();
-		return "populate";
-	}
 	public String getLoginName() {
 		return loginName;
 	}

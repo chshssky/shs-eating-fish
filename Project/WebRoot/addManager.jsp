@@ -1,9 +1,9 @@
-<%@ page language="java" import="java.util.*"
+<%@ page language="java" import="java.util.*" 
 import="com.cheating.hib.*" 
 import="org.hibernate.Criteria" 
 import="org.hibernate.Session"
 import="hibernate.*"
-import="org.hibernate.criterion.Restrictions" pageEncoding="UTF-8"%>
+import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
 <%@ taglib uri="/struts-tags" prefix="s" %>
 <%
 String path = request.getContextPath();
@@ -37,10 +37,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<s:password name="password" label="设置密码"/>
 			<s:password name="repassword" label="确认密码"/>
 			<s:textfield name="managerName" label="管理员名字"/>
-  			<s:select name="restaurant" list="restaurantList" listKey="restaurantId" 
-  			listValue="restaurantName" headerKey="0" headerValue="Restaurant" 
-  			label="Select a restaurant"/> 
-
+			<%
+				Session se = HibernateSessionFactory.getSession();
+				Criteria crit2 = se.createCriteria(Restaurantinfo.class);
+				List<Restaurantinfo> restinfos = crit2.list();
+				se.close();
+			 %>
+			<select name="restaurant" label="选择餐馆">
+    			<%
+    				for(Restaurantinfo info:restinfos)
+    				{	
+    			%>
+    					<option value=<%=info.getRestaurantId()%>><%info.getName();%></option>	
+    			<%	} %>
+    		</select>
 	</s:form>
   </fieldset>
   </body>
