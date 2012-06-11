@@ -41,16 +41,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				Session se = HibernateSessionFactory.getSession();
 				Criteria crit2 = se.createCriteria(Restaurantinfo.class);
 				List<Restaurantinfo> restinfos = crit2.list();
-				se.close();
+				
 			 %>
-			<select name="restaurant" label="选择餐馆">
+			 管理员所属餐馆
+			<select name="restaurant">
     			<%
     				for(Restaurantinfo info:restinfos)
     				{	
     			%>
-    					<option value=<%=info.getRestaurantId()%>><%info.getName();%></option>	
-    			<%	} %>
+    					<option value=<%=info.getRestaurantId()%>><%=info.getName()%></option>	
+    			<%System.out.println(info.getRestaurantId());
+    			System.out.println(info.getName());	
+    			} se.close();%>
     		</select>
+    		<s:submit value="注册"/>
+			<s:reset value="重置"/>
 	</s:form>
   </fieldset>
   </body>

@@ -14,7 +14,6 @@ public class addManager extends ActionSupport{
 	private String repassword;
 	private String managerName;
 	private String restaurant;
-	private ArrayList<Restaurant> restaurantList;
 	public String getLoginName() {
 		return loginName;
 	}
@@ -55,20 +54,18 @@ public class addManager extends ActionSupport{
 		
 		Session se = HibernateSessionFactory.getSession();
 		Criteria crit2 = se.createCriteria(Restaurantinfo.class);
-		crit2.add(Restrictions.eq("name", Integer.valueOf(restaurant)));
+		crit2.add(Restrictions.eq("restaurantId", Integer.valueOf(restaurant)));
 		List<Restaurantinfo> restinfos = crit2.list();
 		Logininfo in = new Logininfo();
 		Managerinfo ma = new Managerinfo();
 		Authority au = (Authority)se.load(Authority.class, 2);
-		
-		
+		in.setLoginName(loginName);
+		in.setPassword(password);
+		in.setAuthority(au);
 		ma.setLogininfo(in);
 		ma.setName(managerName);
 		ma.setRestaurantinfo(restinfos.get(0));
 		
-		in.setLoginName(loginName);
-		in.setPassword(password);
-		in.setAuthority(au);
 		
 		
 		
@@ -82,12 +79,6 @@ public class addManager extends ActionSupport{
 		add();
 		return SUCCESS;
 		
-	}
-	public ArrayList<Restaurant> getRestaurantList() {
-		return restaurantList;
-	}
-	public void setRestaurantList(ArrayList<Restaurant> restaurantList) {
-		this.restaurantList = restaurantList;
 	}
 	
 }

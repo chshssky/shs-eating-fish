@@ -1,4 +1,10 @@
-<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" import="java.util.*" 
+import="com.cheating.hib.*" 
+import="org.hibernate.Criteria" 
+import="org.hibernate.Session"
+import="hibernate.*"
+import="org.hibernate.criterion.Restrictions"
+pageEncoding="UTF-8" import="javax.swing.JOptionPane"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -23,6 +29,47 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    This is my JSP page. <br>
+  <%
+  	int id = Integer.valueOf(request.getParameter("param"));
+  	Session se = HibernateSessionFactory.getSession();
+    Criteria crit = se.createCriteria(Managerinfo.class);
+    
+	Logininfo logInfo = (Logininfo)se.load(Logininfo.class, id);
+	crit.add(Restrictions.eq("logininfo", logInfo));
+	List<Managerinfo> manainfo = crit.list();
+	String name = manainfo.get(0).getName();
+	String restName = manainfo.get(0).getRestaurantinfo().getName();
+	System.out.println(name);
+	System.out.println(restName);
+
+   %>
+   <table align="center" border="1">
+   <tr>
+   <th colspan="2"><h3>再次确认要删除的管理员信息</h3></th>
+   </tr>
+   <tr>
+   <td>管理员登录名</td>
+   <td><%=logInfo.getLoginName()%></td>
+   </tr>
+   <tr>
+   <td>管理员姓名</td>
+   <td><%=name %></td>
+   </tr>
+   <tr>
+   <td>管理员所属餐馆</td>
+   <td><%=restName %></td>
+   </tr>
+   <tr clospan="2">
+   <td>
+   <form action="acknowledgeDelete">
+     <input type="hidden" name="managerID" value=<%=manainfo.get(0).getManagerId()%>></input>
+     <input type="hidden" name="loginID" value=<%=manainfo.get(0).getLogininfo().getLoginId() %>></input>
+     <input type="submit" value="删除此管理员"></input>
+     </form>
+   </td>
+   </tr>
+  
+   </table>
+   <%	se.close(); %>
   </body>
 </html>

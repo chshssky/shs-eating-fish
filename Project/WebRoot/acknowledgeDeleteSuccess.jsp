@@ -10,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <base href="<%=basePath%>">
     
     <title>My JSP 'addManagerSuccess.jsp' starting page</title>
-   <meta http-equiv="refresh" content="2;url=administratorOpe.jsp?id=-2">
+   <meta http-equiv="refresh" content="2;url=administratorOpe.jsp?id=-3">
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->

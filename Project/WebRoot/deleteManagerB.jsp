@@ -43,9 +43,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</s:form>
 		</fieldset>
 	<%
-		if(id == 1)
+		if(id != -1 && id != 0)
 		{%>
-			<jsp:include page="acknowledgeDelete.jsp"></jsp:include>
+			<jsp:include page="acknowledgeDelete.jsp"><jsp:param name="param" value="<%=id%>"/></jsp:include>
 	<% }
 	%> 
 

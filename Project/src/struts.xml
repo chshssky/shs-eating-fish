@@ -28,14 +28,17 @@
 		<result name="success">/checkAllManagers.jsp</result>
 		<result name="fail">/deleteFail.jsp</result>
 		</action>
+		<action name="acknowledgeDelete" class="eating.man.administrator.acknowledgeDelete">
+		<result name="success">/acknowledgeDeleteSuccess.jsp</result>
+		<result name="fail">/deleteFail.jsp</result>
+		</action>
 		<action name="deleteManagerB" class="eating.man.administrator.deleteManagerB">
 		<result name="success">/index.jsp</result>
 		<result name="fail">/deleteFail.jsp</result>
 		</action>
-		<action name="addManager" method="{1}" class="eating.man.administrator.addManager">
+		<action name="addManager" class="eating.man.administrator.addManager">
 		<interceptor-ref name="validationWorkflowStack"/>
-		<result name="populate">/addManager.jsp</result>
-	    <result name="input">/addManager.jsp</result>
+	    <result name="input">administratorOpe.jsp?id=-2</result>
 		<result name="success">/addManagerSuccess.jsp</result>
 		</action>
 		<action name="put_cart" class="fish.operation.cart.PutCart">

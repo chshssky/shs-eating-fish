@@ -30,7 +30,7 @@ import="org.hibernate.Criteria" import="org.hibernate.criterion.Restrictions"%>
    		
    		Criteria cri = se.createCriteria(Coursetype.class) ;
    		Iterator<Coursetype> typeit = cri.list().iterator() ;
-   		
+   	
 		File picDoc = new File(docPath) ;
 		if(!picDoc.exists())
 		{
@@ -61,7 +61,8 @@ import="org.hibernate.Criteria" import="org.hibernate.criterion.Restrictions"%>
     					
     			%>
     					<option value=<%=curType.getId()%>><%=curType.getTypeName() %></option>	
-    			<%	} %>
+    			<%	} se.close();
+    			%>
     		</select>
     	</div><br>
     	<div>请输入菜名：</div><div><input type="text" name="courseName"></div><br/>   	
