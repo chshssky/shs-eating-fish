@@ -63,11 +63,14 @@ public class SubmitOrderAction extends ActionSupport implements ServletRequestAw
 		orderID = orderInfo.getOrderId() ;
 	} 
 	
-	public static int curOrderID()
-	{
-		return orderID ;
+	public static int getOrderID() {
+		return orderID;
 	}
-	
+
+	public static void setOrderID(int orderID) {
+		SubmitOrderAction.orderID = orderID;
+	}
+
 	public void validate()
 	{
 		if(Login.getMycart().getCart().isEmpty())

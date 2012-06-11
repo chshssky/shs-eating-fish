@@ -4,19 +4,9 @@ import="org.hibernate.Criteria"
 import="org.hibernate.Session"
 import="hibernate.*"
 import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>  
-    <title>My JSP 'ShowMyOrder.jsp' starting page</title>   
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
-
+    <title>Continue Pay</title>   
   </head>
   
   <body topmargin="100">
@@ -37,7 +27,7 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
 			Criteria crit3 = se2.createCriteria(Ordercourses.class);
 			crit3.add(Restrictions.eq("orderinfo", info));
 			List<Ordercourses> odcourses = crit3.list();
-			if(info.getState().equals("finish"))
+			if(info.getState().equals("dealing"))
 			{
 	%>
 			
@@ -45,13 +35,12 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
 				<tr>
 				<td>订单号:<%=info.getOrderId() %></td>
 				<td colspan="2">订单生成时间：<%=String.valueOf(info.getOrderTime()) %></td>
-				<td>总价格：<%=info.getSumPrice()%></td>
+				
 				</tr>
 				<tr>
 				<td>菜肴名</td>
 				<td>数量</td>
 				<td>单价</td>
-				<td>配送地址</td>
 				</tr>
 				<%
 					for(Ordercourses info2: odcourses)
@@ -62,20 +51,25 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
 						List<Courseinfo> courseinfo = crit4.list();
 						
 				%>
-							<tr>
+						<tr>
 						<td align="center"><%=courseinfo.get(0).getName()%></td>
 						<td align="center"><%=info2.getNum()%></td>
 						<td align="center"><%=courseinfo.get(0).getPrice() %></td>
-						<td align="center"><%=info.getAddress()%></td>
 						</tr>
+						
 			<%
 					}
-				}
 			 %>
+			 	<tr><td><td>总价格：<%=info.getSumPrice()%></td><td/></tr>
 			</table>
+			<form action="conOrder">
+				<input type="hidden" name="curOrderId" value=<%=info.getOrderId() %> />
+				<input type="submit" value="确认订单" /> 		
+			</form>
 			
-		<%}
-    	
+	<%	
+			}
+		}
      %>
   </body>
 </html>
