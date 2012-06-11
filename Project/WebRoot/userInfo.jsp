@@ -19,7 +19,7 @@
 			Customerinfo cus = (Customerinfo)se.load(Customerinfo.class, currUser.getId());
 			//List<Customerinfo> infos = crit.list();
 		 %>
-			
+			 
 		<center>
 		<%
 			if(id == 0)
