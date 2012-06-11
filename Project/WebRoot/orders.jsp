@@ -24,12 +24,11 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
     <%
     	int customerID = currUser.getId();
     	Session se = HibernateSessionFactory.getSession();
-		Criteria crit = se.createCriteria(Customerinfo.class);
-		crit.add(Restrictions.eq("customerId", customerID));
-		List<Customerinfo> cusinfos = crit.list();
-		Criteria crit2 = se.createCriteria(Orderinfo.class);
-		crit2.add(Restrictions.eq("customerinfo", cusinfos.get(0)));
-		List<Orderinfo> orderinfos = crit2.list();
+		Customerinfo cusInfo = (Customerinfo)se.load(Customerinfo.class, customerID);
+
+		Criteria crit = se.createCriteria(Orderinfo.class);
+		crit.add(Restrictions.eq("customerinfo", cusInfo));
+		List<Orderinfo> orderinfos = crit.list();
 		
 		for(Orderinfo info: orderinfos)
 		{
@@ -75,7 +74,6 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
 			</table>
 			
 		<%}
-    	
-     %>
+    	  %>
   </body>
 </html>

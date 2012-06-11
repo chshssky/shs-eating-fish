@@ -49,18 +49,10 @@ pageEncoding="gb2312" %>
 			  	window.location.href="showRestaurant.jsp?id="+<%=i%>;
 		  	});			
 		  	google.maps.event.addListener(marker[<%=i%>], 'mouseover', function() {
-			  	if (marker[<%=i%>].getAnimation() != null) {
-			    	marker[<%=i%>].setAnimation(null);
-			  	} else {
 			    	marker[<%=i%>].setAnimation(google.maps.Animation.BOUNCE);
-			  	}
 		  	});
 		  	google.maps.event.addListener(marker[<%=i%>], 'mouseout', function() {
-			  	if (marker[<%=i%>].getAnimation() != null) {
 			    	marker[<%=i%>].setAnimation(null);
-			  	} else {
-			    	marker[<%=i%>].setAnimation(google.maps.Animation.BOUNCE);
-			  	}
 		  	});	
 
 

@@ -70,21 +70,14 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
     	Criteria crit = se.createCriteria(Courseinfo.class);
     	if(id != 0)
     	{
-    		Criteria crit2 = se.createCriteria(Restaurantinfo.class);
-			crit2.add(Restrictions.eq("restaurantId", id));
-			List<Restaurantinfo> restinfos = crit2.list();
-			Iterator<Restaurantinfo> restlist = restinfos.iterator() ;
+    		Restaurantinfo resInfo = (Restaurantinfo)se.load(Restaurantinfo.class, id);
 		
-			crit.add(Restrictions.eq("restaurantinfo", restinfos.get(0)));
-			Restaurantinfo rest = new Restaurantinfo() ;
-			if(restlist.hasNext())
-    		{
-    			rest = restlist.next() ;
-    		} 
+			crit.add(Restrictions.eq("restaurantinfo", resInfo));
+
     %>
     	<div class="restBar">
-   			<div class="restName"><h1>欢迎来到~<%=rest.getName() %> </h1></div>
-   			<div class="desc"><h3><%=rest.getDescript() %></h3></div>
+   			<div class="restName"><h1>欢迎来到~<%=resInfo.getName() %> </h1></div>
+   			<div class="desc"><h3><%=resInfo.getDescript() %></h3></div>
    		</div>	
     
     <%	
