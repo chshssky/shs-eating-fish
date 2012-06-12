@@ -31,24 +31,29 @@ import="org.hibernate.criterion.Restrictions" import="java.util.*"%>
 	
 		<div>
 			<div class="funcMenu">
-				<a href="addCourse.jsp">添加新菜</a><br/><br/>
-				<a href="managerinfo.jsp">修改个人资料</a><br/><br/>
-				<a href="manOrder.jsp">查看当前订单</a><br/><br/>
+			<ul id="navlist">
+				<li><a href="addCourse.jsp">添加新菜</a></li>
+				<li><a href="managerinfo.jsp">修改个人资料</a></li>
+				<li><a href="manOrder.jsp">查看当前订单</a></li>
+			</ul>
 			</div>
 			
 			
 			<div class="infoName">
-				<h1>饭店信息：</h1>
+			<fieldset>
+				<legend><h1>饭店信息：</h1></legend>
 			
 				<div class="info">
 					<h2><%=curRest.getDescript() %></h2>
 					
     				<input type="button" value="修改" onclick="window.location='modifyRest.jsp'"/>
 				</div>
+				</fieldset>
 			</div>
 			
 			<div class="cinfoName">
-				<h1>菜品信息：</h1>
+			<fieldset>
+				<legend><h1>菜品信息：</h1></legend>
 			
 				<div class="cinfo">
 				
@@ -70,7 +75,7 @@ import="org.hibernate.criterion.Restrictions" import="java.util.*"%>
 				<%
 					}
 				 %>
-				 
+				 </fieldset>
 				</div>
 			</div>
 			

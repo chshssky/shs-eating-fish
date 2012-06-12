@@ -1,4 +1,8 @@
 @CHARSET "UTF-8";
+body
+{
+	background-image:url(managerbg.jpg);
+}
 div.addCourse
 {
 	margin-top:30px;
@@ -308,13 +312,13 @@ div.courseMenu
 	width:1270px;
 	clear:both;
 	margin-top:-70px;
-	background:#FF6600;
+	background:#6699FF;
 	float:bottom;
 }
 #navlist
 {
 	color:white;
-	background:#17a;
+	background:#99CCFF;
 	border-bottom:0.2em solid #17a;
 	padding:0 1px;
 	margin-left:0;
@@ -336,10 +340,59 @@ div.courseMenu
 	color:#0033CC;
 	text-decoration:none;
 	margin-bottom:0.5em;
-	background:#39c;
+	background:#CCCCFF;
 	border-width:1px;
 	border-style:solid;
 	border-color:#5bd #035 #068 #6cf;
 	border-left:1em solid #fc0;
 	padding:0.25em 0.5em 0.4em 0.75em;
 }
+div.block3
+{
+	width:200px;
+	float:left;
+}
+div.details
+{
+	float:left;
+}
+.block3 table
+	{
+		width:100%;
+		font-size:15px;
+		empty-cells:show;
+		border-collapse:collapse;
+		margin=0 auto;
+		border: 1px solid #cad9ea;
+		color:#666;
+	}
+.block3	th
+	{
+		background-repeat: repeat-x;
+		height:30px;
+		overflow:hidden;
+	}
+ 
+.block3	td
+	{
+		height:35px;
+		
+	}
+.block3	td,th
+	{
+		border:2px solid #cad9ea;
+		padding:0 lem 0;
+	}
+.block3	td:nth-child(2)
+	{
+		width:40%;
+	}
+.block3	td:nth-child(3)
+	{
+		width:40%;
+	}
+.block3	tr:nth-child(even)
+	{
+		background-color:#f5fafe;
+		
+	}
