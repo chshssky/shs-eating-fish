@@ -87,6 +87,6 @@ xmlhttp.send();
 	</s:form>
   </fieldset>
   </div>
-  <div id="txtHint" cssStyle="float=left">客户信息将在此处列出 ...</div>
+  <div id="txtHint" >客户信息将在此处列出 ...</div>
   </body>
 </html>
