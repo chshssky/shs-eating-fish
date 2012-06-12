@@ -4,12 +4,25 @@ import="org.hibernate.criterion.Restrictions" import="java.util.*" import="fish.
 import="fish.man.manager.SingleOrder" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <link rel="stylesheet" media="screen" type="text/css" href="css/manager.css"/>
+<link rel="stylesheet" media="screen" type="text/css" href="css/logo.css"/>
 
 <html>
 <head>
 <title>Check Order</title>
 </head>
-	<body>
+	<body bgcolor="#FFCC66">
+	<div id="wrap">
+	<div class="head">
+	  <div class="logo">
+	   <img src="logo5.png" width="126" height="100"/>
+	  </div>
+	  <div class="welcome">
+	 	<h1>Welcome to</h1><h2> EFC </h2><br/><h1>欢迎来到</h1><h2>EFC</h2><h1>网上订餐系统</h1>
+	 	<h2> &nbsp &nbsp &nbsp &nbsp  &nbsp  &nbsp &nbsp &nbsp Manager Page</h2>
+	 	&nbsp &nbsp &nbsp <a href="manager.jsp">return</a>
+	 </div>
+	 </div>
+	
 		 <% 
   		if(request.getSession().getAttribute("rmvSuc") != null) 
    		{ 
@@ -65,6 +78,13 @@ import="fish.man.manager.SingleOrder" %>
 			<%
 				}
 			 %>
+			 
+	</div>
+	<div id="foot">
+  		<center>
+    		<h4>版权所有(@copy right)</h4>
+    	</center>
+	</div> 
 				
 	</body>
 	
