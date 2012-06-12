@@ -59,6 +59,13 @@ xmlhttp.send();
   </head>
   
   <body>
+  <%
+  	int id;
+  	if(Integer.valueOf(request.getParameter("id"))==null)
+  		id = 1;
+  	else
+  		id = Integer.valueOf(request.getParameter("id"));
+   %>
   <div class="add">
   <fieldset id="fieldset">
     <legend>添加信息</legend>
@@ -88,6 +95,13 @@ xmlhttp.send();
     		<s:submit value="注册"/>
 			<s:reset value="重置"/>
 	</s:form>
+	<%
+		if(id == 0)
+		{
+	 %>
+	 <h2>超出该餐馆的管理员上限，请删除旧管理员或修改管理员上限</h2>
+	 <%
+	 } %>
   </fieldset>
   </div>
   <div id="txtHint" >餐馆信息将在此处列出 ...</div>
