@@ -12,7 +12,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <base href="<%=basePath%>">
     
     <title>网上订餐系统</title>
-	<%--  --%>
+	<%--  --%> 
   </head>
   
   <body bgcolor="#FFCC99">
@@ -53,21 +53,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<jsp:include page="HeadLoggedin.jsp"></jsp:include>
 			<%
 				}
-			%>
+			%>   
 	</div>
   
     </div>
      <div class="block4">
-		<jsp:include page="courseMenu.jsp"></jsp:include>
+		<jsp:include page="courseMenu.jsp"></jsp:include> 
 		
 	 </div>
      <div class="block3">
     	<a href="showRestaurant.jsp?id=0">餐馆信息</a>
-		<jsp:include page="Search.jsp" ></jsp:include>
     	<jsp:include page="Maps.jsp"></jsp:include>
        <jsp:include page="webGL.jsp" ></jsp:include>	
      </div>
-	
+	 
   	</div>
   	
 

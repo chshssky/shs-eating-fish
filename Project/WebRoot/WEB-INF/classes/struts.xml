@@ -87,5 +87,8 @@
 			<result name="input">/handleOrder.jsp</result>
 			<result name="success">/payOrder.jsp</result>
 		</action>
+		<action name="autocompletertag" class="com.efc.action.AutoCompleterAction">
+		    <result>/autocompletertag.jsp</result>
+		</action>
 	</package>
 </struts>    
