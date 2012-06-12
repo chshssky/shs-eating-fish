@@ -24,6 +24,13 @@ div.logo
 	width:126px;
 	float:left;
 }
+	div.eating
+ 	{
+ 		background-image:url("F:\test2.jpg");
+ 		width:100px;
+ 		height:100px;
+ 	}
+
 .welcome h1
 {
 	color:#CC0033;
@@ -44,10 +51,22 @@ div.ifLogin
 	font-color:#FFCCCC;
 	size:30px;
 	float:right;
+	margin-right:50px;
+	padding-top:30px;
+	
+
+}
+
+div.ifLoginN
+{
+	font-color:#FFCCCC;
+	size:30px;
+	float:right;
 	margin-right:100px;
 	padding-top:50px;
 
 }
+
 div.welcome
 {
 	margin-left:150px;
@@ -58,7 +77,6 @@ div.block3
 {
 	color:#0066CC;
 	margin-left:30px;
-	margin-top:30px;
 	font-size:30px;
 	width:920px;
 	height:600px;
@@ -80,7 +98,7 @@ div.block5
 }
 .block4 a
 {
-	
+	color:#0066FF;
 }
 .head a
 {
@@ -112,44 +130,7 @@ div.courseMenu
 	background:#FF6600;
 	float:bottom;
 }
-#navlist
-{
-	color:white;
-	background:#17a;
-	border-bottom:0.2em solid #17a;
-	padding:0 1px;
-	margin-left:0;
-	width:12em;
-	font:normal 0.8em Verdana, sans-serif;
-}
-
-#navlist li
-{
-	list-style:none;
-	margin:0;
-	font-size:1em;
-}
-#navlist a
-{
-	width:99%;
-	display:block;
-	color:#0033CC;
-	text-decoration:none;
-	margin-bottom:0.5em;
-	background:#39c;
-	border-width:1px;
-	border-style:solid;
-	border-color:#5bd #035 #068 #6cf;
-	border-left:1em solid #fc0;
-	padding:0.25em 0.5em 0.4em 0.75em;
-}
-div.eachOrder
-{
-	margin-top:50px;
-
-}
-.eachOrder h1{ font-size: 10px}
-.eachOrder	table
+.block3 table
 	{
 		width:100%;
 		font-size:15px;
@@ -159,7 +140,7 @@ div.eachOrder
 		border: 1px solid #cad9ea;
 		color:#666;
 	}
-.eachOrder th
+.block3	th
 	{
 		background-image: url(C:\Users\Administrator\Desktop\f5caf9a4790a7c724a36d6cd_副本.jpg);
 		background-repeat: repeat-x;
@@ -167,25 +148,25 @@ div.eachOrder
 		overflow:hidden;
 	}
  
-.eachOrder	td
+.block3	td
 	{
 		height:35px;
 		
 	}
-.eachOrder	td,th
+.block3	td,th
 	{
 		border:2px solid #cad9ea;
 		padding:0 lem 0;
 	}
-.eachOrder	td:nth-child(2)
+.block3	td:nth-child(2)
+	{
+		width:60%;
+	}
+.block3	td:nth-child(3)
 	{
 		width:10%;
 	}
-.eachOrder	td:nth-child(3)
-	{
-		width:10%;
-	}
-.eachOrder	tr:nth-child(even)
+.block3	tr:nth-child(even)
 	{
 		background-color:#f5fafe;
 		

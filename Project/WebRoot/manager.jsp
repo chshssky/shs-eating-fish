@@ -2,14 +2,14 @@
 <%@ page import="com.cheating.hib.*" import="org.hibernate.Session" import="org.hibernate.Criteria"
 import="org.hibernate.criterion.Restrictions" import="java.util.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<link rel="stylesheet" media="screen" type="text/css" href="css/logo.css"/>
+
 <link rel="stylesheet" media="screen" type="text/css" href="css/manager.css"/>
 
 <html>
 	<head>
 		<title>Manager Page</title>
 	</head>
-	<body bgcolor="#FFCC66">
+	<body>
 		<% 
 			int restId = (Integer)request.getSession().getAttribute("restId") ; 
 			Session se = HibernateSessionFactory.getSession() ;
@@ -24,7 +24,7 @@ import="org.hibernate.criterion.Restrictions" import="java.util.*"%>
 		   <img src="logo5.png" width="126" height="100"/>
 		  </div>
 		  <div class="welcome">
-		 	<h1>Welcome to</h1><h2> EFC </h2><br/><h1>欢迎来到</h1><h2>EFC</h2><h1>网上订餐系统</h1>
+		 	<h1>Welcome </h1><h2> Manager </h2><br/><h1>欢迎</h1><h2>Manager</h2><h1>登录</h1>
 		 	<h2> &nbsp &nbsp &nbsp &nbsp  &nbsp  &nbsp &nbsp &nbsp Manager Page</h2>
 		 </div>
 		 </div>

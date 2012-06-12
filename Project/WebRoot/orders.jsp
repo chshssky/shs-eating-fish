@@ -111,20 +111,5 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="gb2312"%>
      </div>
 		
   	</div>
-  	<div id="foot">
-  	<center>
-    <h4>∞Ê»®À˘”–(@all rights reserved) eating; chshs ; fish</h4>
-    <h4>Any question please call 18801791172</h4>
-    </center>
-
-  </div> 
-  
-  
-  
-  
-  
-  
-  	
-    
   </body>
 </html>
