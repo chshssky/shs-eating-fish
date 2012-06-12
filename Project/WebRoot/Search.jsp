@@ -26,12 +26,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
     Search:
 
+  
 	<br>test<sx:datetimepicker name="fromDate"/> 
 <br>test2:<sx:datetimepicker name="birthday" value="%{date}" displayFormat="yy-MM-dd" /> 
-<br>test3:<sx:datetimepicker name="student.birthday" type="date" displayFormat=""yyyy-MM-dd HH:mm:ss"" label="生日" value="%{date}"/>
+<br>test3:<sx:datetimepicker name="student.birthday" type="date" displayFormat="yyyy-MM-dd HH:mm:ss" label="生日" value="%{date}"/>
       <sx:autocompleter name="search"  searchType="substring" list="{'上海哈哈哈','上海','上海哈哈哈你','上海么','你好'}">
     </sx:autocompleter>
 <sx:autocompleter list="provice" name="provice"></sx:autocompleter> 
-  
+
   </body>
 </html>

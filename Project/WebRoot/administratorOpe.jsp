@@ -43,7 +43,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <li><a href="administratorOpe.jsp?id=-1">查看所有管理员</a></li>
     <li><a href="administratorOpe.jsp?id=-2">增加管理员</a></li>
     <li><a href="administratorOpe.jsp?id=-3">删除管理员</a></li>
-    <li><a>退出</a></li>
+    <li><a href="index.jsp">退出</a></li>
     </ul>
 
 		

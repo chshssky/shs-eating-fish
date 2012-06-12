@@ -18,6 +18,8 @@ public class PaymentAction extends ActionSupport implements ServletRequestAware{
 	private String firstName ;
 	private String lastName ;
 	private String telephoneNum ;
+	private String demandDate;
+	private String demandTime;
 	private HttpServletRequest request;
 
 	private void order()
@@ -29,6 +31,8 @@ public class PaymentAction extends ActionSupport implements ServletRequestAware{
 		curorder.setLastName(lastName) ;
 		curorder.setTelephoneNum(telephoneNum) ;
 		curorder.setState("finish") ;
+		System.out.println(demandDate);
+		System.out.println(demandTime);
 		Transaction tran = se.beginTransaction();
 		se.update(curorder) ;
 		tran.commit() ;
@@ -88,5 +92,22 @@ public class PaymentAction extends ActionSupport implements ServletRequestAware{
 	public void setServletRequest(HttpServletRequest request) {
 		this.request = request ;
 	}
+
+	public String getDemandDate() {
+		return demandDate;
+	}
+
+	public void setDemandDate(String demandDate) {
+		this.demandDate = demandDate;
+	}
+
+	public String getDemandTime() {
+		return demandTime;
+	}
+
+	public void setDemandTime(String demandTime) {
+		this.demandTime = demandTime;
+	}
+
 	
 }
