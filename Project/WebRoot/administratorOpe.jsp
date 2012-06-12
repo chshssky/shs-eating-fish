@@ -4,8 +4,7 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
-<link rel="stylesheet" media="screen" type="text/css" href="css/showUserInfo.css"/>
+<link rel="stylesheet" media="screen" type="text/css" href="css/adminOpe.css"/>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmls="http://www.w3.org/1999/xhtml">
   <head>
@@ -25,28 +24,32 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-  <%
+ <div id="wrap">
+ <div id="main" class="clearfix">
+  <div class="head">
+  <div class="welcome">
+ <h1>Welcome to</h1><h2>Administrator</h2><br/><h1>欢迎来到</h1><h2>Administrator</h2><h1>页面</h1>
+  </div>
+    </div>
+     <div class="block4">
+		<%
   	int id;
   	if(request.getParameter("id")==null)
   		id = -1;
   	else
   		id =Integer.valueOf(request.getParameter("id"));
    %>
-    <div class="userInfoGuide">
-    <table>
-    <tr>
-    <td><a href="administratorOpe.jsp?id=-1">查看所有管理员</a></td>
-    </tr>
-    <tr>
-    <td><a href="administratorOpe.jsp?id=-2">增加管理员</a></td>
-    </tr>
-    <tr>
-    <td><a href="administratorOpe.jsp?id=-3">删除管理员</a></td>
-    </tr>
-    </table>
-    </div>
-    <div class="change">
-    <%	if(id == -1)
+    <ul id="navlist">
+    <li><a href="administratorOpe.jsp?id=-1">查看所有管理员</a></li>
+    <li><a href="administratorOpe.jsp?id=-2">增加管理员</a></li>
+    <li><a href="administratorOpe.jsp?id=-3">删除管理员</a></li>
+    <li><a>退出</a></li>
+    </ul>
+
+		
+	 </div>
+     <div class="block3">
+    	<%	if(id == -1)
     {
      %>
     <jsp:include page="checkAllManagers.jsp"></jsp:include>
@@ -73,6 +76,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <%
     }
      %>
-    </div>
-  </body>
+     </div>
+	
+  	</div>
+  	</div>
+
+
+  <div id="foot">
+  	<center>
+    <h4>版权所有(@all rights reserved) eating; chshs ; fish</h4>
+    <h4>Any question please call 18801791172</h4>
+    </center>
+  </div>
+ </body>
 </html>

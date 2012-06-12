@@ -3,9 +3,10 @@ import="com.cheating.hib.*"
 import="org.hibernate.Criteria" 
 import="org.hibernate.Session"
 import="hibernate.*"
-import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
+import="org.hibernate.criterion.Restrictions"	pageEncoding="gb2312"%>
+<link rel="stylesheet" media="screen" type="text/css" href="css/order.css"/>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmls="http://www.w3.org/1999/xhtml">
   <head>  
     <title>My JSP 'ShowMyOrder.jsp' starting page</title>   
 	<meta http-equiv="pragma" content="no-cache">
@@ -19,9 +20,30 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
 
   </head>
   
-  <body topmargin="100">
-  	<h1>æˆ‘çš„è®¢å•</h1>
-    <jsp:useBean id="currUser" scope="session" class="com.cheating.SessionBean.LoginedUser"></jsp:useBean>
+  <body bgcolor="#CCFFFF">
+  <div id="wrap">
+  <div class="head">
+  <div class="logo">
+   <a href="index.jsp"><img src="logo5.png" width="126" height="100"/></a>
+ 
+  </div>
+  <div class="welcome">
+ <h1>Welcome to</h1><h2> your orders </h2><br/><h1>»¶Ó­</h1><h2>²é¿´</h2><h1>¶©µ¥</h1>
+  </div>
+
+  
+    </div>
+     <div class="block4">
+		<ul id="navlist">
+		<li><a href="#">ÎÒµÄ¶©µ¥:</a></li>
+		<li><a href="index.jsp">·µ»ØÊ×Ò³</a></li>
+		<li><a href="showRestaurant.jsp?id=0">²é¿´²Í¹İĞÅÏ¢</a></li>
+		<li><a href="showCart.jsp">²é¿´ÎÒµÄ¹ºÎï³µ</a></li>
+		</ul>
+		
+	 </div>
+     <div class="block3">
+    	<jsp:useBean id="currUser" scope="session" class="com.cheating.SessionBean.LoginedUser"></jsp:useBean>
     <%
     	int customerID = currUser.getId();
     	System.out.println(customerID);
@@ -31,6 +53,12 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
 		Criteria crit = se.createCriteria(Orderinfo.class);
 		crit.add(Restrictions.eq("customerinfo", cusInfo));
 		List<Orderinfo> orderinfos = crit.list();
+		if(orderinfos.isEmpty())
+		{%>
+		<h1>ÄúÄ¿Ç°ÔİÊ±Ã»ÓĞÈÎºÎ¶©µ¥Å¶</h1>
+		<%}
+		else
+		{
 		
 		for(Orderinfo info: orderinfos)
 		{
@@ -38,21 +66,21 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
 			Criteria crit3 = se.createCriteria(Ordercourses.class);
 			crit3.add(Restrictions.eq("orderinfo", info));
 			List<Ordercourses> odcourses = crit3.list();
-	%>
-			
+			%>
+			<div class="eachOrder">
 				<table align="center" border="2">
 				<tr>
-				<td>è®¢å•å·:<%=info.getOrderId() %></td>
-				<td colspan="2">è®¢å•ç”Ÿæˆæ—¶é—´ï¼š<%=String.valueOf(info.getOrderTime()) %></td>
-				<td>æ€»ä»·æ ¼ï¼š<%=info.getSumPrice()%></td>
-				<td>çŠ¶æ€ï¼š<%=info.getState()%></td>
+				<th>¶©µ¥ºÅ:<%=info.getOrderId() %></th>
+				<th colspan="2">¶©µ¥Éú³ÉÊ±¼ä£º<%=String.valueOf(info.getOrderTime()) %></th>
+				<th>×Ü¼Û¸ñ£º<%=info.getSumPrice()%></th>
+				<th>×´Ì¬£º<%=info.getState()%></th>
 				</tr>
 				<tr> 
-				<td>èœè‚´å</td>
-				<td>æ•°é‡</td>
-				<td>å•ä»·</td>
-				<td>é…é€åœ°å€</td>
-				<td>è®¢é¤ç”µè¯</td>
+				<td align="center">²ËëÈÃû</td>
+				<td align="center">ÊıÁ¿</td>
+				<td align="center">µ¥¼Û</td>
+				<td align="center">ÅäËÍµØÖ·</td>
+				<td align="center">¶©²Íµç»°</td>
 				</tr>
 				<%
 					for(Ordercourses info2: odcourses)
@@ -74,9 +102,29 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
 					}
 			 %>
 			</table>
-			
+			</div>
 		<%
-		}
+		}}
+		se.close();
     	  %>
+    	  
+     </div>
+		
+  	</div>
+  	<div id="foot">
+  	<center>
+    <h4>°æÈ¨ËùÓĞ(@all rights reserved) eating; chshs ; fish</h4>
+    <h4>Any question please call 18801791172</h4>
+    </center>
+
+  </div> 
+  
+  
+  
+  
+  
+  
+  	
+    
   </body>
 </html>

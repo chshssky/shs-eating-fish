@@ -1,12 +1,16 @@
 @CHARSET "UTF-8";
 html,body,#wrap
 {
-	height:100%;
+	height:70%;
 }
 body>#wrap
 {
 	height:auto;
-	min-height:100%;
+	min-height:70%;
+}
+#wrap
+{
+	background-image:url(adminbg.jpg);
 }
 #main
 {
@@ -14,7 +18,7 @@ body>#wrap
 }
 div.head
 {
-	background-image:url(head.png);
+	background-image:url(administratorHead.jpg);
 	height:100px;
 	width:1270px;
 }
@@ -24,12 +28,6 @@ div.logo
 	width:126px;
 	float:left;
 }
-	div.eating
- 	{
- 		background-image:url("F:\test2.jpg");
- 		width:100px;
- 		height:100px;
- 	}
 
 .welcome h1
 {
@@ -40,7 +38,7 @@ div.logo
 }
 .welcome h2
 {
-	color:#3300FF ;
+	color:#FFFF00  ;
 	font-size:32px;
 	font-family:Kristen ITC,华文行楷;
 	display : inline
@@ -65,20 +63,54 @@ div.block3
 {
 	color:#0066CC;
 	margin-left:30px;
+	margin-top:50px;
 	font-size:30px;
 	width:920px;
-	height:600px;
+	height:450px;
 	float:left;
 }
 div.block4
 {
 	font-size:20px;	
 	color:#6699FF;
-	margin-left:0px;
+	margin-left:10px;
+	margin-top:50px;
 	width:300px;
  	height:auto;
  	float:left;
  	padding-left:0px;
+}
+#navlist
+{
+	color:white;
+	background:#17a;
+	border-bottom:0.2em solid #17a;
+	padding:0 1px;
+	margin-left:0;
+	width:12em;
+	font:normal 0.8em Verdana, sans-serif;
+}
+
+#navlist li
+{
+	list-style:none;
+	margin:0;
+	font-size:1em;
+	margin-top:15px;
+}
+#navlist a
+{
+	width:99%;
+	display:block;
+	color:#0033CC;
+	text-decoration:none;
+	margin-bottom:0.5em;
+	background:#39c;
+	border-width:1px;
+	border-style:solid;
+	border-color:#5bd #035 #068 #6cf;
+	border-left:1em solid #fc0;
+	padding:0.25em 0.5em 0.4em 0.75em;
 }
 div.block5
 {
@@ -115,6 +147,11 @@ div.courseMenu
 	width:1270px;
 	clear:both;
 	margin-top:-70px;
-	background:#FF6600;
+	background:#6666FF;
 	float:bottom;
 }
+.clearfix:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;} 
+
+.clearfix {display: inline-block;} 
+
+

@@ -18,6 +18,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-   	 添加成功 ，两秒后跳回<br>
+   	 删除成功 ，两秒后跳回<br>
   </body>
 </html>

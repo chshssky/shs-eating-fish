@@ -9,8 +9,9 @@ String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
+<link rel="stylesheet" media="screen" type="text/css" href="css/checkAllManagers.css"/>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmls="http://www.w3.org/1999/xhtml">
   <head>
     <base href="<%=basePath%>">
     
@@ -28,12 +29,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
+  <div class="eachManager">
   <table>
    	 <tr>
-     <td>管理员ID</td>
-     <td>管理员名称</td>
-     <td>管理员所属餐馆</td>
-     <td>操作</td>
+     <th><h1>管理员ID</h1></th>
+     <th><h1>管理员名称</h1></th>
+     <th><h1>管理员所属餐馆</h1></th>
+     <th><h1>操作</h1></th>
      </tr>
     <%
     	Session se = HibernateSessionFactory.getSession();
@@ -71,5 +73,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      	
       %>
    </table>
+   </div>
   </body>
 </html>
