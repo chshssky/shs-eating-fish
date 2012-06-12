@@ -3,6 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <link rel="stylesheet" media="screen" type="text/css" href="css/logo.css"/>
 <link rel="stylesheet" media="screen" type="text/css" href="css/payOrder.css"/>
+<link rel="stylesheet" media="screen" type="text/css" href="css/manager.css"/>
 <html>
 <head>
 <title>order</title>
@@ -44,7 +45,12 @@
 				名<input size="2px" type="text" name="firstName"></input><br><br>
 				请输入联系人电话：<br>
 				<input type="text" name="telephoneNum"></input><br><br>
-				<input type="submit" value="确认预订">
+				请选择送餐时间：<br>
+				<select name="sendTime">
+					<option value="temp" /> //要只能选当前时间之后的。。
+				</select>
+				<br><br>
+				<input type="submit" class="input2" value="确认预订">
 			</div>
 		</form>
 	</div>

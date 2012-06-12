@@ -24,7 +24,6 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
     <jsp:useBean id="currUser" scope="session" class="com.cheating.SessionBean.LoginedUser"></jsp:useBean>
     <%
     	int customerID = currUser.getId();
-    	System.out.println(customerID);
     	Session se = HibernateSessionFactory.getSession();
 		Customerinfo cusInfo = (Customerinfo)se.load(Customerinfo.class, customerID);
 
@@ -34,10 +33,11 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
 		
 		for(Orderinfo info: orderinfos)
 		{
-			System.out.println(info.getOrderId());
 			Criteria crit3 = se.createCriteria(Ordercourses.class);
 			crit3.add(Restrictions.eq("orderinfo", info));
 			List<Ordercourses> odcourses = crit3.list();
+			if(info.getState().equals("finish"))
+			{
 	%>
 			
 				<table align="center" border="2">
@@ -45,14 +45,12 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
 				<td>订单号:<%=info.getOrderId() %></td>
 				<td colspan="2">订单生成时间：<%=String.valueOf(info.getOrderTime()) %></td>
 				<td>总价格：<%=info.getSumPrice()%></td>
-				<td>状态：<%=info.getState()%></td>
+				<!-- <td>状态：<%=info.getState()%></td> -->
 				</tr>
 				<tr> 
-				<td>菜肴名</td>
+				<td colspan="2">菜肴名</td>
 				<td>数量</td>
 				<td>单价</td>
-				<td>配送地址</td>
-				<td>订餐电话</td>
 				</tr>
 				<%
 					for(Ordercourses info2: odcourses)
@@ -63,20 +61,22 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
 						List<Courseinfo> courseinfo = crit4.list();
 						
 				%>
-							<tr>
-						<td align="center"><%=courseinfo.get(0).getName()%></td>
+						<tr>
+						<td colspan="2" align="center"><%=courseinfo.get(0).getName()%></td>
 						<td align="center"><%=info2.getNum()%></td>
 						<td align="center"><%=courseinfo.get(0).getPrice() %></td>
-						<td align="center"><%=info.getAddress()%></td>
-						<td align="center"><%=info.getTelephoneNum()%></td>
-						</tr>
 			<%
 					}
 			 %>
+			 		<tr>
+			 			<td align="center" colspan="2">配送地址：<%=info.getAddress()%></td>
+						<td align="center" colspan="2">订餐电话：<%=info.getTelephoneNum()%></td>
+					</tr>
+			<%} %>
 			</table>
 			
 		<%
 		}
-    	  %>
+    	%>
   </body>
 </html>
