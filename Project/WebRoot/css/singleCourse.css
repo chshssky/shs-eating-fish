@@ -11,6 +11,16 @@ div.courseName
 	display : inline;
 }
 
+div.returnRest
+{
+	margin-top:30px;
+	margin-right:120px;
+	float:right;
+	color:#FF6600;
+	font-size:25px;
+	font-family:幼圆;
+	display : inline;
+}
 
 div.des
 {

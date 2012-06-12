@@ -50,9 +50,11 @@ import="java.util.*"%>
     	Iterator<Courseinfo> courseinfos = critCourse.list().iterator() ;
     	
 		Courseinfo info = courseinfos.next() ;
+		int restId = info.getRestaurantinfo().getRestaurantId() ;
 	%>	
 		
 			<div class="courseName"><%=info.getName() %></div>
+			<div class="returnRest"><a href="showRestaurant.jsp?id=<%=restId%>">到饭店逛逛~~</a></div>
 			
 			<div class="pic">
 				<img src=<%=info.getPic() %> height="100px" width="100px"/>
