@@ -93,7 +93,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
   <div id="foot">
   	<center>
-    <h4>版权所有(@all rights reserved) eating; chshs ; fish</h4>
+    <h4>版权所有@all rights reserved) eating; chshs ; fish</h4>
     <h4>Any question please call 18801791172</h4>
     </center>
   </div>

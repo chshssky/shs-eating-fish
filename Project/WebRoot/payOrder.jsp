@@ -4,9 +4,11 @@
 <link rel="stylesheet" media="screen" type="text/css" href="css/logo.css"/>
 <link rel="stylesheet" media="screen" type="text/css" href="css/payOrder.css"/>
 <link rel="stylesheet" media="screen" type="text/css" href="css/manager.css"/>
+<%@ taglib uri="/struts-dojo-tags" prefix="sx" %>
 <html>
 <head>
 <title>order</title>
+	<sx:head/>
 </head>
 	<body>
 	
@@ -36,7 +38,7 @@
 </div>
 	
 	<s:actionerror/>
-		<form action="payment">
+		<s:form action="payment">
 			<div class="input">
 				请输入地址：<br>
 				<input type="text" name="address"></input><br><br>
@@ -46,13 +48,15 @@
 				请输入联系人电话：<br>
 				<input type="text" name="telephoneNum"></input><br><br>
 				请选择送餐时间：<br>
-				<select name="sendTime">
-					<option value="temp" /> //要只能选当前时间之后的。。
-				</select>
+				<%
+					
+				 %>
+				<sx:datetimepicker name="demandDate" type="date" toggleDuration="explode" displayFormat="yyyy-MM-dd" ></sx:datetimepicker>
+				<sx:datetimepicker name="demandTime" type="time" toggleDuration="explode" displayFormat="HH:mm:ss" ></sx:datetimepicker>
 				<br><br>
 				<input type="submit" class="input2" value="确认预订">
 			</div>
-		</form>
+		</s:form>
 	</div>
     <div id="foot">
   		<center>

@@ -77,26 +77,24 @@ public class addManager extends ActionSupport implements ServletRequestAware, Se
 		}
 		else
 		{
-			System.out.println("fuck you!!!!!!!!!!!!!!");
-		Logininfo in = new Logininfo();
-		Managerinfo ma = new Managerinfo();
-		Authority au = (Authority)se.load(Authority.class, 2);
-		in.setLoginName(loginName);
-		in.setPassword(password);
-		in.setAuthority(au);
-		ma.setLogininfo(in);
-		ma.setName(managerName);
-		ma.setRestaurantinfo(restinfos.get(0));
-		Transaction tran = se.beginTransaction();
-		se.save(ma);
-		se.save(in);
-		tran.commit();
-		HibernateSessionFactory.closeSession();
+			Logininfo in = new Logininfo();
+			Managerinfo ma = new Managerinfo();
+			Authority au = (Authority)se.load(Authority.class, 2);
+			in.setLoginName(loginName);
+			in.setPassword(password);
+			in.setAuthority(au);
+			ma.setLogininfo(in);
+			ma.setName(managerName);
+			ma.setRestaurantinfo(restinfos.get(0));
+			Transaction tran = se.beginTransaction();
+			se.save(ma);
+			se.save(in);
+			tran.commit();
+			HibernateSessionFactory.closeSession();
 		}
 		
 	}
 	public String execute() throws Exception{
-		System.out.println("tooooo  fuck cuihao!!!!!!!!!!!!!!");
 		add();
 		return SUCCESS;
 		
