@@ -25,10 +25,38 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-
+<script type="text/javascript">
+function showRest(str)
+{
+var xmlhttp;    
+if (str=="")
+  {
+  document.getElementById("txtHint").innerHTML="";
+  return;
+  }
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
+    }
+  }
+xmlhttp.open("GET","seeRestaurant.jsp?id="+str,true);
+xmlhttp.send();
+}
+</script>
   </head>
   
   <body>
+  <div class="add" cssStyle="float:left">
   <fieldset id="fieldset">
     <legend>添加信息</legend>
   	<s:actionerror/>
@@ -44,7 +72,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				
 			 %>
 			 管理员所属餐馆
-			<select name="restaurant">
+			<select name="restaurant" onchange="showRest(this.value)">
     			<%
     				for(Restaurantinfo info:restinfos)
     				{	
@@ -58,5 +86,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<s:reset value="重置"/>
 	</s:form>
   </fieldset>
+  </div>
+  <div id="txtHint" cssStyle="float=left">客户信息将在此处列出 ...</div>
   </body>
 </html>
