@@ -14,7 +14,9 @@
 			<result name="input">/Login.jsp</result>
 			<result name="success">/index.jsp</result>
 		</action>
-		
+		<action name="changeUpBound" class="eating.man.administrator.changeUpBound">
+			<result name="success">/changeSuccess.jsp</result>
+		</action>
 		<action name="reset_email" class="fish.ui.user.ResetEmail">
 			<!-- need input result -->
 			<result name="success">/userInfo.jsp</result>

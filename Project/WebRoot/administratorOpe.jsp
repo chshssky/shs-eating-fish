@@ -43,6 +43,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <li><a href="administratorOpe.jsp?id=-1">查看所有管理员</a></li>
     <li><a href="administratorOpe.jsp?id=-2">增加管理员</a></li>
     <li><a href="administratorOpe.jsp?id=-3">删除管理员</a></li>
+    <li><a href="administratorOpe.jsp?id=-5">修改管理员上限</a></li>
     <li><a>退出</a></li>
     </ul>
 
@@ -68,6 +69,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     else if(id ==-4)
     {%>
     <jsp:include page="addManager.jsp"><jsp:param name="id" value="0"></jsp:param></jsp:include>
+    <%}
+    else if(id ==-5)
+    {%>
+    <jsp:include page="changeUpBound.jsp"><jsp:param name="id" value="0"></jsp:param></jsp:include>
     <%}
     else if(id == 0)
     {%>
