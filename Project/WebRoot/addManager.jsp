@@ -10,8 +10,11 @@ String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<link rel="stylesheet" media="screen" type="text/css" href="css/addManager.css"/>
+
+<html xmls="http://www.w3.org/1999/xhtml">
   <head>
     <base href="<%=basePath%>">
     
@@ -56,7 +59,7 @@ xmlhttp.send();
   </head>
   
   <body>
-  <div class="add" cssStyle="float:left">
+  <div class="add">
   <fieldset id="fieldset">
     <legend>添加信息</legend>
   	<s:actionerror/>
@@ -87,6 +90,6 @@ xmlhttp.send();
 	</s:form>
   </fieldset>
   </div>
-  <div id="txtHint" >客户信息将在此处列出 ...</div>
+  <div id="txtHint" >餐馆信息将在此处列出 ...</div>
   </body>
 </html>
