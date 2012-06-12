@@ -41,10 +41,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    %>
     <ul id="navlist">
     <li><a href="administratorOpe.jsp?id=-1">查看所有管理员</a></li>
-    <li><a href="administratorOpe.jsp?id=-2">增加管理�/a></li>
-    <li><a href="administratorOpe.jsp?id=-3">删除管理�/a></li>
-    <li><a href="administratorOpe.jsp?id=-5">修改管理员上�/a></li>
-    <li><a>退�/a></li>
+    <li><a href="administratorOpe.jsp?id=-2">增加管理员</a></li>
+    <li><a href="administratorOpe.jsp?id=-3">删除管理员</a></li>
+    <li><a href="administratorOpe.jsp?id=-5">修改管理员上限</a></li>
+    <li><a>退出</a></li>
     </ul>
 
 		
@@ -93,7 +93,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
   <div id="foot">
   	<center>
-    <h4>版权所�@all rights reserved) eating; chshs ; fish</h4>
+    <h4>版权所有@all rights reserved) eating; chshs ; fish</h4>
     <h4>Any question please call 18801791172</h4>
     </center>
   </div>
