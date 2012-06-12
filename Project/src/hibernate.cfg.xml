@@ -11,15 +11,17 @@
 			org.hibernate.dialect.MySQLDialect
 		</property>
 		<property name="connection.url">
-			jdbc:mysql://localhost:3306
+			jdbc:mysql://localhost:3306/orderonlinedb
 		</property>
 		<property name="connection.username">root</property>
-		<property name="connection.password">330330</property>
+		<property name="connection.password">1234</property>
 		<property name="connection.driver_class">
 			com.mysql.jdbc.Driver
 		</property>
 
-		<property name="myeclipse.connection.profile">driver</property>
+		<property name="myeclipse.connection.profile">
+			eating
+		</property>
 
 		<mapping resource="com/cheating/hib/Restaurantinfo.hbm.xml" />
 		<mapping resource="com/cheating/hib/Logininfo.hbm.xml" />

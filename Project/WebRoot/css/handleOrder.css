@@ -130,3 +130,44 @@ div.courseMenu
 	background:#FF6600;
 	float:bottom;
 }
+.block3 table
+	{
+		width:100%;
+		font-size:15px;
+		empty-cells:show;
+		border-collapse:collapse;
+		margin=0 auto;
+		border: 1px solid #cad9ea;
+		color:#666;
+	}
+.block3	th
+	{
+		background-image: url(C:\Users\Administrator\Desktop\f5caf9a4790a7c724a36d6cd_副本.jpg);
+		background-repeat: repeat-x;
+		height:30px;
+		overflow:hidden;
+	}
+ 
+.block3	td
+	{
+		height:35px;
+		
+	}
+.block3	td,th
+	{
+		border:2px solid #cad9ea;
+		padding:0 lem 0;
+	}
+.block3	td:nth-child(2)
+	{
+		width:60%;
+	}
+.block3	td:nth-child(3)
+	{
+		width:10%;
+	}
+.block3	tr:nth-child(even)
+	{
+		background-color:#f5fafe;
+		
+	}

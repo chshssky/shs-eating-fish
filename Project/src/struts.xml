@@ -14,7 +14,9 @@
 			<result name="input">/Login.jsp</result>
 			<result name="success">/index.jsp</result>
 		</action>
-		
+		<action name="changeUpBound" class="eating.man.administrator.changeUpBound">
+			<result name="success">/changeSuccess.jsp</result>
+		</action>
 		<action name="reset_email" class="fish.ui.user.ResetEmail">
 			<!-- need input result -->
 			<result name="success">/userInfo.jsp</result>
@@ -38,7 +40,7 @@
 		</action>
 		<action name="addManager" class="eating.man.administrator.addManager">
 		<interceptor-ref name="validationWorkflowStack"/>
-	    <!-- <result name="input">administratorOpe.jsp?id=-2</result> -->
+	    <result name="input">/administratorOpe.jsp?id=-2</result>
 		<result name="success">/addManagerSuccess.jsp</result>
 		</action>
 		<action name="put_cart" class="fish.operation.cart.PutCart">
@@ -94,6 +96,9 @@
 		<action name="manOrderRmv" class="fish.man.manager.ManOrderRmvAction">
 			<result name="input">/manOrder.jsp</result>
 			<result name="success">/manOrder.jsp</result>
+		</action>
+		<action name="autocompletertag" class="com.efc.action.AutoCompleterAction">
+		    <result>/autocompletertag.jsp</result>
 		</action>
 		
 		<action name="rmvCourse" class="fish.man.manager.RmvCourseAction">

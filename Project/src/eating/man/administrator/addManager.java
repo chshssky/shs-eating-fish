@@ -1,19 +1,27 @@
 package eating.man.administrator;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.struts2.interceptor.ServletRequestAware;
+import org.apache.struts2.interceptor.ServletResponseAware;
 import org.hibernate.*;
 import org.hibernate.criterion.Restrictions;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.cheating.hib.*;
 
-public class addManager extends ActionSupport {
+public class addManager extends ActionSupport implements ServletRequestAware, ServletResponseAware{
 	private String loginName;
 	private String password;
 	private String repassword;
 	private String managerName;
 	private String restaurant;
+	private HttpServletRequest request;
+	private HttpServletResponse response;
 	public String getLoginName() {
 		return loginName;
 	}
@@ -44,63 +52,61 @@ public class addManager extends ActionSupport {
 	public void setRestaurant(String restaurant) {
 		this.restaurant = restaurant;
 	}
-	
-	private boolean checkUser() {
-		Session se = HibernateSessionFactory.getSession();
-		
-		Criteria crit = se.createCriteria(Logininfo.class);
-    	crit.add(Restrictions.eq("loginName", loginName));
-    	
-    	if(crit.list().size() != 0)
-    		return false ;
-    	
-    	else return true ;
-	}
-	
 	public void validate() {
 		if(password != null && repassword != null){
 			if(!repassword.equals(password))
 				this.addActionError("两次输入密码不一致");
-			
-			if(!checkUser())
-				this.addActionError("此用户名已存在");
 		}
 	}
-	
-	
-	
-	public void add() {
+	public void add() throws IOException 
+	{
 		
 		Session se = HibernateSessionFactory.getSession();
 		Criteria crit2 = se.createCriteria(Restaurantinfo.class);
 		crit2.add(Restrictions.eq("restaurantId", Integer.valueOf(restaurant)));
 		List<Restaurantinfo> restinfos = crit2.list();
-		Logininfo in = new Logininfo();
-		Managerinfo ma = new Managerinfo();
-		Authority au = (Authority)se.load(Authority.class, 2);
-		in.setLoginName(loginName);
-		in.setPassword(password);
-		in.setAuthority(au);
-		ma.setLogininfo(in);
-		ma.setName(managerName);
-		ma.setRestaurantinfo(restinfos.get(0));
+		int managerUpBound = restinfos.get(0).getManagerUpBound();
+		Criteria crit3 = se.createCriteria(Managerinfo.class);
+		crit3.add(Restrictions.eq("restaurantinfo",restinfos.get(0)));
+		List<Managerinfo> mana = crit3.list();
+	
+		if(managerUpBound <= mana.size())
+		{
+			se.close();
+			response.sendRedirect("administratorOpe.jsp?id=-4");
+		}
+		else
+		{
+			Logininfo in = new Logininfo();
+			Managerinfo ma = new Managerinfo();
+			Authority au = (Authority)se.load(Authority.class, 2);
+			in.setLoginName(loginName);
+			in.setPassword(password);
+			in.setAuthority(au);
+			ma.setLogininfo(in);
+			ma.setName(managerName);
+			ma.setRestaurantinfo(restinfos.get(0));
+			Transaction tran = se.beginTransaction();
+			se.save(ma);
+			se.save(in);
+			tran.commit();
+			HibernateSessionFactory.closeSession();
+		}
 		
-		
-		
-		
-		Transaction tran = se.beginTransaction();
-		se.save(ma);
-		se.save(in);
-		tran.commit();
-		HibernateSessionFactory.closeSession();
 	}
-	
-	
-	
 	public String execute() throws Exception{
 		add();
 		return SUCCESS;
 		
+	}
+	public void setServletResponse(HttpServletResponse response) {
+		// TODO Auto-generated method stub
+		this.response = response ;
+	}
+
+	public void setServletRequest(HttpServletRequest request) {
+		// TODO Auto-generated method stub
+		this.request = request;
 	}
 	
 }

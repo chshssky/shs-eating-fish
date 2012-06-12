@@ -45,7 +45,7 @@ import="org.hibernate.criterion.Restrictions" import="java.util.*"%>
 			
 			
 			<div class="infoName">
-				<h1>饭店信息：</h1>
+				<h1>饭店信息�/h1>
 			
 				<div class="info">
 					<h2><%=curRest.getDescript() %></h2>
@@ -55,7 +55,7 @@ import="org.hibernate.criterion.Restrictions" import="java.util.*"%>
 			</div>
 			
 			<div class="cinfoName">
-				<h1>菜品信息：</h1>
+				<h1>菜品信息�/h1>
 			
 				<div class="cinfo">
 				
@@ -94,7 +94,7 @@ import="org.hibernate.criterion.Restrictions" import="java.util.*"%>
 	</div>
 	<div id="foot">
   		<center>
-    		<h4>版权所有(@copy right)</h4>
+    		<h4>版权所�@copy right)</h4>
     	</center>
 	</div> 
 	</body>

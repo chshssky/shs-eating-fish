@@ -43,6 +43,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <li><a href="administratorOpe.jsp?id=-1">查看所有管理员</a></li>
     <li><a href="administratorOpe.jsp?id=-2">增加管理员</a></li>
     <li><a href="administratorOpe.jsp?id=-3">删除管理员</a></li>
+    <li><a href="administratorOpe.jsp?id=-5">修改管理员上限</a></li>
     <li><a>退出</a></li>
     </ul>
 
@@ -65,6 +66,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     {%>
     <jsp:include page="deleteManagerB.jsp"><jsp:param name="id" value="-1"></jsp:param></jsp:include>
     <%}
+    else if(id ==-4)
+    {%>
+    <jsp:include page="addManager.jsp"><jsp:param name="id" value="0"></jsp:param></jsp:include>
+    <%}
+    else if(id ==-5)
+    {%>
+    <jsp:include page="changeUpBound.jsp"><jsp:param name="id" value="0"></jsp:param></jsp:include>
+    <%}
     else if(id == 0)
     {%>
     	<jsp:include page="deleteManagerB.jsp"><jsp:param name="id" value="0"></jsp:param></jsp:include>
@@ -84,7 +93,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
   <div id="foot">
   	<center>
-    <h4>版权所有(@all rights reserved) eating; chshs ; fish</h4>
+    <h4>版权所有@all rights reserved) eating; chshs ; fish</h4>
     <h4>Any question please call 18801791172</h4>
     </center>
   </div>

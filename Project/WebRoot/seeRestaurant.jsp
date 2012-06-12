@@ -42,21 +42,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <tr>
   <th colspan="2">餐馆信息</th>
   </tr>
-  <tr margin-top="5px">
-  <td margin-top="5px">餐馆ID</td>
-  <td margin-top="5px"><%=rest.get(0).getRestaurantId() %></td>
+  <tr>
+  <td>餐馆ID</td>
+  <td><%=rest.get(0).getRestaurantId() %></td>
   </tr>
-  <tr margin-top="5px">
-  <td margin-top="5px">餐馆名称</td>
-  <td margin-top="5px"><%=rest.get(0).getName() %></td>
+  <tr>
+  <td>餐馆名称</td>
+  <td><%=rest.get(0).getName() %></td>
   </tr>
-  <tr margin-top="5px">
-  <td margin-top="5px"  >餐馆地址</td>
-  <td margin-top="5px"><%=rest.get(0).getAddress() %></td>
+  <tr>
+  <td>餐馆地址</td>
+  <td><%=rest.get(0).getAddress() %></td>
   </tr>
-  <tr margin-top="5px">
-  <td margin-top="5px">管理员上限</td>
-  <td margin-top="5px"><%=rest.get(0).getManagerUpBound() %>人</td>
+  <tr>
+  <td>管理员上限</td>
+  <td><%=rest.get(0).getManagerUpBound() %>人</td>
   </tr>
   </table>
    <%se.close(); %>
