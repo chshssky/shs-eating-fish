@@ -38,7 +38,7 @@
 		</action>
 		<action name="addManager" class="eating.man.administrator.addManager">
 		<interceptor-ref name="validationWorkflowStack"/>
-	    <result name="input">/addManager.jsp?id=0</result>
+	    <result name="input">/administratorOpe.jsp?id=-2</result>
 		<result name="success">/addManagerSuccess.jsp</result>
 		</action>
 		<action name="put_cart" class="fish.operation.cart.PutCart">
