@@ -4,6 +4,9 @@ import="org.hibernate.Criteria"
 import="org.hibernate.Session"
 import="hibernate.*"
 import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
+
+<link rel="stylesheet" media="screen" type="text/css" href="css/manager.css"/>
+
 <html>
   <head>  
     <title>Continue Pay</title>   
@@ -60,13 +63,14 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
 			<%
 					}
 			 %>
-			 	<tr><td><td>总价格：<%=info.getSumPrice()%></td><td/></tr>
+			 	<tr><td colspan="3">总价格：<%=info.getSumPrice()%></td></tr>
 			</table>
+		<div class="handleSub">
 			<form action="conOrder">
 				<input type="hidden" name="curOrderId" value=<%=info.getOrderId() %> />
-				<input type="submit" value="确认订单" /> 		
+				<input type="submit" class="input2" value="确认订单" /> 		
 			</form>
-			
+		</div>
 	<%	
 			}
 		}

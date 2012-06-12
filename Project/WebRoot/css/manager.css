@@ -157,3 +157,11 @@ div.restinfo
 	font-family:华文行楷
 	
 }
+
+div.handleSub
+{
+	margin-top:10px;
+	margin-left:800px;
+	float:left;
+	display:inline;
+}

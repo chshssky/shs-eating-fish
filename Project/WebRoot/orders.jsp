@@ -106,7 +106,7 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="gb2312"%>
 		<%
 		}}
 		se.close();
-    	  %>
+    	%>
     	  
      </div>
 		

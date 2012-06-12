@@ -40,21 +40,26 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <div class="welcome">
  <h1>Welcome to</h1><h2> EFC </h2><br/><h1>欢迎来到</h1><h2>EFC</h2><h1>网上订餐系统</h1>
   </div>
+  
   <div class="ifLogin">
 			<jsp:useBean id="currUser" scope="session" class="com.cheating.SessionBean.LoginedUser"></jsp:useBean>
 			<%
 				System.out.println("index.jsp:LoginID:" + currUser.getId());
 				if(currUser.getId() == 0) {
 			%>
-			<jsp:include page="HeadLoggedout.jsp"></jsp:include>
+			<div class="ifLoginN">
+				<jsp:include page="HeadLoggedout.jsp"></jsp:include>
+			</div>
 			<%
 				} else {
 			%>
-			<jsp:include page="HeadLoggedin.jsp"></jsp:include>
+			<div class="ifLogin">
+				<jsp:include page="HeadLoggedin.jsp"></jsp:include>
+			</div>
 			<%
 				}
 			%>
-	</div>
+	
   
     </div>
      <div class="block4">
@@ -63,6 +68,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	 </div>
      <div class="block3">
     	<a href="showRestaurant.jsp?id=0">餐馆信息</a>
+	
     	<jsp:include page="Maps.jsp"></jsp:include>
        <jsp:include page="webGL.jsp" ></jsp:include>	
      </div>
@@ -73,7 +79,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
   <div id="foot">
   	<center>
-    <h4>版权所有(@all rights reserved) eating; chshs ; fish</h4>
+    <h4>版权所�@all rights reserved) eating; chshs ; fish</h4>
     <h4>Any question please call 18801791172</h4>
     </center>
 

@@ -51,10 +51,21 @@ div.ifLogin
 	font-color:#FFCCCC;
 	size:30px;
 	float:right;
+	margin-right:50px;
+	padding-top:0px;
+
+}
+
+div.ifLoginN
+{
+	font-color:#FFCCCC;
+	size:30px;
+	float:right;
 	margin-right:100px;
 	padding-top:50px;
 
 }
+
 div.welcome
 {
 	margin-left:150px;
