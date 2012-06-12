@@ -65,6 +65,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     {%>
     <jsp:include page="deleteManagerB.jsp"><jsp:param name="id" value="-1"></jsp:param></jsp:include>
     <%}
+    else if(id ==-4)
+    {%>
+    <jsp:include page="addManager.jsp"><jsp:param name="id" value="0"></jsp:param></jsp:include>
+    <%}
     else if(id == 0)
     {%>
     	<jsp:include page="deleteManagerB.jsp"><jsp:param name="id" value="0"></jsp:param></jsp:include>

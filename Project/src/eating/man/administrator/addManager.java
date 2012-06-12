@@ -6,13 +6,15 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.struts2.interceptor.ServletRequestAware;
+import org.apache.struts2.interceptor.ServletResponseAware;
 import org.hibernate.*;
 import org.hibernate.criterion.Restrictions;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.cheating.hib.*;
 
-public class addManager extends ActionSupport{
+public class addManager extends ActionSupport implements ServletRequestAware, ServletResponseAware{
 	private String loginName;
 	private String password;
 	private String repassword;
@@ -67,11 +69,11 @@ public class addManager extends ActionSupport{
 		Criteria crit3 = se.createCriteria(Managerinfo.class);
 		crit3.add(Restrictions.eq("restaurantinfo",restinfos.get(0)));
 		List<Managerinfo> mana = crit3.list();
-		System.out.println("UpBound:..,,,,"+managerUpBound);
+	
 		if(managerUpBound <= mana.size())
 		{
-			HibernateSessionFactory.closeSession();
-			response.sendRedirect("addManager.jsp?id=0");
+			se.close();
+			response.sendRedirect("administratorOpe.jsp?id=-4");
 		}
 		else
 		{
