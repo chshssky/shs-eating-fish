@@ -1,0 +1,27 @@
+@CHARSET "UTF-8";
+div.headline
+{
+	background-image:url(info.png);
+	height:46px;
+	width:200px;
+}
+.headline h1
+{
+	font-size:30px;
+	font-family:Kristen ITC,华文行楷;
+	color:#000000;
+}
+div.resetEmail
+{
+	
+}
+.resetEmail h2
+{
+	font-size:35px;
+	font-family:Kristen ITC,华文行楷;
+}
+div.resetPassword h2
+{
+	font-size:35px;
+	font-family:Kristen ITC,华文行楷;
+}

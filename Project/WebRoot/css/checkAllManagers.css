@@ -1,0 +1,87 @@
+@CHARSET "UTF-8";
+.ecahManager
+{
+	margin-top:50px;
+}
+.eachManager h1
+{ 
+	font-size: 10px;
+	font-family:华文行楷；
+}
+.eachManager table
+	{
+		width:100%;
+		font-size:15px;
+		empty-cells:show;
+		border-collapse:collapse;
+		margin=0 auto;
+		border: 1px solid #cad9ea;
+		color:#666;
+	}
+.eachManager th
+	{
+		background-image: url(C:\Users\Administrator\Desktop\f5caf9a4790a7c724a36d6cd_副本.jpg);
+		background-repeat: repeat-x;
+		height:30px;
+		overflow:hidden;
+	}
+ 
+.eachManager td
+	{
+		height:35px;
+		
+	}
+.eachManager td,th
+	{
+		border:2px solid #cad9ea;
+		padding:0 lem 0;
+	}
+.eachManager td:nth-child(2)
+	{
+		width:10%;
+	}
+.eachManager td:nth-child(3)
+	{
+		width:50%;
+	}
+.eachManager tr:nth-child(even)
+	{
+		background-color:#f5fafe;
+		
+	}
+	.acknowledge table
+	{
+		width:100%;
+		font-size:15px;
+		empty-cells:show;
+		border-collapse:collapse;
+		margin=0 auto;
+		border: 1px solid #cad9ea;
+		color:#666;
+	}
+.acknowledge th
+	{
+		background-image: url(C:\Users\Administrator\Desktop\f5caf9a4790a7c724a36d6cd_副本.jpg);
+		background-repeat: repeat-x;
+		height:30px;
+		overflow:hidden;
+	}
+ 
+.acknowledge td
+	{
+		height:35px;
+		
+	}
+	.acknowledge td,th
+	{
+		border:2px solid #cad9ea;
+		padding:0 lem 0;
+	}
+.acknowledge td:nth-child(1)
+	{
+		width:50%;
+	}
+.acknowledge td:nth-child(2)
+	{
+		width:50%;
+	}

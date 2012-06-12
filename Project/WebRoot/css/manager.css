@@ -157,3 +157,26 @@ div.restinfo
 	font-family:华文行楷
 	
 }
+
+div.handleSub
+{
+	margin-top:10px;
+	margin-left:800px;
+	float:left;
+	display:inline;
+}
+
+div.rmvOrder
+{
+	margin-top:20px;
+	margin-left:200px;
+	float:left;
+}
+
+div.rmvOrderButton
+{
+	margin-top:30px;
+	margin-left:20px;
+	float:left;
+	display:inline;
+}

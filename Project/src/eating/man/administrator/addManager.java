@@ -1,6 +1,10 @@
 package eating.man.administrator;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.hibernate.*;
 import org.hibernate.criterion.Restrictions;
@@ -14,21 +18,8 @@ public class addManager extends ActionSupport{
 	private String repassword;
 	private String managerName;
 	private String restaurant;
-	private ArrayList<Restaurant> restaurantList;
-	public String populate()
-	{
-		restaurantList = new ArrayList<Restaurant>();
-		Session se = HibernateSessionFactory.getSession();
-		Criteria crit = se.createCriteria(Restaurantinfo.class);
-		List<Restaurantinfo> restinfos = crit.list();
-
-		for(Restaurantinfo info:restinfos)
-		{
-			restaurantList.add(new Restaurant(info.getRestaurantId(),info.getName()));
-		}
-		se.close();
-		return "populate";
-	}
+	private HttpServletRequest request;
+	private HttpServletResponse response;
 	public String getLoginName() {
 		return loginName;
 	}
@@ -65,43 +56,57 @@ public class addManager extends ActionSupport{
 				this.addActionError("两次输入密码不一致");
 		}
 	}
-	public void add() {
+	public void add() throws IOException 
+	{
 		
 		Session se = HibernateSessionFactory.getSession();
 		Criteria crit2 = se.createCriteria(Restaurantinfo.class);
-		crit2.add(Restrictions.eq("name", Integer.valueOf(restaurant)));
+		crit2.add(Restrictions.eq("restaurantId", Integer.valueOf(restaurant)));
 		List<Restaurantinfo> restinfos = crit2.list();
+		int managerUpBound = restinfos.get(0).getManagerUpBound();
+		Criteria crit3 = se.createCriteria(Managerinfo.class);
+		crit3.add(Restrictions.eq("restaurantinfo",restinfos.get(0)));
+		List<Managerinfo> mana = crit3.list();
+		System.out.println("UpBound:..,,,,"+managerUpBound);
+		if(managerUpBound <= mana.size())
+		{
+			HibernateSessionFactory.closeSession();
+			response.sendRedirect("addManager.jsp?id=0");
+		}
+		else
+		{
+			System.out.println("fuck you!!!!!!!!!!!!!!");
 		Logininfo in = new Logininfo();
 		Managerinfo ma = new Managerinfo();
 		Authority au = (Authority)se.load(Authority.class, 2);
-		
-		
-		ma.setLogininfo(in);
-		ma.setName(managerName);
-		ma.setRestaurantinfo(restinfos.get(0));
-		
 		in.setLoginName(loginName);
 		in.setPassword(password);
 		in.setAuthority(au);
-		
-		
-		
+		ma.setLogininfo(in);
+		ma.setName(managerName);
+		ma.setRestaurantinfo(restinfos.get(0));
 		Transaction tran = se.beginTransaction();
 		se.save(ma);
 		se.save(in);
 		tran.commit();
 		HibernateSessionFactory.closeSession();
+		}
+		
 	}
 	public String execute() throws Exception{
+		System.out.println("tooooo  fuck cuihao!!!!!!!!!!!!!!");
 		add();
 		return SUCCESS;
 		
 	}
-	public ArrayList<Restaurant> getRestaurantList() {
-		return restaurantList;
+	public void setServletResponse(HttpServletResponse response) {
+		// TODO Auto-generated method stub
+		this.response = response ;
 	}
-	public void setRestaurantList(ArrayList<Restaurant> restaurantList) {
-		this.restaurantList = restaurantList;
+
+	public void setServletRequest(HttpServletRequest request) {
+		// TODO Auto-generated method stub
+		this.request = request;
 	}
 	
 }

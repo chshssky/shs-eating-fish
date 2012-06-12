@@ -1,7 +1,5 @@
 package eating.man.administrator;
 
-import java.io.IOException;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -19,7 +17,7 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.criterion.Restrictions;
 
 
-public class deleteManagerA extends ActionSupport implements ServletRequestAware, ServletResponseAware{
+public class acknowledgeDelete extends ActionSupport implements ServletRequestAware, ServletResponseAware{
 	private int managerID;
 	private int loginID;
 	private HttpServletRequest request;
@@ -39,7 +37,7 @@ public class deleteManagerA extends ActionSupport implements ServletRequestAware
 	public void setLoginID(int loginID) {
 		this.loginID = loginID;
 	}
-	public void delete() throws IOException
+	public void delete()
 	{
 		Session se = HibernateSessionFactory.getSession();
 		
@@ -49,8 +47,10 @@ public class deleteManagerA extends ActionSupport implements ServletRequestAware
 		se.delete(login);
 		se.delete(manager);
 		tx.commit();
+
+		System.out.println(managerID);
+		System.out.println(loginID);
 		se.close();
-		response.sendRedirect("administratorOpe.jsp?id=-1");
 	}
 	
 	public String execute() throws Exception
@@ -59,13 +59,13 @@ public class deleteManagerA extends ActionSupport implements ServletRequestAware
 		return SUCCESS;
 	}
 	@Override
-	public void setServletResponse(HttpServletResponse response) {
+	public void setServletResponse(HttpServletResponse arg0) {
 		// TODO Auto-generated method stub
 		this.response = response ;
 	}
 
 	@Override
-	public void setServletRequest(HttpServletRequest request) {
+	public void setServletRequest(HttpServletRequest arg0) {
 		// TODO Auto-generated method stub
 		this.request = request;
 	}

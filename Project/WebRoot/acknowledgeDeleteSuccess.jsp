@@ -10,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <base href="<%=basePath%>">
     
     <title>My JSP 'addManagerSuccess.jsp' starting page</title>
-   <meta http-equiv="refresh" content="2;url=administratorOpe.jsp?id=-2">
+   <meta http-equiv="refresh" content="2;url=administratorOpe.jsp?id=-3">
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
@@ -18,6 +18,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-   	 添加成功 ，两秒后跳回<br>
+   	 删除成功 ，两秒后跳回<br>
   </body>
 </html>

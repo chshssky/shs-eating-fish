@@ -5,14 +5,18 @@
   
   <body>
   	<jsp:useBean id="currUser" scope="session" class="com.cheating.SessionBean.LoginedUser"></jsp:useBean>
-    <h3 align="right">
+    <h3 align="left">
 	  	  你好,  
 	  	<a href="showUserInfo.jsp?id=0">
 	  	<%=currUser.getFirstname() %>
-	  	</a>!   	
-    	<a href="orders.jsp">订单</a>
+	  	</a>
+	  	<br>
+	</h3>
+	<h3 align="right">  	   	
+    	<a href="orders.jsp">历史订单</a>
+    	<a href="handleOrder.jsp">未处理订单</a>
     	<a href="showCart.jsp">购物车</a>
-    	<a href="logout.jsp">登出</a>  <!-- 登出的时候删除购物车 -->
+    	<a href="logout.jsp">登出</a>  
     </h3>
   </body>
 </html>
