@@ -53,7 +53,8 @@ public class SubmitOrderAction extends ActionSupport implements ServletRequestAw
 		orderInfo.setCustomerinfo(currCus) ;
 		orderInfo.setSumPrice(sum_price) ;
 		orderInfo.setState("dealing") ;
-		orderInfo.setAddress("temp") ;
+		orderInfo.setAddress("…–Œ¥ÃÓ–¥") ;
+		orderInfo.setTelephoneNum("…–Œ¥ÃÓ–¥") ;
 		orderInfo.setLastName("temp") ;
 		
 		se.save(orderInfo);
