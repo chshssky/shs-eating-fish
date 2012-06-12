@@ -21,21 +21,11 @@ import="org.hibernate.Criteria" import="org.hibernate.criterion.Restrictions"%>
    			out.print("<script>alert('"+request.getAttribute("nullPath")+"');</script>") ;
    		}
    		
-   		Path.setCurPath(request.getSession().getServletContext().getRealPath("/")) ;
+   		request.getSession().removeAttribute("nullPath") ;
+
    		Session se = HibernateSessionFactory.getSession() ;
-   		System.out.println(request.getSession().getServletContext().getRealPath("/")) ;
-   		String curPath = Path.getCurPath() ;
-   		String docPath = curPath + "/pictures" ;
-   		Path.setDocPath(docPath) ;
-   		
    		Criteria cri = se.createCriteria(Coursetype.class) ;
    		Iterator<Coursetype> typeit = cri.list().iterator() ;
-   	
-		File picDoc = new File(docPath) ;
-		if(!picDoc.exists())
-		{
-			picDoc.mkdir() ;
-		}
     %>
     
     <div id="wrap">
@@ -45,7 +35,8 @@ import="org.hibernate.Criteria" import="org.hibernate.criterion.Restrictions"%>
 	  </div>
 	  <div class="welcome">
 	 	<h1>Welcome to</h1><h2> EFC </h2><br/><h1>欢迎来到</h1><h2>EFC</h2><h1>网上订餐系统</h1>
-	 	<h2> &nbsp &nbsp &nbsp &nbsp  &nbsp  &nbsp &nbsp &nbsp Manager Page</h2>
+	 	<h2> &nbsp &nbsp &nbsp Manager Page&nbsp &nbsp &nbsp
+		 	<a href="index.jsp">登出</a></h2>
 	 	&nbsp &nbsp &nbsp <a href="manager.jsp">return</a>
 	 </div>
 	 </div>

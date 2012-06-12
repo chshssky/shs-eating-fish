@@ -35,9 +35,10 @@
  </div>
 </div>
 	
-	<s:actionerror/>
+	
 		<form action="payment">
 			<div class="input">
+			<s:actionerror/>
 				请输入地址：<br>
 				<input type="text" name="address"></input><br><br>
 				请输入联系人姓名：<br>
@@ -50,7 +51,9 @@
 					<option value="temp" /> //要只能选当前时间之后的。。
 				</select>
 				<br><br>
+				
 				<input type="submit" class="input2" value="确认预订">
+				<input type="button" value="以后再处理" class="input2" onclick="window.location='index.jsp'"/>
 			</div>
 		</form>
 	</div>

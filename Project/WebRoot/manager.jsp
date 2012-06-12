@@ -11,6 +11,12 @@ import="org.hibernate.criterion.Restrictions" import="java.util.*"%>
 	</head>
 	<body bgcolor="#FFCC66">
 		<% 
+			if(request.getAttribute("rmvSuc") != null)
+	   		{
+	   			out.print("<script>alert('"+request.getAttribute("rmvSuc")+"');</script>") ;
+	   		}
+   			request.getSession().removeAttribute("rmvSuc") ;
+		
 			int restId = (Integer)request.getSession().getAttribute("restId") ; 
 			Session se = HibernateSessionFactory.getSession() ;
 			Restaurantinfo curRest = (Restaurantinfo)se.load(Restaurantinfo.class, restId) ;
@@ -25,7 +31,8 @@ import="org.hibernate.criterion.Restrictions" import="java.util.*"%>
 		  </div>
 		  <div class="welcome">
 		 	<h1>Welcome to</h1><h2> EFC </h2><br/><h1>欢迎来到</h1><h2>EFC</h2><h1>网上订餐系统</h1>
-		 	<h2> &nbsp &nbsp &nbsp &nbsp  &nbsp  &nbsp &nbsp &nbsp Manager Page</h2>
+		 	<h2> &nbsp &nbsp &nbsp Manager Page&nbsp &nbsp &nbsp
+		 	<a href="index.jsp">登出</a></h2>
 		 </div>
 		 </div>
 	
@@ -64,6 +71,13 @@ import="org.hibernate.criterion.Restrictions" import="java.util.*"%>
 						<div class="modifyButton2">
 							<input type="hidden" name="courseID" value=<%=curCourse.getCourseId() %> />
 							&nbsp &nbsp<input type="submit" value="修改" />
+    					</div>
+    					</form>
+    					
+    					<form action="rmvCourse">
+						<div class="modifyButton2">
+							<input type="hidden" name="courseID" value=<%=curCourse.getCourseId() %> />
+							&nbsp &nbsp<input type="submit" value="删除" />
     					</div>
     					</form>
     				

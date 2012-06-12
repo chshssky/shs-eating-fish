@@ -86,7 +86,7 @@
 <div class="course">
 <center>
 <table border="2">
-
+<s:actionerror/>
 			<tr align="center">
 				<td>菜名</td>
 				<td>数量</td>
@@ -107,8 +107,9 @@
 			course = (Courseinfo)HibernateSessionFactory.getSession().load(Courseinfo.class, item.getCourse_id()) ;
 			sum_price += course.getPrice() ;
 	%>
-	<s:actionerror/>
+	
 	<tr align="center">	
+	
 		<td><%=course.getName()%></td>
 		<td><%=item.getCourse_num()%></td>
 		<td><%=course.getPrice()%></td>
@@ -116,7 +117,8 @@
 			<input type="hidden" name="course_id" value=<%=item.getCourse_id()%>></input>
 			<input type="submit" value="删除"></input>
 		</form></td> 
-	</tr>		 
+	</tr>
+		 
 	<%	
 		}
 	 %>

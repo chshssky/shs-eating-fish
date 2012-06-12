@@ -1,6 +1,7 @@
 package fish.ui.user;
 
 import org.hibernate.*;
+import org.hibernate.criterion.Restrictions;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.cheating.hib.*;
@@ -13,38 +14,22 @@ public class Register extends ActionSupport{
 	private String firstname;
 	private String lastname;
 	private String email ;
-	public String getUsername() {
-		return username;
+
+	private boolean checkUser() {
+		Session se = HibernateSessionFactory.getSession();
+		
+		Criteria crit = se.createCriteria(Logininfo.class);
+    	crit.add(Restrictions.eq("loginName", username));
+    	
+    	if(crit.list().size() != 0)
+    		return false ;
+    	
+    	else return true ;
 	}
-	public void setUsername(String username) {
-		this.username = username;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	public String getRepassword() {
-		return repassword;
-	}
-	public void setRepassword(String repassword) {
-		this.repassword = repassword;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
+		
 	
-	public void validate() {
-		if(password != null && repassword != null){
-			if(!repassword.equals(password))
-				this.addActionError("两次输入密码不一致");
-		}
-	}
-	public void register() {
+	
+	private void register() {
 		Session se = HibernateSessionFactory.getSession();
 		
 		Logininfo in = new Logininfo();
@@ -68,6 +53,17 @@ public class Register extends ActionSupport{
 		tran.commit();
 		HibernateSessionFactory.closeSession();
 	}
+	
+	public void validate() {
+		if(password != null && repassword != null){
+			if(!repassword.equals(password))
+				this.addActionError("两次输入密码不一致");
+		}
+		
+		if(!checkUser())
+			this.addActionError("此用户名已存在");
+	}
+	
 	public String execute() throws Exception{
 		register();
 		return SUCCESS;
@@ -90,5 +86,30 @@ public class Register extends ActionSupport{
 	}
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
+	}
+	
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getRepassword() {
+		return repassword;
+	}
+	public void setRepassword(String repassword) {
+		this.repassword = repassword;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 }

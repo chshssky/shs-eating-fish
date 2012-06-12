@@ -18,7 +18,8 @@ import="fish.man.manager.SingleOrder" %>
 	  </div>
 	  <div class="welcome">
 	 	<h1>Welcome to</h1><h2> EFC </h2><br/><h1>欢迎来到</h1><h2>EFC</h2><h1>网上订餐系统</h1>
-	 	<h2> &nbsp &nbsp &nbsp &nbsp  &nbsp  &nbsp &nbsp &nbsp Manager Page</h2>
+	 	<h2> &nbsp &nbsp &nbsp Manager Page&nbsp &nbsp &nbsp
+		 	<a href="index.jsp">登出</a></h2>
 	 	&nbsp &nbsp &nbsp <a href="manager.jsp">return</a>
 	 </div>
 	 </div>

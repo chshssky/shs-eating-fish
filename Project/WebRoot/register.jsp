@@ -10,9 +10,11 @@
 	<body>
 		
 		<div class="wrapper">
+		<center><a href="index.jsp">返回主界面</a></center>		
 		<h1><font color="#99CCFF">请填写注册信</font></h1>
-        <s:actionerror/>
+        
 		<s:form action="register_check" >
+			<s:actionerror/>
 			<s:textfield name="username" cssStyle="background:url(text_field.png)" label="用户"/>
 			<s:password name="password" cssStyle="background:url(text_field.png)" label="密码"/>
 			<s:password name="repassword" cssStyle="background:url(text_field.png)" label="确认密码"/>

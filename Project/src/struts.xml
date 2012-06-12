@@ -95,5 +95,10 @@
 			<result name="input">/manOrder.jsp</result>
 			<result name="success">/manOrder.jsp</result>
 		</action>
+		
+		<action name="rmvCourse" class="fish.man.manager.RmvCourseAction">
+			<result name="input">/manager.jsp</result>
+			<result name="success">/manager.jsp</result>
+		</action>
 	</package>
 </struts>    

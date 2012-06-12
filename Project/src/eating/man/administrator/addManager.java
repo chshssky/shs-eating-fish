@@ -8,7 +8,7 @@ import org.hibernate.criterion.Restrictions;
 import com.opensymphony.xwork2.ActionSupport;
 import com.cheating.hib.*;
 
-public class addManager extends ActionSupport{
+public class addManager extends ActionSupport {
 	private String loginName;
 	private String password;
 	private String repassword;
@@ -44,12 +44,31 @@ public class addManager extends ActionSupport{
 	public void setRestaurant(String restaurant) {
 		this.restaurant = restaurant;
 	}
+	
+	private boolean checkUser() {
+		Session se = HibernateSessionFactory.getSession();
+		
+		Criteria crit = se.createCriteria(Logininfo.class);
+    	crit.add(Restrictions.eq("loginName", loginName));
+    	
+    	if(crit.list().size() != 0)
+    		return false ;
+    	
+    	else return true ;
+	}
+	
 	public void validate() {
 		if(password != null && repassword != null){
 			if(!repassword.equals(password))
 				this.addActionError("两次输入密码不一致");
+			
+			if(!checkUser())
+				this.addActionError("此用户名已存在");
 		}
 	}
+	
+	
+	
 	public void add() {
 		
 		Session se = HibernateSessionFactory.getSession();
@@ -75,6 +94,9 @@ public class addManager extends ActionSupport{
 		tran.commit();
 		HibernateSessionFactory.closeSession();
 	}
+	
+	
+	
 	public String execute() throws Exception{
 		add();
 		return SUCCESS;
