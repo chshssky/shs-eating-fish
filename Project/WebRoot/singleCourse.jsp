@@ -57,7 +57,7 @@ import="java.util.*"%>
 			<div class="returnRest"><a href="showRestaurant.jsp?id=<%=restId%>">到饭店逛逛~~</a></div>
 			
 			<div class="pic">
-				<img src=<%=info.getPic() %> height="100px" width="100px"/>
+				<img src=<%=String.valueOf(info.getPic()) %> height="100px" width="100px"/>
 			</div>
 			<div class="des">
 				<%=info.getDescript() %>
