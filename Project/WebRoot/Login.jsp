@@ -37,35 +37,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		}
    %>
    
-  <br/><br/><br/><br/><br/>
-  		<h1><font color="#9933FF">欢迎登陆</font></h1>
-  		<div class="wrapper">
-  		<div class="ribbon">欢迎登陆&nbsp&nbsp&nbsp&nbsp<a href="register.jsp"><I>注册</I></a></div>
-  		<a href="index.jsp">返回</a>
-  		<div class="loginwrapper">
-		<s:form action="login_check">
+<center>
+  <div class="login">
+  <fieldset>
+  <legend><h1><font color="#9933FF">欢迎登陆</font></h1></legend>
+  		<s:form action="login_check">
 		<s:actionerror/>
 			<s:textfield name="loginName" label="用户"></s:textfield><br/>
 			<s:password name="password" label="密码"></s:password>
-			<s:submit cssStyle="float:left; background:url(login_btn.jpg) 0px 0px;width:92px;height:31px;
- 		    border:0px; float:right;margin-right:20px;margin-top:5px;" value=""/>
- 		    <s:reset cssStyle="background:url(reset_btn.jpg) 0px 0px;width:92px;height:31px;
- 		    border:0px; float:right;margin-right:20px;margin-top:5px;" value="" />
-			
-		
+			<s:submit  value="登录"/>
+ 		    <s:reset value="重置" />
 		</s:form>
-		</div>
-		<div class="bottomwrapper">
- 		<a href="#">忘记密码</a><br/>
- 		<a href="#">注册新用</a>
- 		</div>
-		</div>
-		<div class="right">
- 		<h1>亲爱的请登录</h1>
- 		<p>欢迎来到我们的订餐网</p>
- 		<p>希望您订餐过程愉</p>
- 		<p>&nbsp &nbsp 全体工作人员寄语</p>
- 	</div>
-		
+		<a href="index.jsp">返回</a>
+   </fieldset>
+   </div>
+   </center>
   </body>
 </html>

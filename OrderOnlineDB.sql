@@ -1,4 +1,4 @@
-Create Database OrderOnlineDB;
+﻿Create Database OrderOnlineDB;
 use orderonlineDB;
 create table courseType 
 (
@@ -163,36 +163,36 @@ values('长春不老私房菜','虹口区长春路101号福馨宾馆近溧阳路
 
 
 
-insert into courseinfo(name, descript, price, RestaurantID, type) values
+insert into courseinfo(name, descript, price, RestaurantID, type, pic) values
 ('大虾创意寿司','独特造型的大虾寿司，不仅在味道上保留的传统的风格，
-还加入了创新的元素，使之色香味更具个性',39,1, 7);
-insert into courseinfo(name, descript, price, RestaurantID, type) values
-('禾风牛排','后用炭火上烤至七成熟，其肉质紧实嫩滑，入口咸鲜适中',68,1,9);
+还加入了创新的元素，使之色香味更具个性',39,1, 7, 'pictures/daxia.jsp');
+insert into courseinfo(name, descript, price, RestaurantID, type, pic) values
+('禾风牛排','后用炭火上烤至七成熟，其肉质紧实嫩滑，入口咸鲜适中',68,1,9, 'pictures/niupai.jsp');
 
 
-insert into courseinfo(name, descript, price, RestaurantID, type) values
-('缤纷海鲜组合（小）','涮生蚝、响螺海肠、墨鱼仔、蟹腿、蛏子、草虾',79,2,8);
-insert into courseinfo(name, descript, price, RestaurantID, type) values
-('菌王锅','各式菌菇，在煨制3小时的老鸡汤内，吸足了“油水”，滋味不凡',12,2,6);
+insert into courseinfo(name, descript, price, RestaurantID, type, pic) values
+('缤纷海鲜组合（小）','涮生蚝、响螺海肠、墨鱼仔、蟹腿、蛏子、草虾',79,2,8, 'pictures/haixian.jsp');
+insert into courseinfo(name, descript, price, RestaurantID, type, pic) values
+('菌王锅','各式菌菇，在煨制3小时的老鸡汤内，吸足了“油水”，滋味不凡',12,2,6, 'pictures/junwang.jsp');
 
 
 
-insert into courseinfo(name, descript, price, RestaurantID, type) values
-('豆鼓蒸凤爪','只需轻吮，便整骨脱出，口齿留香，就连啃着酥软的骨头也是一种乐趣。',18,3,5);
-insert into courseinfo(name, descript, price, RestaurantID, type) values
-('泰皇咖喱','挑选丰腴肥美的鲜活青蟹，配以鸽子熬制的高汤和原汁原味的泰式黄咖喱',168,3,1);
+insert into courseinfo(name, descript, price, RestaurantID, type, pic) values
+('豆鼓蒸凤爪','只需轻吮，便整骨脱出，口齿留香，就连啃着酥软的骨头也是一种乐趣。',18,3,5, 'pictures/fengzhua.jsp');
+insert into courseinfo(name, descript, price, RestaurantID, type, pic) values
+('泰皇咖喱','挑选丰腴肥美的鲜活青蟹，配以鸽子熬制的高汤和原汁原味的泰式黄咖喱',168,3,1, 'pictures/taihuang.jsp');
 
-insert into courseinfo(name, descript, price, RestaurantID, type) values
-('木瓜芝士虾','木瓜芝士虾”，必选新鲜活虾，搭配“马苏里拉芝士”和木瓜烤而成',88,4,8);
-insert into courseinfo(name, descript, price, RestaurantID, type) values
-('越式煎羊排','肉质相对鲜嫩。用秘制酱料腌制来保持其更为入味，采用正宗的越式做法，羊排滋味更为浓厚',16,4,9);
-insert into courseinfo(name, descript, price, RestaurantID, type) values
-('烟熏鲑鱼','鲜嫩美味，再加上些烟熏口感，更是滋味无穷。',53,5,10);
-insert into courseinfo(name, descript, price, RestaurantID, type) values
-('上海熏鱼','色泽酱红油亮，肉质细密鲜嫩，外皮酥而不硬',69,5,10);
-insert into courseinfo(name, descript, price, RestaurantID, type) values
-('龙虾汤','龙虾取自大明湖畔的夏雨荷下，虾肉甜美。',53,6,6);
-insert into courseinfo(name, descript, price, RestaurantID, type) values
-('文火焖小牛肉','餐厅选用的质感柔嫩的顶级雪花牛肉，加上秘制酱料文火焖制而成，绵软酥烂',69,6,5);
+insert into courseinfo(name, descript, price, RestaurantID, type, pic) values
+('木瓜芝士虾','木瓜芝士虾”，必选新鲜活虾，搭配“马苏里拉芝士”和木瓜烤而成',88,4,8, 'pictures/mugua.jsp');
+insert into courseinfo(name, descript, price, RestaurantID, type, pic) values
+('越式煎羊排','肉质相对鲜嫩。用秘制酱料腌制来保持其更为入味，采用正宗的越式做法，羊排滋味更为浓厚',16,4,9,'pictures/yangpai.jsp');
+insert into courseinfo(name, descript, price, RestaurantID, type, pic) values
+('烟熏鲑鱼','鲜嫩美味，再加上些烟熏口感，更是滋味无穷。',53,5,10, 'pictures/guiyu.jsp');
+insert into courseinfo(name, descript, price, RestaurantID, type, pic) values
+('上海熏鱼','色泽酱红油亮，肉质细密鲜嫩，外皮酥而不硬',69,5,10, 'pictures/xunyu.jsp');
+insert into courseinfo(name, descript, price, RestaurantID, type, pic) values
+('龙虾汤','龙虾取自大明湖畔的夏雨荷下，虾肉甜美。',53,6,6, 'pictures/longxia.jsp');
+insert into courseinfo(name, descript, price, RestaurantID, type,pic) values
+('文火焖小牛肉','餐厅选用的质感柔嫩的顶级雪花牛肉，加上秘制酱料文火焖制而成，绵软酥烂',69,6,5,'pictures/wenhuo.jsp');
 
 

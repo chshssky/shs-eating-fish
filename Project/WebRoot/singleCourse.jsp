@@ -67,7 +67,7 @@ import="java.util.*"%>
 				<form action="put_cart">
        				<input type="hidden" name="id" id="id" value=<%=info.getCourseId()%>></input>
        				<input type="text" name="course_count" vaule="1" id="course_count" size="3"></input>
-       				<input type="submit" name="submit" value="加入购物车"></input>
+       				<input type="submit" name="submit" value="加入购物�></input>
        			</form>
        		</div>
 	
@@ -76,7 +76,7 @@ import="java.util.*"%>
 </div>
 <div id="foot">
   	<center>
-    	<h4>版权所有(@copy right)</h4>
+    	<h4>版权所�@copy right)</h4>
     </center>
 </div>
 	

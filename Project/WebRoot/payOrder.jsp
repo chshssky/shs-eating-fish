@@ -2,8 +2,8 @@
 <%@ taglib uri="/struts-tags" prefix="s" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <link rel="stylesheet" media="screen" type="text/css" href="css/logo.css"/>
-<link rel="stylesheet" media="screen" type="text/css" href="css/payOrder.css"/>
-<link rel="stylesheet" media="screen" type="text/css" href="css/manager.css"/>
+<link rel="stylesheet" media="screen" type="text/css" href="css/payOrder.css><link rel="stylesheet" media="screen" type="text/css" href="css/manager.css"/>
+
 <%@ taglib uri="/struts-dojo-tags" prefix="sx" %>
 <html>
 <head>
@@ -49,7 +49,6 @@
 				请输入联系人电话<br>
 				<input type="text" name="telephoneNum"></input><br><br>
 				请选择送餐时间<br>
-				<%
 					
 				 %>
 				<sx:datetimepicker name="demandDate" type="date" toggleDuration="explode" displayFormat="yyyy-MM-dd" ></sx:datetimepicker>
@@ -57,7 +56,7 @@
 				<br><br>
 				
 				<input type="submit" class="input2" value="确认预订">
-				<input type="button" value="以后再处理  class="input2" onclick="window.location='index.jsp'"/>
+				<input type="button" value="以后再处� class="input2" onclick="window.location='index.jsp'"/>
 			</div>
 		</s:form>
 	</div>
