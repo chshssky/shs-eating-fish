@@ -48,11 +48,12 @@ div.logo
 
 div.ifLogin
 {
-	font-color:#FFCCCC;
-	size:30px;
+	font-color:#000000;
+	font-size:10px;
 	float:right;
 	margin-right:50px;
-	padding-top:30px;
+	padding-top:0px;
+	
 	
 
 }

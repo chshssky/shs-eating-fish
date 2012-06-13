@@ -12,4 +12,8 @@ public class ResetEmail extends ActionSupport{
 	public void setNew_email(String new_email) {
 		this.new_email = new_email;
 	}
+	public void execute() {
+		
+		return SUCCESS;
+	}
 }

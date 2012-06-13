@@ -18,12 +18,12 @@
 			<result name="success">/changeSuccess.jsp</result>
 		</action>
 		<action name="reset_email" class="fish.ui.user.ResetEmail">
-			<!-- need input result -->
+			<result name="input">/userInfo.jsp?id=1</result>
 			<result name="success">/userInfo.jsp</result>
 		</action>
 		
 		<action name="reset_password" class="fish.ui.user.ResetPass">
-			<!-- need input result -->
+			<result name="input">/userInfo.jsp?id=2</result>
 			<result name="success">/userInfo.jsp</result>
 		</action>
 		<action name="deleteManagerA" class="eating.man.administrator.deleteManagerA">
@@ -40,7 +40,7 @@
 		</action>
 		<action name="addManager" class="eating.man.administrator.addManager">
 		<interceptor-ref name="validationWorkflowStack"/>
-	    <result name="input">/administratorOpe.jsp?id=-2</result>
+	    <result name="input" type="redirect">/administratorOpe.jsp?id=-2</result>
 		<result name="success">/addManagerSuccess.jsp</result>
 		</action>
 		<action name="put_cart" class="fish.operation.cart.PutCart">

@@ -35,7 +35,6 @@ public class PaymentAction extends ActionSupport implements ServletRequestAware{
 		curorder.setLastName(lastName) ;
 		curorder.setTelephoneNum(telephoneNum) ;
 		curorder.setState("finish") ;
-		curorder.setDemandTime(new timestamp());
 		
 		System.out.println(demandDate);
 		System.out.println(demandTime);
@@ -74,7 +73,7 @@ public class PaymentAction extends ActionSupport implements ServletRequestAware{
 			this.addActionError("请输入电话号码") ;
 		}
 		
-		if(isNum(telephoneNum))
+		if(!isNum(telephoneNum))
 		{
 			this.addActionError("请输入正确电话号码") ;
 		}

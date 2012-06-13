@@ -25,12 +25,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     Search:
-    <s:form action="autocompleterResult" method="POST" >
+    <s:form action="autocompletertag">
     <select name="option">
     	<option value="rest">餐馆</option>
     	<option value="cour">菜品</option>
     </select>
-	<sx:autocompleter label="搜索" list="courses" searchType="substring" href="AutoCompleterAction.action" name="myCourse" autocomplete="true"></sx:autocompleter> 
+    
+    
+	<sx:autocompleter label="搜索" list="courses" searchType="substring" name="myCourse" ></sx:autocompleter> 
 	<s:submit name="submit"></s:submit>
 	</s:form>
   </body>
