@@ -28,14 +28,6 @@
 		<message>请再次输入密码</message>
 	</validator>
 	
-	<!-- 
-	<validator type="expression">  
-		<param name="expression">
-			(password==repassword)
-		</param>
-		<message>Confirm password should be equal to the password</message>
-	</validator> -->
-	
 	<field name="email">
 		<field-validator type="requiredstring" short-circuit="true">
 			<message>邮箱不能为空</message>

@@ -29,6 +29,13 @@ import="java.util.*"%>
 		 </div>
 	
 	<%
+		if(request.getAttribute("nullPath") != null)
+   		{
+   			out.print("<script>alert('"+request.getAttribute("nullPath")+"');</script>") ;
+   		}
+   		
+   		request.getSession().removeAttribute("nullPath") ;
+	
 		Session se = HibernateSessionFactory.getSession() ;
 		int courseId =Integer.valueOf(request.getParameter("courseID")) ;
 		Criteria critCourse = se.createCriteria(Courseinfo.class) ;

@@ -37,27 +37,30 @@
  </div>
 </div>
 	
-	<s:actionerror/>
-		<s:form action="payment">
+	
+		<form action="payment">
 			<div class="input">
-				请输入地址：<br>
+			<s:actionerror/>
+				请输入地址�br>
 				<input type="text" name="address"></input><br><br>
-				请输入联系人姓名：<br>
-				姓<input size="2px" type="text" name="lastName"></input>
-				名<input size="2px" type="text" name="firstName"></input><br><br>
-				请输入联系人电话：<br>
+				请输入联系人姓名�br>
+				�input size="2px" type="text" name="lastName"></input>
+				�input size="2px" type="text" name="firstName"></input><br><br>
+				请输入联系人电话�br>
 				<input type="text" name="telephoneNum"></input><br><br>
-				请选择送餐时间：<br>
+				请选择送餐时间�br>
 				<sx:datetimepicker name="demandDate" type="date" toggleDuration="explode" displayFormat="yyyy-MM-dd" ></sx:datetimepicker>
 				<sx:datetimepicker name="demandTime" type="time" toggleDuration="explode" displayFormat="HH:mm:ss" ></sx:datetimepicker>
 				<br><br>
+				
 				<input type="submit" class="input2" value="确认预订">
+				<input type="button" value="以后再处� class="input2" onclick="window.location='index.jsp'"/>
 			</div>
 		</s:form>
 	</div>
     <div id="foot">
   		<center>
-    		<h4>版权所有(@copy right)</h4>
+    		<h4>版权所�@copy right)</h4>
     	</center>
   	</div>		
 	</body>

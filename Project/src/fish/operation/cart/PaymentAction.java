@@ -48,11 +48,35 @@ public class PaymentAction extends ActionSupport implements ServletRequestAware{
 		HibernateSessionFactory.closeSession() ;
 	}
 	
+	private boolean isNum(String num) {
+		for(int i = 0; i < num.length(); ++ i)
+			if(num.charAt(i) > '9' || num.charAt(i) < '0')
+				return false ;
+		
+		return true ;
+	}
+	
+	
 	public void validate()
 	{
 		if(address.isEmpty())
 		{
 			this.addActionError("请输入地址") ;
+		}
+		
+		if(firstName.isEmpty() || lastName.isEmpty())
+		{
+			this.addActionError("请输入姓名") ;
+		}
+		
+		if(telephoneNum.isEmpty())
+		{
+			this.addActionError("请输入电话号码") ;
+		}
+		
+		if(isNum(telephoneNum))
+		{
+			this.addActionError("请输入正确电话号码") ;
 		}
 	}
 	

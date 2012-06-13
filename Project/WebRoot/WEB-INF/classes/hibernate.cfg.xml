@@ -19,7 +19,7 @@
 			com.mysql.jdbc.Driver
 		</property>
 
-		<property name="myeclipse.connection.profile">
+		<property name="myeclipse.connection.profile">driver</property>
 			mysql-jdbc
 		</property>
 

@@ -36,6 +36,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		request.removeAttribute("needLogin") ;
 		}
    %>
+   
   <br/><br/><br/><br/><br/>
   		<h1><font color="#9933FF">欢迎登陆</font></h1>
   		<div class="wrapper">
@@ -43,6 +44,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   		<a href="index.jsp">返回</a>
   		<div class="loginwrapper">
 		<s:form action="login_check">
+		<s:actionerror/>
 			<s:textfield name="loginName" label="用户"></s:textfield><br/>
 			<s:password name="password" label="密码"></s:password>
 			<s:submit cssStyle="float:left; background:url(login_btn.jpg) 0px 0px;width:92px;height:31px;
