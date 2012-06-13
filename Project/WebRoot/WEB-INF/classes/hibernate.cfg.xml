@@ -14,13 +14,13 @@
 			jdbc:mysql://localhost:3306/orderonlinedb
 		</property>
 		<property name="connection.username">root</property>
-		<property name="connection.password">1234</property>
+		<property name="connection.password">cuohai</property>
 		<property name="connection.driver_class">
 			com.mysql.jdbc.Driver
 		</property>
 
 		<property name="myeclipse.connection.profile">
-			eating
+			mysql-jdbc
 		</property>
 
 		<mapping resource="com/cheating/hib/Restaurantinfo.hbm.xml" />
