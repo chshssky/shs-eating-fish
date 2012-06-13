@@ -83,12 +83,8 @@ import="fish.man.manager.SingleOrder" %>
    		<%
    			request.getSession().removeAttribute("rmvSuc") ;
    		}
-   			int sign;
-   			if(request.getParameter("id") == null)
-   				sign=0;
-   			else
-   				sign = Integer.valueOf(request.getParameter("id"));
-   		    System.out.println("?????????" + sign);
+   				
+   		    
 			int restId = (Integer)request.getSession().getAttribute("restId") ;
 			int listIndex = 0 ;
 			RestOrder.searchOrder(restId) ;
@@ -108,7 +104,6 @@ import="fish.man.manager.SingleOrder" %>
 				<td>状态：<%=curOrder.getOrder().getState()%></td>
 				
 				</tr>
-				
 					<tr>
 						<td align="center">用户名：<%=curOrder.getOrder().getCustomerinfo().getLogininfo().getLoginName() %></td> 					
 			 			<td align="center" colspan="2">配送地址：<%=curOrder.getOrder().getAddress()%></td>
@@ -128,14 +123,7 @@ import="fish.man.manager.SingleOrder" %>
 			<%
 				}
 			 %>	</div>
-			 <div class="details">
-			<%  if(sign!=0)
-			{
-			%>
-			 <jsp:include page="orderDetail.jsp"><jsp:param name="id" value="<%=sign%>"></jsp:param>
-    </jsp:include>
-			<% }%>
-			 </div>
+			
 			 
 	</div>
 	

@@ -4,7 +4,6 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
 <link rel="stylesheet" media="screen" type="text/css" href="css/logo.css"/>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmls="http://www.w3.org/1999/xhtml">
@@ -15,7 +14,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<%--  --%> 
   </head>
   
-  <body bgcolor="#FFCC99">
+  <body>
  
   <%
   		if(request.getSession().getAttribute("orderSuc") != null)

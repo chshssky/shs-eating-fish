@@ -57,12 +57,14 @@ public class AddCourseAction extends ActionSupport implements ServletRequestAwar
 			return false ;
 		}
 		
-		System.out.println(picPath) ;
 		
 		try {
 			InputStream inStream = new FileInputStream(pic);			
 			File newPic = new File(Path.getDocPath() + "/" + curRest.getRestaurantId() + pic.getName()) ; 
 		
+
+			System.out.println(newPic.getAbsolutePath()) ;
+			
 			if(newPic.exists())
 			{
 				request.setAttribute("nullPath", "«Î÷ÿ√¸√˚Õº∆¨") ;  

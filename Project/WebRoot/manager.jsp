@@ -94,7 +94,7 @@ import="org.hibernate.criterion.Restrictions" import="java.util.*"%>
 	</div>
 	<div id="foot">
   		<center>
-    		<h4>版权所有(copy right)</h4>
+    		<h4>版权所�copy right)</h4>
     	</center>
 	</div> 
 	</body>
