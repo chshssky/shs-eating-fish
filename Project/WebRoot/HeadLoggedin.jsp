@@ -10,7 +10,7 @@
 	  	<a href="showUserInfo.jsp?id=0">
 	  	<%=currUser.getFirstname() %>
 	  	</a>
-	  	<br>
+	  	
 	</h3>
 	<h3 align="right">  	   	
     	<a href="orders.jsp">历史订单</a>

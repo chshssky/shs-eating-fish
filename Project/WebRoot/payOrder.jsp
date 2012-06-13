@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <link rel="stylesheet" media="screen" type="text/css" href="css/logo.css"/>
 <link rel="stylesheet" media="screen" type="text/css" href="css/payOrder.css"/>
-<link rel="stylesheet" media="screen" type="text/css" href="css/manager.css"/>
+
 <%@ taglib uri="/struts-dojo-tags" prefix="sx" %>
 <html>
 <head>
@@ -38,17 +38,17 @@
 </div>
 	
 	
-		<form action="payment">
+		<s:form action="payment">
 			<div class="input">
 			<s:actionerror/>
-				请输入地址�br>
+				请输入地址<br>
 				<input type="text" name="address"></input><br><br>
-				请输入联系人姓名�br>
-				�input size="2px" type="text" name="lastName"></input>
-				�input size="2px" type="text" name="firstName"></input><br><br>
-				请输入联系人电话�br>
+				请输入联系人姓名<br>
+				<input size="2px" type="text" name="lastName"></input>
+				<input size="2px" type="text" name="firstName"></input><br><br>
+				请输入联系人电话<br>
 				<input type="text" name="telephoneNum"></input><br><br>
-				请选择送餐时间�br>
+				请选择送餐时间<br>
 				<%
 					
 				 %>
@@ -57,13 +57,13 @@
 				<br><br>
 				
 				<input type="submit" class="input2" value="确认预订">
-				<input type="button" value="以后再处� class="input2" onclick="window.location='index.jsp'"/>
+				<input type="button" value="以后再处理" class="input2" onclick="window.location='index.jsp'"/>
 			</div>
 		</s:form>
 	</div>
     <div id="foot">
   		<center>
-    		<h4>版权所�@copy right)</h4>
+    		<h4>版权所(@copy right)</h4>
     	</center>
   	</div>		
 	</body>
