@@ -48,9 +48,6 @@
 				请输入联系人电话：<br>
 				<input type="text" name="telephoneNum"></input><br><br>
 				请选择送餐时间：<br>
-				<%
-					
-				 %>
 				<sx:datetimepicker name="demandDate" type="date" toggleDuration="explode" displayFormat="yyyy-MM-dd" ></sx:datetimepicker>
 				<sx:datetimepicker name="demandTime" type="time" toggleDuration="explode" displayFormat="HH:mm:ss" ></sx:datetimepicker>
 				<br><br>

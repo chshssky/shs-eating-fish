@@ -6,26 +6,51 @@ import java.util.List;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class AutoCompleterAction extends ActionSupport {
-	private List provice;
+	private List<String> courses=new ArrayList<String>();
+	private String myCourse;
+	private String option;
 
-    @Override
-    public String execute() throws Exception {
-        List arl = new ArrayList();
-        arl.add("湖南");
-        arl.add("湖北");
-        arl.add("上海");
-        arl.add("北京");
-        arl.add("天津");
-        arl.add("广东");
-        this.setProvice(arl);
-        return SUCCESS;
-    }
+	public AutoCompleterAction(){
+		courses.add("Spring MVC");
+		courses.add("Struts 1.x");
+		if (option.equals("rest"))
+			courses.add("Struts 2.x");
+		courses.add("JavaServer Faces (JSF)");
+		courses.add("Google Web Toolkit (GWT)");
+		courses.add("Apache Wicket");
+		courses.add("Apache Click");
+		courses.add("Apache Cocoon");
+		courses.add("JBoss Seam");
+		courses.add("Stripes");
+		courses.add("Apache Tapestry");
+		courses.add("Others");
+	}
 
-    public List getProvice() {
-        return this.provice;
-    }
+	public List<String> getCourses() {
+		return courses;
+	}
 
-    public void setProvice(List provice) {
-        this.provice = provice;
-    }	
+	public void setCourses(List<String> courses) {
+		this.courses = courses;
+	}
+
+	public String getMyCourse() {
+		return myCourse;
+	}
+
+	public void setMyCourse(String myCourse) {
+		this.myCourse = myCourse;
+	}
+	public String display() {
+		return NONE;
+	}
+
+	public String getOption() {
+		return option;
+	}
+
+	public void setOption(String option) {
+		this.option = option;
+	}	
+ 
 }

@@ -97,8 +97,12 @@
 			<result name="input">/manOrder.jsp</result>
 			<result name="success">/manOrder.jsp</result>
 		</action>
-		<action name="autocompletertag" class="com.efc.action.AutoCompleterAction">
-		    <result>/autocompletertag.jsp</result>
+		<action name="autocompletertag" class="com.efc.action.AutoCompleterAction"
+		    method="display">
+		    <result name="none">/Search.jsp</result>
+		</action>
+		<action name="autocompleterResult" class="com.efc.action.AutoCompleterAction">
+		    <result name="success">/index.jsp</result>
 		</action>
 	</package>
 </struts>    

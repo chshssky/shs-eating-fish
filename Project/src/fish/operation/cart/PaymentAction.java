@@ -1,5 +1,8 @@
 package fish.operation.cart;
 
+import java.sql.Date;
+import java.sql.Timestamp;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.swing.JOptionPane;
 
@@ -24,6 +27,7 @@ public class PaymentAction extends ActionSupport implements ServletRequestAware{
 
 	private void order()
 	{
+		Timestamp datetime;
 		Session se = HibernateSessionFactory.getSession() ;
 		Orderinfo curorder = (Orderinfo)se.load(Orderinfo.class, SubmitOrderAction.getOrderID()) ;
 		curorder.setAddress(address) ;
@@ -31,8 +35,13 @@ public class PaymentAction extends ActionSupport implements ServletRequestAware{
 		curorder.setLastName(lastName) ;
 		curorder.setTelephoneNum(telephoneNum) ;
 		curorder.setState("finish") ;
+		curorder.setDemandTime(new timestamp());
+		
 		System.out.println(demandDate);
 		System.out.println(demandTime);
+		
+		System.out.println(demandDate.substring(0, 8));
+		System.out.println(demandTime.substring(10, 17));
 		Transaction tran = se.beginTransaction();
 		se.update(curorder) ;
 		tran.commit() ;
