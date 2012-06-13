@@ -65,7 +65,7 @@ public class PaymentAction extends ActionSupport implements ServletRequestAware{
 			this.addActionError("请输入电话号码") ;
 		}
 		
-		if(isNum(telephoneNum))
+		if(!isNum(telephoneNum))
 		{
 			this.addActionError("请输入正确电话号码") ;
 		}
