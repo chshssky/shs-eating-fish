@@ -76,7 +76,7 @@ create table OrderInfo
     sumPrice int(10),
     orderTime TIMESTAMP default current_timestamp,
     demandTime DATETIME,
-    state varchar(20) default 'dealing',
+    state varchar(20) default '未提交',
     CustomerID int(10),
     primary key(OrderID),
     foreign key(CustomerID) references CustomerInfo(CustomerID)
@@ -87,6 +87,7 @@ create table OrderCourses
     num int(10) not null,
     OrderID int(10),
     CourseID int(10),
+    State varchar(20) default '处理中',
     primary key(OrderCoursesID),
     foreign key(OrderID) references OrderInfo(OrderID),
     foreign key(CourseID) references CourseInfo(CourseID)
@@ -95,7 +96,7 @@ create table reservationInfo
 (
     OrderID int(10) not null AUTO_INCREMENT,
     orderTime TIMESTAMP not null default current_timestamp,
-    state varchar(20) default 'dealing',
+    state varchar(20) default '处理中',
     CustomerID int(10),
     RestaurantID int(10),
     primary key(OrderID),
