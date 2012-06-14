@@ -19,13 +19,13 @@ public class ResetEmail extends ActionSupport{
 		Session se = HibernateSessionFactory.getSession();
 		
 		Customerinfo cu = new Customerinfo();
-		cu = se.load(Customerinfo.class, );
+        //cu = se.load(Customerinfo.class, 1);
 		
 		
 		
 	}
 	public void validate() {
-		if()
+	
 		
 	}
 	public  String execute() throws Exception{

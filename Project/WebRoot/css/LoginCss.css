@@ -41,12 +41,6 @@
  		color:#9933FF;
  		font-weight:bold;
  	}
- 	div.logo
- 	{
- 		background:url(logo.png) no-repeat;
- 		width:330px;
- 		height:115px;
- 	}
  	div.loginwrapper
  	{
  		margin-left:40px;
@@ -125,4 +119,13 @@
  		width:400px;
  		padding-top:120px;
  	}
- 	
+ #footLogin
+{
+	position:relative;
+	height:70px;
+	width:1270px;
+	clear:both;
+	margin-top:190px;
+	background:#6699FF;
+	float:bottom;
+}

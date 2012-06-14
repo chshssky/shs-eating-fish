@@ -14,7 +14,7 @@ body>#wrap
 }
 div.head
 {
-	background-image:url(head.png);
+	background-image:url(managerHead.jpg);
 	height:100px;
 	width:1270px;
 }
@@ -69,6 +69,7 @@ div.block4
 	font-size:20px;	
 	color:#6699FF;
 	margin-left:0px;
+	margin-top:50px;
 	width:300px;
  	height:auto;
  	float:left;
