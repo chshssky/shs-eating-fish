@@ -46,7 +46,7 @@
 			<legend><h2>重置email</h2></legend>
 			<h2>请输入新的email</h2>
 			<s:form action="reset_email">
-				<s:textfield type="text" name="reemail"/>
+				<s:textfield type="text" name="newEmail"/>
 				<s:submit value="Reset Email"/>					
 			</s:form>
 			</fieldset>
