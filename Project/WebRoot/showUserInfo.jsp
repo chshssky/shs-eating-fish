@@ -28,7 +28,7 @@
 </head>
 
 <body>
-	<body bgcolor="#CCFFFF">
+  <body>
 		<div id="wrap">
 			<div class="head">
 				<div class="logo">
@@ -42,7 +42,7 @@
 					<h2>your information</h2>
 					<br />
 					<h1>欢迎</h1>
-					<h2>查看、修改</h2>
+					<h2>查看、修�/h2>
 					<h1>您的信息</h1>
 				</div>
 			</div>
@@ -71,7 +71,7 @@
 		</div>
 		<div id="foot">
 			<center>
-				<h4>版权所有(@all rights reserved) eating; chshs ; fish</h4>
+				<h4>版权所�@all rights reserved) eating; chshs ; fish</h4>
 				<h4>Any question please call 18801791172</h4>
 			</center>
 		</div>

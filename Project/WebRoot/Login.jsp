@@ -38,6 +38,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    %>
    
 <center>
+<div class="head">
+	<div class="logo">
+	<a href="index.jsp"><img src="logo5.png" width="126"height="100" /> </a>
+	</div>
+	<div class="welcome">
+				
+				<h1>欢迎来到</h1>
+				<h2>EFC</h2>
+				<h1>登陆界面</h1>
+			</div>
+</div>
   <div class="login">
   <fieldset>
   <legend><h1><font color="#9933FF">欢迎登陆</font></h1></legend>
@@ -52,5 +63,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    </fieldset>
    </div>
    </center>
+   <div id="footLogin">
+   <center>
+			<h4>版权所有(@all rights reserved) eating; chshs ; fish</h4>
+			<h4>Any question please call 18801791172</h4>
+		</center>
+   </div>
   </body>
 </html>

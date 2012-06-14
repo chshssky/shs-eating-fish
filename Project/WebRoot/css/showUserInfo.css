@@ -14,7 +14,7 @@ body>#wrap
 }
 div.head
 {
-	background-image:url(head.png);
+	background-image:url(managerHead.jpg);
 	height:100px;
 	width:1270px;
 }
@@ -76,6 +76,7 @@ div.block4
 	font-size:20px;	
 	color:#6699FF;
 	margin-left:0px;
+	margin-top:50px;
 	width:300px;
  	height:auto;
  	float:left;
@@ -116,7 +117,7 @@ div.courseMenu
 	width:1270px;
 	clear:both;
 	margin-top:-70px;
-	background:#FF6600;
+	background:#6699FF;
 	float:bottom;
 }
 #navlist

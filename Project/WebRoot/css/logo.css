@@ -14,7 +14,7 @@ body>#wrap
 }
 div.head
 {
-	background-image:url(head.png);
+	background-image:url(managerHead.jpg);
 	height:100px;
 	width:1270px;
 }
@@ -88,6 +88,7 @@ div.block4
 	font-size:20px;	
 	color:#6699FF;
 	margin-left:0px;
+	margin-top:30px;
 	width:300px;
  	height:auto;
  	float:left;
@@ -113,7 +114,7 @@ div.block5
 }
 .ifLogin a:hover
 {
-	color:#33CCCC;
+	color:#000000;
 }
 div.courseMenu
 {
@@ -127,7 +128,7 @@ div.courseMenu
 	height:70px;
 	width:1270px;
 	clear:both;
-	margin-top:-70px;
-	background:#FF6600;
+	margin-top:90px;
+	background:#6699FF;
 	float:bottom;
 }

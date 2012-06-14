@@ -12,7 +12,7 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
     <title>Continue Pay</title>   
   </head>
   
-  <body background="horder.jpg">
+  <body>
   <jsp:useBean id="currUser" scope="session" class="com.cheating.SessionBean.LoginedUser"></jsp:useBean>
   <div id="wrap">
   <div class="head">

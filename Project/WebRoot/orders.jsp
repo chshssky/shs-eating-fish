@@ -20,7 +20,7 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="gb2312"%>
 
   </head>
   
-  <body bgcolor="#CCFFFF">
+  <body>
   <div id="wrap">
   <div class="head">
   <div class="logo">

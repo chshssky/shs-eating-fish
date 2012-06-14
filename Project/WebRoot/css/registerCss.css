@@ -4,19 +4,68 @@ body
 	font-family:Helvetica, arial,sans-serif;
  	margin:0px 0px 0px 0px;
  	font-size:14px;
- 	background-color:#CCCCFF;
- 	/*background-image:url(registerbg2.gif);*/
- 	background-repeat:no-repeat;
 	
 }
+
+div.head
+{
+	background-image:url(managerHead.jpg);
+	height:100px;
+	width:1270px;
+}
+div.logo
+{
+	height:100px;
+	width:126px;
+	float:left;
+}
+#foot
+{
+	position:relative;
+	height:70px;
+	width:1270px;
+	clear:both;
+	margin-top:90px;
+	background:#6699FF;
+	float:bottom;
+}
+
 div.wrapper
 {
-	background-image:url(registerbg.jpg);
 	background-repeat:no-repeat;
 	height:420px;
-	width:470px;
+	width:400px;
 	margin-top:70px;
 	margin-left:380px;
 	padding-left:90px;
 	padding-top:10px;;
-} 
+}
+.welcome
+{
+		margin-left:280px;
+}
+.welcome h1
+{
+	color:#CC0033;
+	font-size:32px;
+	font-family:Kristen ITC,华文行楷;
+	display : inline
+}
+.welcome h2
+{
+	color:#3300FF ;
+	font-size:32px;
+	font-family:Kristen ITC,华文行楷;
+	display : inline
+}
+#foot
+{
+	position:relative;
+	height:70px;
+	width:1270px;
+	clear:both;
+	margin-top:50px;
+	background:#6699FF;
+	float:bottom;
+}
+

@@ -14,7 +14,7 @@ body>#wrap
 }
 div.head
 {
-	background-image:url(head.png);
+	background-image:url(managerHead.jpg);
 	height:100px;
 	width:1270px;
 }
@@ -52,7 +52,8 @@ div.ifLogin
 	size:30px;
 	float:right;
 	margin-right:50px;
-	padding-top:30px;
+	margin-top:0px;
+	padding-top:0px;
 	
 
 }
@@ -112,7 +113,7 @@ div.block5
 }
 .ifLogin a:hover
 {
-	color:#33CCCC;
+	color:#000000;
 }
 div.courseMenu
 {
