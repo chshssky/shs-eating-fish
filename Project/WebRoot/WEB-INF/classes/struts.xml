@@ -18,13 +18,13 @@
 			<result name="success">/changeSuccess.jsp</result>
 		</action>
 		<action name="reset_email" class="fish.ui.user.ResetEmail">
-			<result name="input">/userInfo.jsp?id=1</result>
-			<result name="success">/userInfo.jsp</result>
+			<result name="input">/showUserInfo.jsp?id=1</result>
+			<result name="success">/showUserInfo.jsp</result>
 		</action>
 		
 		<action name="reset_password" class="fish.ui.user.ResetPass">
-			<result name="input">/userInfo.jsp?id=2</result>
-			<result name="success">/userInfo.jsp</result>
+			<result name="input">/showUserInfo.jsp?id=2</result>
+			<result name="success">/showUserInfo.jsp</result>
 		</action>
 		<action name="deleteManagerA" class="eating.man.administrator.deleteManagerA">
 		<result name="success">/checkAllManagers.jsp</result>
