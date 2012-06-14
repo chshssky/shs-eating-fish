@@ -51,7 +51,7 @@
 				请选择送餐时间<br>
 					
 				
-				<sx:datetimepicker name="demandDate" type="date" toggleDuration="explode" displayFormat="yyyy-MM-dd" ></sx:datetimepicker>
+				<sx:datetimepicker name="demandDate" value="%{'today'}" type="date" toggleDuration="explode" displayFormat="yyyy-MM-dd" ></sx:datetimepicker>
 				<sx:datetimepicker name="demandTime" type="time" toggleDuration="explode" displayFormat="HH:mm:ss" ></sx:datetimepicker>
 				
 				

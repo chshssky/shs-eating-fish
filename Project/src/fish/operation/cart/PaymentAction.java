@@ -39,8 +39,12 @@ public class PaymentAction extends ActionSupport implements ServletRequestAware{
 		System.out.println(demandDate);
 		System.out.println(demandTime);
 		
-		System.out.println(demandDate.substring(0, 8));
-		System.out.println(demandTime.substring(10, 17));
+		System.out.println(demandDate.substring(0, 10));
+		System.out.println(demandTime.substring(11, 19));
+		String dt = demandDate.substring(0, 10) + " " + demandTime.substring(11, 19);
+		System.out.println(dt);
+		datetime = Timestamp.valueOf(dt);
+		curorder.setDemandTime(datetime);
 		Transaction tran = se.beginTransaction();
 		se.update(curorder) ;
 		tran.commit() ;
