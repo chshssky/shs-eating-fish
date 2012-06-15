@@ -18,8 +18,9 @@ public class Ordercourses extends AbstractOrdercourses implements
 	}
 
 	/** full constructor */
-	public Ordercourses(Courseinfo courseinfo, Orderinfo orderinfo, Integer num) {
-		super(courseinfo, orderinfo, num);
+	public Ordercourses(Courseinfo courseinfo, Orderinfo orderinfo,
+			Integer num, String state) {
+		super(courseinfo, orderinfo, num, state);
 	}
 
 }

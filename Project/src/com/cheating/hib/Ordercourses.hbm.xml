@@ -19,5 +19,8 @@
         <property name="num" type="java.lang.Integer">
             <column name="num" not-null="true" />
         </property>
+        <property name="state" type="java.lang.String">
+            <column name="State" length="20" />
+        </property>
     </class>
 </hibernate-mapping>

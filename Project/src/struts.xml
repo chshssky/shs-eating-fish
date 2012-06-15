@@ -109,5 +109,10 @@
 			<result name="input">/manager.jsp</result>
 			<result name="success">/manager.jsp</result>
 		</action>
+		
+		<action name="manHandle" class="fish.man.manager.ManHandleAction">
+			<result name="input">/manager.jsp</result>
+			<result name="success">/manager.jsp</result>
+		</action>
 	</package>
 </struts>    

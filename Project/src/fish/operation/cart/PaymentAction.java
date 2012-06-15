@@ -2,6 +2,8 @@ package fish.operation.cart;
 
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.util.Iterator;
+import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.swing.JOptionPane;
@@ -11,6 +13,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import com.cheating.hib.HibernateSessionFactory;
+import com.cheating.hib.Ordercourses;
 import com.cheating.hib.Orderinfo;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -34,18 +37,23 @@ public class PaymentAction extends ActionSupport implements ServletRequestAware{
 		curorder.setFirstName(firstName) ; 
 		curorder.setLastName(lastName) ;
 		curorder.setTelephoneNum(telephoneNum) ;
-		curorder.setState("finish") ;
+		curorder.setState("处理中") ;
+		Set<Ordercourses> orderCourse = curorder.getOrdercourseses() ;
+		Iterator<Ordercourses> it = orderCourse.iterator() ;
+		Session sess = HibernateSessionFactory.getSession() ;
+		Transaction tran = sess.beginTransaction() ;
+		while(it.hasNext())
+		{
+			Ordercourses or = it.next() ;
+			or.setState("处理中") ;
+			tran.begin() ;
+			sess.save(or) ;
+		}
 		
-		System.out.println(demandDate);
-		System.out.println(demandTime);
-		
-		System.out.println(demandDate.substring(0, 10));
-		System.out.println(demandTime.substring(11, 19));
 		String dt = demandDate.substring(0, 10) + " " + demandTime.substring(11, 19);
 		System.out.println(dt);
 		datetime = Timestamp.valueOf(dt);
 		curorder.setDemandTime(datetime);
-		Transaction tran = se.beginTransaction();
 		se.update(curorder) ;
 		tran.commit() ;
 		HibernateSessionFactory.closeSession() ;

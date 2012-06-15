@@ -66,8 +66,10 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="gb2312"%>
 			Criteria crit3 = se.createCriteria(Ordercourses.class);
 			crit3.add(Restrictions.eq("orderinfo", info));
 			List<Ordercourses> odcourses = crit3.list();
+			if(info.getState().equals("处理中"))
+			{
 			%>
-			<div class="eachOrder">
+				<div class="eachOrder">
 				<table align="center" border="2">
 				<tr>
 				<th>订单号:<%=info.getOrderId() %></th>
@@ -90,16 +92,20 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="gb2312"%>
 						crit4.add(Restrictions.eq("courseId", info2.getCourseinfo().getCourseId()));
 						List<Courseinfo> courseinfo = crit4.list();
 						
+						
+						
 				%>
 							<tr>
-						<td align="center"><%=courseinfo.get(0).getName()%></td>
-						<td align="center"><%=info2.getNum()%></td>
-						<td align="center"><%=courseinfo.get(0).getPrice() %></td>
-						<td align="center"><%=info.getAddress()%></td>
-						<td align="center"><%=info.getTelephoneNum()%></td>
-						</tr>
+							<td align="center"><%=courseinfo.get(0).getName()%></td>
+							<td align="center"><%=info2.getNum()%></td>
+							<td align="center"><%=courseinfo.get(0).getPrice() %></td>
+							<td align="center"><%=info.getAddress()%></td>
+							<td align="center"><%=info.getTelephoneNum()%></td>
+							</tr>
+						
 			<%
-					}
+					}		
+			}
 			 %>
 			</table>
 			</div>

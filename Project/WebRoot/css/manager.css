@@ -263,7 +263,7 @@ div.block3
 	color:#0066CC;
 	margin-left:30px;
 	font-size:30px;
-	width:920px;
+	width:400px;
 	height:600px;
 	float:left;
 }
@@ -347,15 +347,7 @@ div.courseMenu
 	border-left:1em solid #fc0;
 	padding:0.25em 0.5em 0.4em 0.75em;
 }
-div.block3
-{
-	width:200px;
-	float:left;
-}
-div.details
-{
-	float:left;
-}
+
 .block3 table
 	{
 		width:100%;
@@ -396,3 +388,8 @@ div.details
 		background-color:#f5fafe;
 		
 	}
+div.detail
+{
+	float:left;
+	width:400px;
+}

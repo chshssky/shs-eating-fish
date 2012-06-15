@@ -43,6 +43,7 @@ public class SubmitOrderAction extends ActionSupport implements ServletRequestAw
 			orderCourses.setNum(cur_order.getCourse_num()) ;
 			orderCourses.setCourseinfo(course) ;
 			orderCourses.setOrderinfo(orderInfo) ;
+			orderCourses.setState("Œ¥Ã·Ωª") ;
 			
 			se.save(orderCourses);
 		}
@@ -52,7 +53,7 @@ public class SubmitOrderAction extends ActionSupport implements ServletRequestAw
 		
 		orderInfo.setCustomerinfo(currCus) ;
 		orderInfo.setSumPrice(sum_price) ;
-		orderInfo.setState("dealing") ;
+		orderInfo.setState("Œ¥Ã·Ωª") ;
 		orderInfo.setAddress("…–Œ¥ÃÓ–¥") ;
 		orderInfo.setTelephoneNum("…–Œ¥ÃÓ–¥") ;
 		orderInfo.setLastName("temp") ;

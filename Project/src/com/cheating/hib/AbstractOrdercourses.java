@@ -13,6 +13,7 @@ public abstract class AbstractOrdercourses implements java.io.Serializable {
 	private Courseinfo courseinfo;
 	private Orderinfo orderinfo;
 	private Integer num;
+	private String state;
 
 	// Constructors
 
@@ -27,10 +28,11 @@ public abstract class AbstractOrdercourses implements java.io.Serializable {
 
 	/** full constructor */
 	public AbstractOrdercourses(Courseinfo courseinfo, Orderinfo orderinfo,
-			Integer num) {
+			Integer num, String state) {
 		this.courseinfo = courseinfo;
 		this.orderinfo = orderinfo;
 		this.num = num;
+		this.state = state;
 	}
 
 	// Property accessors
@@ -65,6 +67,14 @@ public abstract class AbstractOrdercourses implements java.io.Serializable {
 
 	public void setNum(Integer num) {
 		this.num = num;
+	}
+
+	public String getState() {
+		return this.state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
 	}
 
 }

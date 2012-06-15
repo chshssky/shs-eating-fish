@@ -16,8 +16,8 @@ public class Orderinfo extends AbstractOrderinfo implements
 	}
 
 	/** minimal constructor */
-	public Orderinfo(String address) {
-		super(address);
+	public Orderinfo(String address, String lastName) {
+		super(address, lastName);
 	}
 
 	/** full constructor */

@@ -32,7 +32,6 @@ public class RestOrder {
 		Iterator<Ordercourses> orderCourselist = orderCourse.list().iterator() ;
 		while(orderCourselist.hasNext())
 		{
-			System.out.println("count   " + orderCourse.list().size());
 			Ordercourses curOrderCourse = orderCourselist.next() ;
 			Courseinfo curCourse = curOrderCourse.getCourseinfo() ;
 			Orderinfo curOrder = curOrderCourse.getOrderinfo() ;
@@ -66,14 +65,16 @@ public class RestOrder {
 					SingleOrder cur = new SingleOrder() ;
 					cur.setOrder(new Orderinfo()) ;
 					
-					System.out.println("ccccc" + curCourse.getName()) ;
-				
+					//cur.setState(new LinkedList<String>()) ;					
+					cur.setOrdercourses(new LinkedList<Ordercourses>()) ;
 					cur.setCourses(new LinkedList<Courseinfo>()) ;
 					cur.setNum(new LinkedList<Integer>()) ;
 					cur.setOrder(curOrder) ;
 					cur.getCourses().add(curCourse) ;
 					cur.getNum().add(curOrderCourse.getNum()) ;
-					
+					cur.getOrdercourses().add(curOrderCourse) ;
+					//cur.getState().add(curOrderCourse.getState()) ;
+			
 					RestOrder.getRestList().add(cur) ;
 				}
 			}	

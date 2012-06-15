@@ -62,7 +62,7 @@ import="org.hibernate.criterion.Restrictions"	pageEncoding="UTF-8"%>
 			Criteria crit3 = se2.createCriteria(Ordercourses.class);
 			crit3.add(Restrictions.eq("orderinfo", info));
 			List<Ordercourses> odcourses = crit3.list();
-			if(info.getState().equals("dealing"))
+			if(info.getState().equals("未提交"))
 			{
 				count2 = count2 + 1;
 	%>

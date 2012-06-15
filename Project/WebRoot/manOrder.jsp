@@ -59,7 +59,7 @@ import="fish.man.manager.SingleOrder" %>
 	</style>
 </head>
 	<body bgcolor="#FFCC66">
-	<div id="wrap">
+
 	<div class="head">
 	  <div class="logo">
 	   <img src="logo5.png" width="126" height="100"/>
@@ -73,6 +73,11 @@ import="fish.man.manager.SingleOrder" %>
 	 </div>
 	
 		 <% 
+		 int getParam;
+		 if(request.getParameter("id") == null)
+		 	getParam = -1;
+		 else
+			getParam = Integer.valueOf(request.getParameter("id"));		 	
   		if(request.getSession().getAttribute("rmvSuc") != null) 
    		{ 
    		%>
@@ -101,7 +106,7 @@ import="fish.man.manager.SingleOrder" %>
 				<td>订单号:<%=curOrder.getOrder().getOrderId() %></td>
 				<td colspan="2">订单生成时间：<%=String.valueOf(curOrder.getOrder().getOrderTime()) %></td>
 				<td>总价格：<%=curOrder.getOrder().getSumPrice()%></td>
-				<td>状态：<%=curOrder.getOrder().getState()%></td>
+				<td>状态：<%=curOrder.getState()%></td>
 				
 				</tr>
 					<tr>
@@ -117,15 +122,43 @@ import="fish.man.manager.SingleOrder" %>
 					<input type="hidden" name="curOrderId" value=<%=curOrder.getOrder().getOrderId() %> />
 					<input type="submit" value="删除" class="input2" />
 				    </form>
-					</td>
-					</tr>
+				    </td>
+				    
+				    <td colspa ="2">
+					<form action="manHandle">
+				  <%
+				    if(curOrder.getState().equals("处理中"))
+				    {
+				  %>	
+				  		
+						<input type="hidden" name="listIndex2" value=<%=listIndex %> />
+						<input type="hidden" name="curOrderId2" value=<%=curOrder.getOrder().getOrderId() %> />
+						<input type="submit" value="已送餐" class="input2" />
+					    
+						
+					<%} %>
+					
+					</form> 
+						</td>
+						</tr>
 			</table>
 			<%
 				}
 			 %>	</div>
+			  <div class="detail">
+			<%if(getParam != -1)
+			{
+			 %>
+			
+			  <jsp:include page="orderDetail.jsp"><jsp:param name="id" value="<%=getParam%>"></jsp:param>
+    </jsp:include>
+  
+			 <%} %>
+			   </div>
+			
 			
 			 
-	</div>
+
 	
 				
 	</body>

@@ -23,16 +23,16 @@
             <column name="firstName" length="20" />
         </property>
         <property name="lastName" type="java.lang.String">
-            <column name="lastName" length="20" />
+            <column name="lastName" length="20" not-null="true" />
         </property>
         <property name="sumPrice" type="java.lang.Integer">
             <column name="sumPrice" />
         </property>
         <property name="orderTime" type="java.sql.Timestamp">
-            <column name="orderTime" length="19" />
+            <column name="orderTime" length="0" />
         </property>
         <property name="demandTime" type="java.sql.Timestamp">
-            <column name="demandTime" length="19" />
+            <column name="demandTime" length="0" />
         </property>
         <property name="state" type="java.lang.String">
             <column name="state" length="20" />
