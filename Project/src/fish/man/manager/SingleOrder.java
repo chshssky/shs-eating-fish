@@ -11,14 +11,14 @@ public class SingleOrder {
 	private List<Courseinfo> courses ;
 	private List<Ordercourses> ordercourses ;
 	private List<Integer> num ;
-	//private List<String> state ;
+	private List<String> state ;
 	
-	/*public List<String> getState() {
+	public List<String> getState() {
 		return state;
 	}
 	public void setState(List<String> state) {
 		this.state = state;
-	}*/
+	}
 	public List<Integer> getNum() {
 		return num;
 	}

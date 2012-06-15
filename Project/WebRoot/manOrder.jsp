@@ -106,7 +106,7 @@ import="fish.man.manager.SingleOrder" %>
 				<td>订单号:<%=curOrder.getOrder().getOrderId() %></td>
 				<td colspan="2">订单生成时间：<%=String.valueOf(curOrder.getOrder().getOrderTime()) %></td>
 				<td>总价格：<%=curOrder.getOrder().getSumPrice()%></td>
-				<td>状态：<%=curOrder.getState()%></td>
+				<td>状态：<%=curOrder.getState().get(0) %></td>
 				
 				</tr>
 					<tr>
@@ -127,7 +127,7 @@ import="fish.man.manager.SingleOrder" %>
 				    <td colspa ="2">
 					<form action="manHandle">
 				  <%
-				    if(curOrder.getState().equals("处理中"))
+				    if(curOrder.getState().get(0).equals("处理中"))
 				    {
 				  %>	
 				  		

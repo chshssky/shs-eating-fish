@@ -65,7 +65,7 @@ public class RestOrder {
 					SingleOrder cur = new SingleOrder() ;
 					cur.setOrder(new Orderinfo()) ;
 					
-					//cur.setState(new LinkedList<String>()) ;					
+					cur.setState(new LinkedList<String>()) ;					
 					cur.setOrdercourses(new LinkedList<Ordercourses>()) ;
 					cur.setCourses(new LinkedList<Courseinfo>()) ;
 					cur.setNum(new LinkedList<Integer>()) ;
@@ -73,7 +73,7 @@ public class RestOrder {
 					cur.getCourses().add(curCourse) ;
 					cur.getNum().add(curOrderCourse.getNum()) ;
 					cur.getOrdercourses().add(curOrderCourse) ;
-					//cur.getState().add(curOrderCourse.getState()) ;
+					cur.getState().add(curOrderCourse.getState()) ;
 			
 					RestOrder.getRestList().add(cur) ;
 				}
